@@ -16,7 +16,7 @@ Numeraiの中核をなすのは、データサイエンスの問題、つまり�
 [analysis and tips notebooks](https://github.com/numerai/example-scripts/blob/master/analysis_and_tips.ipynb) を読んで、データセットを深く掘り下げてみましょう。
 {% endhint %}
 
-![numerai\_training\_data.csv](../.gitbook/assets/image%20%282%29.png)
+![numerai\_training\_data.csv](../.gitbook/assets/image%20%287%29.png)
 
 ## Modeling
 
@@ -57,7 +57,7 @@ predictions.to_csv("predictions.csv")
 [tool や library](https://docs.numer.ai/tournament/tools) を使用して、GraphQL [API](https://api-tournament.numer.ai/)に接続しましょう。
 {% endhint %}
 
-![prediction.csv](../.gitbook/assets/image%20%283%29.png)
+![prediction.csv](../.gitbook/assets/image.png)
 
 ## Scoring
 
@@ -103,7 +103,7 @@ mmc_payout = stake * clip(corr + mmc, -0.25, 0.25)
 
 提出した予測結果にstake した場合、ペイアウトも毎日更新されます。しかし、最終的なスコアと最終的なペイアウトだけがカウントされます。
 
-![submission and scoring calender](../.gitbook/assets/image%20%284%29.png)
+![submission and scoring calender](../.gitbook/assets/image%20%282%29.png)
 
 ## Reputation and Leaderboard
 
