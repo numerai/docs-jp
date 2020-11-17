@@ -104,41 +104,106 @@ universe の履歴は、 [historical targets file](https://numerai-signals-publi
 
 ### Neutralization
 
-Numerai には様々な既存のシグナルがあります。当社の既存のシグナルには、Barra ファクター（サイズ、バリュー、モメンタムなどのようなもの）、国やセクターのリスクファクター、株式でよく使われている特徴量\(custom stock features\) などが含まれています。
+Numerai には様々な既存のシグナルがあります。当社の既存のシグナルには、Barra ファクター（サイズ、バリュー、モメンタムなどのようなもの）、国やセクターのリスクファクター、custom stock features などが含まれています。
 
 {% hint style="info" %}
 定義: シグナルまたはターゲットは、Barra ファクター、国やセクターのファクター、その他のcustom stock features など、Numeraiの既存のシグナルとの相関関係が０になるように変換された後、"neutralized" されたとみなされます。
 {% endhint %}
 
-Numerai Signalsにアップロードされた全ての信号は、スコアリングされる前にneutralize されます。neutralization のポイントは、既知の信号に存在しない信号の独自成分あるいは直交成分を分離することです。
+Numerai Signalsにアップロードされた全てのシグナルは、スコアリングされる前にneutralize されます。neutralization のポイントは、既知のシグナルに存在しないシグナルの独自成分あるいは直交成分を分離することです。
 
 ![A visualization of neutralization against a single known signal](../.gitbook/assets/image%20%289%29.png)
 
 {% hint style="warning" %}
-よく知られたいくつかの信号の単純な線形の組み合わせを提出すると、中和後に直交成分がほとんど残りません。
+よく知られたいくつかのシグナルの単純な線形和を提出すると、neutralization 後に直交成分がほとんど残りません。
 {% endhint %}
 
-信号を評価するために使用されるターゲットも中和されます。ターゲットは、実質的にはNumeraiのカスタムの「特定のリターン」または「残留リターン」です。
+シグナルを評価するために使用されるターゲットもneutralize されます。ターゲットは、実質的にはNumerai のカスタムの「特定のリターン」または「残留リターン」です。
 
-中和を実行するために使用されるデータは提供されないため、このプロセスは「ブラックボックス」であることを意味します。ただし、過去の期間に強いスコアを持つシグナルは、現在のラウンドでも将来のラウンドでも良いスコアが得られない可能性があることに注意することが重要ですが、シグナルのヒストリカル診断を使用して、neutralization が将来のシグナルに与える影響を推定することができます。
+neutralization を実行するために使用されるデータは提供されないため、このプロセスは「ブラックボックス」であることを意味します。ただし、過去の期間に強いスコアを持つシグナルは、現在のラウンドでも将来のラウンドでも良いスコアが得られない可能性があることに注意することが重要ですが、シグナルのヒストリカル診断を使用して、neutralization が将来のシグナルに与える影響を推定することができます。
 
-The code that is used to implement neutralization is open source. You can learn more about the neutralization process in this example notebook:
+neutralization を実装するために使用されているコードはオープンソースです。neutralization のプロセスについては、このexample notebook で詳しく知ることができます。
 
 {% embed url="https://github.com/numerai/example-scripts/blob/master/SignalsScoringExample.ipynb" %}
 
-Or check out this forum post to understand broader implications of feature exposure and neutralization.  
+あるいは、feature exposure とneutralization のより広い意味合いを理解するために、このフォーラムの投稿をチェックしてみてください。
 
+{% embed url="https://forum.numer.ai/t/model-diagnostics-feature-exposure/899" %}
 
+後続の株式リターンとの相関性が非常に高いシグナルは、Numerai Signalsのスコアが非常に悪く、後続の株式リターンとの相関性が弱いシグナルは、高いスコアを出すことができるかもしれません。
 
+言い換えれば、強い予測値を持つ「良い」シグナルは、単独で考えた場合、Numerai Signals のスコアは低いかもしれません。これは、シグナルの重要なユニークな側面を強調しています。Numerai Signals は、株式のリターンを予測することではなく、Numerai にはない独自のシグナルを見つけることです。
 
+### Six Day Neutralized Return Targets
 
+シグナルは、Numerai によって作成されたカスタムブラックボックスターゲットに対して評価されます。このターゲットは、6日間のニュートラル化された後続リターンに基づいています（最初の2日間は無視します）。
 
+シグナルが6日の地平線（最初の2日を除く）で評価される理由は、短い時間軸でしか機能しないシグナルは、大規模なヘッジファンドが実装することが不可能だからです。例えば、シグナルが株式の1時間後のリターンを正確に予測できたとしても、ヘッジファンドがそのポジションを完全に取引するのに24時間かかるのであれば、あまり有用ではありません。大規模なヘッジファンドにとって最も有用なシグナルは、「低アルファ減衰」とも呼ばれる長い時間軸での予測力を持っています。
 
-###   <a id="spotify-music"></a>
+後続のニュートラル化されたリターンの6日間を構成する正確な市場日についての詳細は、dates and deadlines についての後のセクションを参照してください。
 
+### Scoring
 
+スコアリングの前に、シグナルは最初に\[0, 1\]の間でランク付けされ、次に中和されます。最後に、neutralize されたシグナルとターゲットの間のスピアマン相関を取ることでスコアが計算されます。このスコアは、このドキュメントとウェブサイトでは、単に`corr`と呼ばれています。
 
+スコアリングの前にシグナルをneutralize することで、Numeraiはシグナルをターゲットに合わせ、ターゲットに対するパフォーマンスを向上させます。ターゲットもneutralize されるため、neutralization ステップでは、neutralization に使用されたデータをNumeraiが提供することなく、シグナルを効果的に最適化して最高のパフォーマンスを得ることができます。
 
+例えば、シグナルがcountry risks に対してneutralize されていない場合、Numerai Signalsはスコアリングの前にcountry risks に対してシグナルをneutralize するので、country risks のneutralization を気にすることなく独自のシグナルの作成に集中することができます。
 
+universe の一部の銘柄（例：米国株のシグナルのみ）についてのみシグナルを保有している場合でも、シグナルに参加することができ、高いパフォーマンスを発揮することができます。シグナルがない銘柄については、シグナルがランク付けされた後、Numerai が自動的に中央値で埋めてくれます。
 
+### Meta Model Contribution
+
+`corr`があなたのシグナルがNumeraiが知っているすべてのシグナルとneutralize されたターゲットとどれだけ相関しているかを示す指標であるとすれば、Meta Model Contribution \(MMC\)は、あなたのシグナルが、Numeraiが知っているすべてのシグナルとneutralize されたターゲット、およびNumerai Signals 上の他のすべてのstake されたシグナルとどれだけ相関しているかを示す指標である。このスコアは、このドキュメントやウェブサイトでは、単に`mmc`と呼ばれています。
+
+シグナルの`mmc`は、最初にSignals' Meta Modelと呼ばれる特別なシグナルを構築することによって計算されます。ここで、Signals' Meta Modelとは、与えられたラウンドに対してNumerai Signals上のすべての（ランク付けされ、neutralize された）シグナルのstake 加重平均として定義されたものです。シグナルの`mmc`は、Signals' Meta Modelに中和された後のターゲットに対するシグナルの相関関係です。
+
+{% hint style="success" %}
+シグナルの高い一貫性のあるMMCは、あなたのシグナルがNumeraiの全てのデータとNumerai Signalsの他の全てのシグナルの組み合わせよりも優位に立っていることを意味するので、二重に印象的です。
+{% endhint %}
+
+MMCはメインのNumerai Tournamentから取った概念であり、スコアリングシステムは非常に似ています。Numerai でのMMCの計算方法の詳細については、Numerai Tournament のドキュメントの[metamodel contribution](https://docs.numer.ai/tournament/metamodel-contribution) のセクションを参照してください。
+
+Numerai SignalsのMMCの計算は、Numerai Tournamentのそれとは完全に分離されていることに注意してください。具体的には、Numerai Signalsへのsubmission のみがSignalsのメタモデルを構築するために使用されます。
+
+## Staking and Payouts
+
+`payouts` を獲得する機会が欲しい場合は、投稿を`stake` することができます。`corr` または `corr_plus_mmc` にstake することができます。
+
+{% hint style="info" %}
+ステイクを行うには、[NMR cryptocurrency](https://www.coinbase.com/price/numeraire) をロックアップ\(しばらく引き出せないようにする\)する必要があります。これにより、シグナルのパフォーマンスが悪くなった場合、Numeraiはあなたのステークを燃やすことができます。
+{% endhint %}
+
+一度stake すれば、提出したスコアに応じて、何％かを`earn` したり、`burn` したりすることができます。
+
+```python
+corr_payout = stake * clip(2 * corr, -0.25, 0.25)
+
+corr_plus_mmc_payout = stake * clip(2 * corr + mmc, -0.25, 0.25)
+```
+
+例えば、`corr`に`100NMR`をstake して、あなたのスコアが`+0.05`であった場合、あなたは`100NMRの2 * 5% = 10NMR`を得ることができます。もしあなたが`corr_plus_mmc`にstake して、あなたの`mmc`が`+0.03`であれば、あなたは`100NMRの(2 * 5% + 3%) = 13NMR`を得ることになります。
+
+あなたが稼ぐか、または燃やすことができる最大値は、各ラウンドであなたの賭け金の25％です。ペイアウトは自動的にあなたのstake に戻されます。
+
+{% hint style="danger" %}
+シグナルを賭ける機会は、Numeraiによる投資契約、証券、金融資産のリターンに基づくスワップ、Numeraiのヘッジファンドへの参加、またはNumerai自身への参加、またはNumeraiが獲得するフィーの提供**ではない**ことに注意することが重要です。支払いは、ユーザーには開示されないブラックボックスのターゲットに基づいて、当社の裁量で行われます。 基本的に、Numerai Signalsは、「本物の」シグナルを検証する方法としてNMR staking を使用して、ユーザーが自分のシグナルの価値を評価することを可能にするNumeraiが提供するサービスです。その見返りとして、Numeraiはstake されたシグナルと関連データをNumeraiヘッジファンドで使用します。異なる期待を持っているユーザーは、シグナルをstake するべきではありません。
+
+詳細については、[利用規約](https://numer.ai/terms)をお読みください。
+{% endhint %}
+
+stake を作成するには、ウェブサイトの"manage stake"ボタンをクリックして、stake を"increase"するための"change request"を作成します。ここでは、`corr`と`corr_plus_mmc`のどちらにstake するかを選択することができます。いつでもstake を減らしたい場合は、"change request"を作成してステークを"decrease"することもできます。  
+
+![](../.gitbook/assets/image%20%2812%29.png)
+
+change requests をしたからといって、すぐに適用されるわけではありませんのでご注意ください。変更を適用する前に、必ずウェブサイトに表示されている"effective date"を再確認してください。
+
+## Dates and Deadlines
+
+### Data Date vs Effective Date
+
+There are two types of dates in Numerai Signals 
+
+* `data_date` - dates corresponding to the underlying stock market data. All `data_dates` refer to the market close of that date and do not include a time. For example, values in the `friday_date` column of submissions are of type `data_date`.
+* `effective_date`- dates corresponding to actions or events that take place on Numerai Signals and may include a time which is always specified in UTC. There is usually a delay between the `data_date` and the `effective_date` because of time zones and the time it takes for stock market data to be processed. Unless otherwise specified, all dates mentioned in the website and this doc are of type `effective_date`. 
 
