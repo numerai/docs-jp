@@ -202,8 +202,34 @@ change requests をしたからといって、すぐに適用されるわけで�
 
 ### Data Date vs Effective Date
 
-There are two types of dates in Numerai Signals 
+ヌメライシグナルには2種類の日付があります。
 
-* `data_date` - dates corresponding to the underlying stock market data. All `data_dates` refer to the market close of that date and do not include a time. For example, values in the `friday_date` column of submissions are of type `data_date`.
-* `effective_date`- dates corresponding to actions or events that take place on Numerai Signals and may include a time which is always specified in UTC. There is usually a delay between the `data_date` and the `effective_date` because of time zones and the time it takes for stock market data to be processed. Unless otherwise specified, all dates mentioned in the website and this doc are of type `effective_date`. 
+* `data_date` - 基礎となる株式市場データに対応する日付です。すべての`data_date`は、その日の市場の終値を参照しており、時刻は含まれていません。例えば、submissionsの`friday_date`列の値は`data_date`型です。
+* `effective_date`- Numerai Signals で行われるアクションやイベントに対応する日付で、常にUTCで指定された時間を含む場合があります。時間帯や株式市場データの処理に時間がかかるため、`data_date`と`effective_date`の間には通常遅延が発生します。特に指定がない限り、本ウェブサイトおよび本文書に記載されている日付はすべて effective\_date 型です。
+
+### Rounds
+
+Submissions、stakes、scores、payoutsは、それらについて話しやすいように番号の付いた`rounds` にグループ化されています。
+
+新しい`round`は毎週`土曜日の18:00 UTC`で行われます。提出とstake の締め切りは`月曜日の14:30 UTC`です。遅れたsubmissions は採点されず、payoutsにはカウントされません。締め切り後に行われたstake の変更は次のroundに適用されます。
+
+オンタイムのsubmissionsは採点され、保留中のpayoutsは金曜日、土曜日、火曜日、水曜日に計算されます。stake 値は"stake selection"の間、金曜日までにロックされます。これは、前のround からのpayouts が次のroundsのためのあなたのstake 値に複合することを意味します。水曜日のスコアとペイアウトは、そのラウンドの最終スコアとペイアウトとなります。
+
+![](../.gitbook/assets/image%20%2814%29.png)
+
+`round`のuniverse は、前の金曜日の`data_date`で定義されています。4 日間のスコアリングとペイアウトは、`3 日目-2 日目`、`4 日目-2 日目`、`5 日目-2 日目`、`6 日目-2 日目`の中立リターンに基づいています。ある日のマーケットクローズからスコアリングのためにデータが利用可能になるまでには2日のラグがあります。例えば、`6日目-2日目`のneutralized returnsは月曜日のマーケットクローズまでですが、利用可能になるのは水曜日です。
+
+![](../.gitbook/assets/image%20%2815%29.png)
+
+## Reputation and Leaderboard <a id="reputation-and-leaderboard"></a>
+
+あなたのシグナルの`reputation`は、過去20回のラウンドにおけるあなたのシグナルの`corr`の加重平均です。同様に、あなたのシグナルの`mmc_reputation`は、過去20ラウンドのあなたのシグナルの`mmc`の加重平均です。
+
+![](../.gitbook/assets/image%20%2813%29.png)
+
+## Support
+
+助けが必要ですか？
+
+質問、サポート、フィードバックのために [RocketChat](https://community.numer.ai/home) で私たちを見つけてください!
 
