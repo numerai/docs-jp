@@ -16,7 +16,7 @@
 
 ## Numerai Signals
 
-* [Numerai Signals Overview](numerai-signals/signals-overview.md)
+* [Signals Overview](numerai-signals/signals-overview.md)
 * [New Users](numerai-signals/new-users.md)
 
 ## Connect
