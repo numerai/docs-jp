@@ -23,46 +23,40 @@ description: ヌメライを改善してNMRを稼ぎましょう
 
 ### Exclusions
 
-While researching, we'd like to ask you to refrain from:
+調査中は、以下のことはご遠慮ください。
 
-* Denial of service
-* Spamming
-* Automated scanning of any kind
-* Missing Security Headers \(eg. HSTS, CSP\)
-* Missing Secure Flags on Cookies
-* SSL issues \(weak ciphers/key-size/BEAST/CRIME\)
-* CSRF without any security impact
-* Rate limiting attacks \(unless it constitutes a significant risk\)
-* Email sending checks
-* Misconfigured DNS records \(unless it constitutes a significant risk\)
+* サービス拒否
+* スパム
+* あらゆる種類の自動スキャン
+* セキュリティヘッダーの欠落 \(eg. HSTS, CSP\)
+* Cookieに安全なフラグの欠落
+* SSL の問題 \(weak ciphers/key-size/BEAST/CRIME\)
+* セキュリティへ影響を与えないCSRF
+* レート制限攻撃（重大なリスクを構成しない限り）
+* メールを送ることによるチェック
+* 誤って構成されたDNSレコード（重大なリスクを構成しない限り）
 
 ### How to submit a bug report
 
-Message us on the [RocketChat](https://community.numer.ai/) \#[support channel](https://community.numer.ai/channel/support).
+[RocketChat](https://community.numer.ai/) \#[support channel](https://community.numer.ai/channel/support) でメッセージを送ってください。
 
-Tell us what you expected to happen, what is broken and whether or not it is still happening. Please include your username where appropriate. Please also include any instructions on how to reproduce the error or any screenshots / error messages.
+何が起こると予想されたのか、何が壊れているのか、まだ起こっているのかどうかを教えてください。必要に応じてあなたのユーザー名も含めてください。また、エラーを再現する方法やスクリーンショット、エラーメッセージも含めてください。
 
-If the issue is with the website, please include information about your browser and any extensions you may have installed \(anti-virus, ad-blockers\). If you are not comfortable posting this information in public you can also send us a direct message or send us an email to support@numer.ai.
+問題がウェブサイトにある場合は、お使いのブラウザとインストールされている拡張機能（アンチウイルス、広告ブロック）に関する情報を含めてください。この情報を公開することに抵抗がある場合は、ダイレクトメッセージを送信するか、support@numer.ai まで電子メールを送信してください。
 
 ## Feedback & Suggestions
 
-If you have any good ideas about how to improve the Numerai propose it to us! If it is a good idea and we end up using it then we will give you a bounty!
+もしあなたがNumeraiを改善するための良いアイデアをお持ちでしたら、私たちに提案してください! もしそれが良いアイデアであり、最終的にそれを使用することになった場合は、あなたに賞金を差し上げます!
 
 | Feedback & Suggestions | Bounty |
 | :--- | :--- |
-| Small _website features_ | 1 NMR |
-| Medium _data, submissions and staking improvements_ | 1-5 NMR |
-| Large _tournament rules/payouts, reputation_ | 10-100 NMR |
+| 小規模なウェブサイトの機能 | 1 NMR |
+| 中規模のデータ、submission、staking の改善 | 1-5 NMR |
+| 大規模トーナメントのルール/ペイアウト、reputation | 10-100 NMR |
 
 ### How to give feedback and suggestions
 
-Message us on the [RocketChat](https://community.numer.ai/) \#[feedback channel](https://community.numer.ai/channel/feedback).
+[RocketChat](https://community.numer.ai/) \#[feedback channel](https://community.numer.ai/channel/feedback) でメッセージを送ってください。
 
-If you are going for a large bounty, it would be helpful if you wrote up your idea in a document \(pdf or google docs\) or a notebook \(google colab, github\).
-
-
-
-
-
-
+大きな懸賞金を狙うのであれば、アイデアを文書（pdfやgoogle docs）やノート（google colab、github）に書き出してくれると助かります。
 
