@@ -16,7 +16,7 @@ stakeせずにNumeraiに参加することで、トーナメントの詳細や�
 
 Numeraiのウェブサイトでは、「Manage Stake」をクリックしてstake を管理することができます。このモーダルを使用して、ステークの金額を増減したり、`MMC`に参加したり、参加しないことを選択したりすることができます。
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
 stake を増やすと、あなたのwallet からNMRを取り出し、stake に入れます。stake を減らすと、stake からNMRを取り出してwalletに戻します。
 
