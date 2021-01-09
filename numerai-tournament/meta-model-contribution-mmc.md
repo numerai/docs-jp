@@ -16,26 +16,23 @@
 
 ## Calculation <a id="calculation"></a>
 
-To calculate a user's \(U\) `mmc` for a given round we
+特定のラウンドのユーザ（以下Uとする）の`mmc` を計算するには、以下の手順を踏みます。
 
-* select a random 67% of all staking users \(with replacement\)
-* calculate the stake weighted predictions of these users
-* transform both the stake weighted predictions, and U's model to be uniformly distributed
-* neutralize U's model with respect to the uniform stake weighted predictions
-* calculate the covariance between U's model and the targets
-* divide this value by 0.0841 \(this step is to bring the expected score up to the same magnitude as correlation\)
-* the resultant value is an MMC score
-* repeat this whole process 20 times and keep the average MMC score
+* 全stake ユーザーの67％をランダムに選択します。（入れ替えあり）
+* これらのユーザーのstake 重み付き予測を計算します。
+* stake 重み付き予測とUのモデルの両方を一様分布に変換します。
+* 一様なstake 重み付き予測に関してUのモデルをneutralize します。
+* Uのモデルとtarget の間の共分散を計算します。
+* この値を0.0841で割ります。 \(このステップは、期待されるスコアを相関と同じ大きさにするためです\)
+* 結果として得られる値は、MMC のスコアです。
+* この全体のプロセスを20回繰り返し、平均MMCのスコアを保持します。
 
 ## Design Considerations <a id="design-considerations"></a>
 
-* Stake weight is necessary to make the system unattackable
-* Sampling a random 67% each time is important to incentivize some redundancy.
-
-  A very large staker submitting similar predictions to yours would penalize you too much if we didn't do this.
+* システムが攻撃されないようにするにはstake weight が必要です。
+* 毎回ランダムに67%の確率でサンプリングすることは、ある程度の冗長性を高めるために重要です。  あなたに似たような予測を提出した非常に大きなstake をした者は、我々がこれをしなかったら、あなたにペナルティを与えすぎてしまいます。
 
 ## Discussion <a id="discussion"></a>
 
-Read more about the MMC calculation [here](https://forum.numer.ai/t/mmc2-announcement/93). Read more about MMC and profitability [here](https://forum.numer.ai/t/mmc-staking-change-corr-mmc/698). Read [this Medium post about MMC](https://medium.com/numerai/a-new-data-science-competition-where-being-different-pays-251c2aecc40a) and the value of originality.[  
-](https://app.gitbook.com/@numerai/s/numerai-tournament/tournament/tools)
+より詳しいMMCの計算については[こちら](https://forum.numer.ai/t/mmc2-announcement/93)をご覧ください。MMCと収益性については[こちら](https://forum.numer.ai/t/mmc-staking-change-corr-mmc/698)をお読みください。MMCとオリジナリティの価値については、[このMediumの記事](https://medium.com/numerai/a-new-data-science-competition-where-being-different-pays-251c2aecc40a)をお読みください。
 

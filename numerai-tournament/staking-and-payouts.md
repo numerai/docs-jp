@@ -48,7 +48,7 @@ stake を減らすと、すぐに次のラウンドで`stake_value`が下がり�
 {% endhint %}
 
 {% hint style="info" %}
-減少リクエストをキャンセルすると、すぐに次のラウンドでステーク値が元の値に戻ってしまいます。
+decrease リクエストをキャンセルすると、すぐに次のラウンドでステーク値が元の値に戻ってしまいます。
 {% endhint %}
 
 コミュニティで構築された[Numerai Payouts](https://docs.numer.ai/help/payouts-app)アプリでペイアウトを追跡しましょう。
