@@ -2,15 +2,15 @@
 
 ## Motivation
 
-How can you tell if your model is working or not? Only time will tell.
+モデルが機能しているかどうか、どうやって見分けることができるのでしょうか？それは時間だけが教えてくれます。
 
-While your payouts depend on your performance in a single round, your reputation and rank depends on your performance over 20 rounds. 
+ペイアウトは1回のラウンドでのパフォーマンスに左右されますが、評価やランクは20ラウンドのパフォーマンスに左右されます。
 
 ## Calculation
 
-Your reputation on round `n` is a weighted average of your `correlation` over the past 20 rounds including rounds that are currently resolving.
+ラウンド`n`でのあなたの評価は、現在解決中のラウンドを含む過去20ラウンドの相関関係の加重平均です。
 
-The weights on each round change as the round progresses. New rounds start low and gain weight as it nears resolution. Resolved rounds have full weight, but lose weight as it ages until it is dropped entirely.
+各ラウンドの重さは、ラウンドが進むにつれて変化します。新しいラウンドは低めにスタートし、解決に近づくにつれてwieght が増えていきます。解決されたラウンドは、最大加重１を持っていますが、それが完全にドロップされるまで、それが古くなるにつれてweight が減少します。
 
 ```python
 # delta is the difference between the current and target round number
@@ -23,15 +23,15 @@ def round_weight(delta, day):
       return 1
 ```
 
-For example, here are the round weights on day 3 for round 204.
+例えば、ラウンド204の3日目のラウンドweight はこんな感じです。
 
 ![](../.gitbook/assets/image%20%2817%29.png)
 
 ## Missing scores
 
-Late and missing submissions in the 20 round window are penalized in order for reputation to be comparable across models.
+20ラウンドのウィンドウでの提出遅れや提出しなかったsubmission は、評判がモデル間で比較できるようにするためにペナルティが課せられます。
 
-The first late or missed submission will receive the score equivalent to the `example_predictions`. Subsequent late or missed submissions will receive a very low score of `-0.1`.
+最初の提出が遅れた、または失敗した場合、`example_predictions`と同等のスコアが与えられます。それ以降の遅刻やミスした投稿には`-0.1`という非常に低いスコアが与えられます。
 
-To avoid this penalty, automate your weekly submission workflow with [Numerai Compute](https://docs.numer.ai/tournament/compute).
+このペナルティを回避するために、[Numerai Compute](https://app.gitbook.com/@numerai/s/japanese-docs/~/drafts/-MQbysZVkNB763WvP03a/numerai-tournament/numerai-compute)を使って毎週の提出ワークフローを自動化しましょう。
 
