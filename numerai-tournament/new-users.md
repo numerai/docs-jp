@@ -4,7 +4,11 @@
 
 {% embed url="https://qiita.com/blog\_UKI/items/469143fe6940f3148880" %}
 
+{% embed url="https://qiita.com/tit\_BTCQASH/items/366a2d1c273507dd4b8c" %}
+
 {% embed url="https://zenn.dev/katsu1110/articles/bb2b5cba9b04c9e30bfe" %}
+
+{% embed url="https://www.kaggle.com/code1110/numerai-tournament" %}
 
 * Join the [RocketChat \#NewUsers channel](https://community.numer.ai/channel/newusers) for tips and support
 * Check out the [Numerai Forum](https://forum.numer.ai) for long-form posts on data analysis, tips and tutorials
