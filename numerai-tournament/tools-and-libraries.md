@@ -2,35 +2,37 @@
 
 ## Example scripts <a id="example-scripts"></a>
 
-### [numerai/example-scripts](https://github.com/numerai/example-scripts)
+{% embed url="https://github.com/numerai/example-scripts" %}
 
-#### Example Machine Learning Scripts for Numerai's Tournament - numerai/example-scripts github.com
+These are the example machine learning scripts included with the download of [Numerai's data](https://numer.ai/learn).
 
 ## API clients <a id="api-clients"></a>
 
-[uuazed/numerapi](https://github.com/uuazed/numerapi)
+{% embed url="https://github.com/uuazed/numerapi" caption="Automatically download and upload data for the Numerai machine learning competition." %}
 
-#### Python API and command line interface for the numer.ai machine learning competition - uuazed/numerapi github.com
+This library is a Python client to the Numerai API. The interface is programmed in Python and allows downloading the training data, uploading predictions, and accessing user, submission and competitions information. It works for both, the main competition and the newer Numerai Signals competition.
 
-[Omni-Analytics-Group/Rnumerai](https://github.com/Omni-Analytics-Group/Rnumerai)
+{% embed url="https://github.com/Omni-Analytics-Group/Rnumerai" %}
 
-#### R Interface to the Numerai Machine Learning Tournament API - Omni-Analytics-Group/Rnumerai github.com
+This interface allows download of tournament data, submit predictions, get user information, stake NMR's and much more. Using the functions from this package end user can write R code to automate the whole procedure related to numerai tournament.
 
-[uuazed/numerapi-scala](https://github.com/uuazed/numerapi-scala)
+{% embed url="https://github.com/uuazed/numerapi-scala" caption="Automatically download data and upload predictions for the Numerai competition" %}
 
-#### Contribute to uuazed/numerapi-scala development by creating an account on GitHub. github.com
+This library is a Scala client to the Numerai API. It allows downloading the training data, uploading predictions, and accessing user, submission and competition information.
 
 ## TOOLS <a id="tools"></a>
 
-[numerai/numerai-cli](https://github.com/numerai/numerai-cli)
+{% embed url="https://github.com/numerai/numerai-cli" %}
 
-#### Fully automated submission workflow in the cloud for &lt;$1/mo - numerai/numerai-cligithub.com
+Fully automated submission workflow in the cloud for &lt;$1/mo. Learn more: [https://docs.numer.ai/tournament/compute](https://docs.numer.ai/tournament/compute)
 
-[numerai/numerox](https://github.com/numerai/numerox)
+{% embed url="https://github.com/numerai/numerox" %}
 
-#### Numerai tournament toolbox written in Python. Contribute to numerai/numerox development by creating an account on GitHub. github.com
+Numerai tournament toolbox written in Python.
 
-[thebrain85/numerauto](https://github.com/thebrain85/numerauto)
+{% embed url="https://github.com/thebrain85/numerauto" %}
 
-#### Contribute to thebrain85/numerauto development by creating an account on GitHub. github.com 
+Numerauto is a Python daemon that facilates automatic weekly participation in the Numerai machine learning competition \([http://numer.ai](http://numer.ai/)\).
+
+####  
 
