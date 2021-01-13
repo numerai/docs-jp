@@ -4,35 +4,35 @@
 
 {% embed url="https://github.com/numerai/example-scripts" %}
 
-These are the example machine learning scripts included with the download of [Numerai's data](https://numer.ai/learn).
+これらは、Numeraiのデータをダウンロードした際に含まれる機械学習スクリプトの例です。
 
 ## API clients <a id="api-clients"></a>
 
 {% embed url="https://github.com/uuazed/numerapi" caption="Automatically download and upload data for the Numerai machine learning competition." %}
 
-This library is a Python client to the Numerai API. The interface is programmed in Python and allows downloading the training data, uploading predictions, and accessing user, submission and competitions information. It works for both, the main competition and the newer Numerai Signals competition.
+本ライブラリは、Numerai APIへのPythonクライアントです。インターフェースはPythonでプログラムされており、トレーニングデータのダウンロード、予測値のアップロード、ユーザー、submission、competition情報へのアクセスが可能です。これは、メインcompetitionと新しいNumerai Signals competitionの両方で動作します。
 
 {% embed url="https://github.com/Omni-Analytics-Group/Rnumerai" %}
 
-This interface allows download of tournament data, submit predictions, get user information, stake NMR's and much more. Using the functions from this package end user can write R code to automate the whole procedure related to numerai tournament.
+本インターフェースは、トーナメントデータのダウンロード、予測の提出、ユーザー情報の取得、NMRのstake、その他さまざまなことを行うことができます。このパッケージの関数を使用して、エンドユーザはRコードを記述して、Numeraiトーナメントに関連する全ての手続きを自動化することができます。
 
 {% embed url="https://github.com/uuazed/numerapi-scala" caption="Automatically download data and upload predictions for the Numerai competition" %}
 
-This library is a Scala client to the Numerai API. It allows downloading the training data, uploading predictions, and accessing user, submission and competition information.
+このライブラリは、Numerai APIへのScalaクライアントです。これにより、トレーニングデータのダウンロード、予測値のアップロード、ユーザー情報、submission情報、competition情報へのアクセスが可能になります。
 
 ## TOOLS <a id="tools"></a>
 
 {% embed url="https://github.com/numerai/numerai-cli" %}
 
-Fully automated submission workflow in the cloud for &lt;$1/mo. Learn more: [https://docs.numer.ai/tournament/compute](https://docs.numer.ai/tournament/compute)
+クラウド上で完全自動化されたsubmissionワークフローを1ドル/月未満で提供します。詳細はこちら: [https://docs.numer.ai/tournament/compute](https://docs.numer.ai/tournament/compute)
 
 {% embed url="https://github.com/numerai/numerox" %}
+
+Pythonで書かれたNumeraiトーナメントツールボックス。
 
 Numerai tournament toolbox written in Python.
 
 {% embed url="https://github.com/thebrain85/numerauto" %}
 
-Numerauto is a Python daemon that facilates automatic weekly participation in the Numerai machine learning competition \([http://numer.ai](http://numer.ai/)\).
-
-####  
+Numerautoは、Numerai機械学習competition\([http://numer.ai](http://numer.ai%29に毎週自動的に参加できるようにするPythonデーモンです。)\)に毎週自動的に参加できるようにするPythonデーモンです。
 

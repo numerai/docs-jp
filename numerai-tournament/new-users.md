@@ -10,8 +10,8 @@
 
 {% embed url="https://www.kaggle.com/code1110/numerai-tournament" %}
 
-* Join the [RocketChat \#NewUsers channel](https://community.numer.ai/channel/newusers) for tips and support
-* Check out the [Numerai Forum](https://forum.numer.ai) for long-form posts on data analysis, tips and tutorials
+* [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加してヒントやサポートを得る
+* データ分析、ヒント、チュートリアルに関する長文の投稿は、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。
 
 #### Walkthroughs and Tutorials \(English\)
 
@@ -19,11 +19,11 @@ Numerai notebook at [https://numer.ai/submit](https://numer.ai/submit)
 
 {% embed url="https://numer.ai/submit" caption="Numerai Notebook" %}
 
-Easy guide with Google Colab by community member [SurajP](https://numer.ai/surajp)
+コミュニティメンバーの[SurajP](https://numer.ai/surajp)さんによるGoogle Colabを使った簡単なガイド
 
 {% embed url="https://medium.com/@parmarsuraj99/a-guide-to-the-hardest-data-science-tournament-on-the-planet-748f46e83690" %}
 
-Tutorial with Kaggle Kernel by community member [perfect\_fit](https://numer.ai/perfect_fit)
+コミュニティメンバーの[perfect\_fit](https://numer.ai/perfect_fit)さんによるKaggleカーネルを使ったチュートリアル
 
 {% embed url="https://app.wandb.ai/carlolepelaars/numerai\_tutorial/reports/Build-the-World-s-Open-Hedge-Fund-by-Modeling-the-Stock-Market--VmlldzoxODU0NTQ" %}
 
