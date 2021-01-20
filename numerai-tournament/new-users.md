@@ -10,6 +10,8 @@
 
 {% embed url="https://www.kaggle.com/code1110/numerai-tournament" %}
 
+{% embed url="https://www.kaggle.com/code1110/numerai-mlp-with-kerastuner-starter/notebook" %}
+
 * [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加してヒントやサポートを得る
 * データ分析、ヒント、チュートリアルに関する長文の投稿は、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。
 
