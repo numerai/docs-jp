@@ -75,7 +75,7 @@ correlation = np.corrcoef(labels, ranked_predictions)[0, 1]
 
 あなたの予測結果は、あなたのメタモデルへの貢献度、つまり`mmc`でも採点されます。
 
-詳しくは、[metamodel contribution](https://app.gitbook.com/@numerai/s/japanese-docs/~/drafts/-MLUpa5DSnesxvoD5OAP/numerai-tournament/meta-model-contribution-mmc) のセクションを参照してください
+詳しくは、[metamodel contribution](https://jp.docs.numer.ai/numerai-tournament/meta-model-contribution-mmc) のセクションを参照してください
 
 ## Staking and Payouts
 
@@ -95,7 +95,7 @@ corr_payout = stake * clip(corr, -0.25, 0.25)
 mmc_payout = stake * clip(corr + mmc, -0.25, 0.25)
 ```
 
-詳しくは [Staking and Payouts](https://app.gitbook.com/@numerai/s/japanese-docs/~/drafts/-MLUpa5DSnesxvoD5OAP/numerai-tournament/staking-and-payouts) のセクションを見てください。
+詳しくは [Staking and Payouts](https://jp.docs.numer.ai/numerai-tournament/staking-and-payouts) のセクションを見てください。
 
 ## Daily Updates
 
@@ -109,7 +109,7 @@ mmc_payout = stake * clip(corr + mmc, -0.25, 0.25)
 
 リーダーボードでのあなたの `rank` は、過去20ラウンドの `correlation` スコアの加重平均である `reputation` に基づいています。 
 
-詳しくは、 [Reputation](https://app.gitbook.com/@numerai/s/japanese-docs/~/drafts/-MLUpa5DSnesxvoD5OAP/numerai-tournament/reputation) のセクションを参照してください。
+詳しくは、 [Reputation](https://jp.docs.numer.ai/numerai-tournament/reputation) のセクションを参照してください。
 
 ![](../.gitbook/assets/image%20%285%29.png)
 
