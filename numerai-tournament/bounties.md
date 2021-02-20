@@ -19,7 +19,7 @@ description: ヌメライを改善してNMRを稼ぎましょう
 | 中程度のデータエラー、不正なペイアウト、submit/stake ができない | 1-5 NMR |
 | _大規模_な悪用、セキュリティ問題、スマートコントラクトの脆弱性 | 1-100 NMR |
 
-注: バウンティの支払いを受けるには、[Numerai Tournament](https://numer.ai/tournament/)のアカウントが必要です。600ドル以上の賞金を受け取る米国人は、[W9 taxpayer information](https://app.gitbook.com/@numerai/s/numerai-tournament/help/us-taxes)を提出する必要があります。
+注: バウンティの支払いを受けるには、[Numerai Tournament](https://numer.ai/tournament/)のアカウントが必要です。600ドル以上の賞金を受け取る米国人は、[W9 taxpayer information](https://docs.numer.ai/help/us-taxes)を提出する必要があります。
 
 ### Exclusions
 
