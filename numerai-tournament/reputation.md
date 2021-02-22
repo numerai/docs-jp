@@ -33,5 +33,5 @@ def round_weight(delta, day):
 
 最初の提出が遅れた、または失敗した場合、`example_predictions`と同等のスコアが与えられます。それ以降の遅刻やミスした投稿には`-0.1`という非常に低いスコアが与えられます。
 
-このペナルティを回避するために、[Numerai Compute](https://app.gitbook.com/@numerai/s/japanese-docs/~/drafts/-MQbysZVkNB763WvP03a/numerai-tournament/numerai-compute)を使って毎週の提出ワークフローを自動化しましょう。
+このペナルティを回避するために、[Numerai Compute](https://jp.docs.numer.ai/numerai-tournament/numerai-compute)を使って毎週の提出ワークフローを自動化しましょう。
 
