@@ -4,10 +4,6 @@
 
 {% embed url="https://qiita.com/tit\_BTCQASH/items/fbcc9271c0a8977ff216" %}
 
-
-
-
-
 Computeは、あなた自身のインフラストラクチャを使用して毎週のsubmission ワークフローを自動化するのに役立つフレームワークです。
 
 [numerai-cli](https://github.com/numerai/numerai-cli) を使用してインフラストラクチャをprovision（提供）し、新しいトーナメントデータをlisten（待機）し、モデルを実行し、予測値をNumeraiにアップロードするサーバとして、事前にトレーニングされたモデルをデプロイします。
