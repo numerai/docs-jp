@@ -17,7 +17,7 @@ Numerai Signals は、世界最後のヘッジファンドを構築するため�
 
 株式市場のシグナルは、Numeraiのような定量的なヘッジファンドがポートフォリオを構築するために使用する、株式に関する数値データの供給です。
 
-![An example stock market signal](../.gitbook/assets/image%20%284%29.png)
+![An example stock market signal](../.gitbook/assets/image%20%284%29%20%282%29.png)
 
 株式市場のシグナルの例としては、次のようなものがあります。
 

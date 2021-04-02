@@ -51,7 +51,7 @@ predictions.to_csv("predictions.csv")
 
 毎週土曜日の`18:00 UTC`\(日本時間では日曜日`03:00 JST`\) に新しい`round`が始まり、新しい`tournament_data`が公開されます。あなたの予想をNumeraiに提出して、トーナメントに参加しましょう。
 
- 締め切りは月曜日`14:30 UTC` \(日本時間では月曜日`23:30 JST`\) です。提出が遅れた場合、ペイアウトの対象外となります。
+締め切りは月曜日`14:30 UTC` \(日本時間では月曜日`23:30 JST`\) です。提出が遅れた場合、ペイアウトの対象外となります。
 
 {% hint style="info" %}
 [tool や library](https://docs.numer.ai/tournament/tools) を使用して、GraphQL [API](https://api-tournament.numer.ai/)に接続しましょう。
@@ -107,7 +107,7 @@ mmc_payout = stake * clip(corr + mmc, -0.25, 0.25)
 
 ## Reputation and Leaderboard
 
-リーダーボードでのあなたの `rank` は、過去20ラウンドの `correlation` スコアの加重平均である `reputation` に基づいています。 
+リーダーボードでのあなたの `rank` は、過去20ラウンドの `correlation` スコアの加重平均である `reputation` に基づいています。
 
 詳しくは、 [Reputation](https://jp.docs.numer.ai/numerai-tournament/reputation) のセクションを参照してください。
 
