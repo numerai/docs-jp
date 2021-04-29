@@ -41,5 +41,5 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
  
 ## 議論 <a id="discussion"></a>
 
-より詳しいMMCの計算については[こちら](https://forum.numer.ai/t/mmc2-announcement/93)をお読みください。MMCと収益性については[こちら](https://forum.numer.ai/t/mmc-staking-change-corr-mmc/698)をお読みください。MMCとオリジナリティの価値については、[このMediumの記事](https://medium.com/numerai/a-new-data-science-competition-where-being-different-pays-251c2aecc40a)をお読みください。
+より詳しいMMCの計算については[こちら](https://forum.numer.ai/t/mmc2-announcement/93)、MMCと収益性については[こちら](https://forum.numer.ai/t/mmc-staking-change-corr-mmc/698)、MMCとオリジナリティの価値については、[このMediumの記事](https://medium.com/numerai/a-new-data-science-competition-where-being-different-pays-251c2aecc40a)をお読みください。
 
