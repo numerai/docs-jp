@@ -13,7 +13,7 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
 {% endhint %}
 
 {% hint style="success" %}
-2019年には、Integration\_test(https://numer.ai/integration_test) のようなツリーベースのモデルがよいパフォーマンスを出しており、非常に人気があります。<br>
+2019年には、[Integration_test](https://numer.ai/integration_test) のようなツリーベースのモデルがよいパフォーマンスを出しており、非常に人気があります。<br>
 一方、`Corr`を最大化しつつ、`mmc`を最大化したい場合、どのようにモデル設計をすればよいでしょう？　<br>
 他の人が考えないような方法で予測ファイルを提出すれば`mmc`を高められると思います。<br>
 試行錯誤しましょう！<br>
@@ -26,13 +26,14 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
 * NMRをステークしているユーザーの67％をランダムに選択します。（選択されるユーザーは入れ替えられることがあります）
 * これらのユーザーのステークしているNMRの量を用い、加重した予測値を計算します。
 * 加重した予測値とUのモデルの両方を一様分布に変換します。
-* 上記の予測値とUのモデルを中和します。中和とは、加重した予測値とUのモデルを線形回帰しその差分を計算することです。（＊参考:https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)
+* 上記の予測値とUのモデルを中和します。中和とは、加重した予測値とUのモデルを線形回帰しその差分を計算することです。
+* [参考](https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)
 * Uのモデルとtarget の間の共分散を計算します。
 * この値を0.0841で割ったものがMMCのスコアです。 \(このステップは、期待されるスコアを相関と同じ大きさにするためです\)
 * この全体のプロセスを20回繰り返しすことでMMCの平均スコアが計算できます。
 ![MMCの図](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F562749%2F1dfde04d-9648-7c92-8da3-e23eac997161.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=3f4b1b65c4d915e845070ad5a345846d "MMCの図")
 
-本図は（[UKIさん](https://twitter.com/blog_uki)が[作成](https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)したものを引用しています。
+本図は[UKIさん](https://twitter.com/blog_uki)が[作成](https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)したものを引用しています。
 
 ## MMCのデザインについて <a id="design-considerations"></a>
 
