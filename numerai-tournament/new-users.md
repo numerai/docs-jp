@@ -1,14 +1,14 @@
 #### 有用な日本語記事
+* [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加することでさらなるヒントやサポートを得られます！
+* データ分析、ヒント、チュートリアルに関する投稿は、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。
+
 
 【Numeraiグッズのデザイン(?)】<br>
 [ペエム・スタジオ](https://www.paihemestudio.com/)<br>
 
-
-
 【Numeraiに関する説明・HPの見方等】<br>
 [Numerai公式](https://numer.ai/tournament):[Numerai 日本語ドキュメント](https://jp.docs.numer.ai/)<br>
-[@blog_UKIさん](https://twitter.com/blog_uki):[機械学習による株価予測　はじめようNumerai]
-(https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)<br>
+[@blog_UKIさん](https://twitter.com/blog_uki):[機械学習による株価予測　はじめようNumerai](https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)<br>
 [@blog_UKIさん](https://qiita.com/blog_UKI/items/469143fe6940f3148880):[Numeraiトーナメント　－伝統的クオンツと機械学習の融合－](https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)<br>
 [@blog_UKIさん](https://twitter.com/blog_uki):[機械学習による株価予測　さがそうNumerai Signals](https://qiita.com/blog_UKI/items/adba89950c4f70c2167d)<br>
 [@blog_UKIさん](https://twitter.com/blog_uki):[機械学習による株価予測　さがそう 真のNumerai Signals](https://qiita.com/blog_UKI/items/6f044b41819f1f003426)<br>
@@ -77,44 +77,14 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 [Numeraiに関する日本語での初ツイート](https://twitter.com/khyh_/status/683196065416220672)<br>
 
 
-# 新規参加者向けのTips
-
-{% embed url="https://qiita.com/blog\_UKI/items/fb401725288e58c92bd6" %}
-
-{% embed url="https://qiita.com/blog\_UKI/items/469143fe6940f3148880" %}
-
-{% embed url="https://qiita.com/tit\_BTCQASH/items/366a2d1c273507dd4b8c" %}
-
-{% embed url="https://zenn.dev/katsu1110/articles/bb2b5cba9b04c9e30bfe" %}
-
-{% embed url="https://www.kaggle.com/code1110/numerai-tournament" %}
-
-{% embed url="https://www.kaggle.com/code1110/numerai-mlp-with-kerastuner-starter/notebook" %}
-
-* [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加することでヒントやサポートを得られます！
-* データ分析、ヒント、チュートリアルに関する投稿は、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。
-
 #### Numeraiに関するチュートリアル \(＊英語版\)
-
-Numerai notebook at [https://numer.ai/submit](https://numer.ai/submit)
-
-{% embed url="https://numer.ai/submit" caption="Numerai Notebook" %}
-
-コミュニティメンバーの[SurajP](https://numer.ai/surajp)さんによるGoogle Colabを使った簡単なガイド
-
-{% embed url="https://medium.com/@parmarsuraj99/a-guide-to-the-hardest-data-science-tournament-on-the-planet-748f46e83690" %}
-
-コミュニティメンバーの[perfect\_fit](https://numer.ai/perfect_fit)さんによるKaggleカーネルを使ったチュートリアル
-
-{% embed url="https://app.wandb.ai/carlolepelaars/numerai\_tutorial/reports/Build-the-World-s-Open-Hedge-Fund-by-Modeling-the-Stock-Market--VmlldzoxODU0NTQ" %}
-
-{% embed url="https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai" %}
+[Numerai notebook](https://numer.ai/submit)<br>
+[[SurajP](https://numer.ai/surajp)さんによるGoogle Colabを使った簡単なガイド](https://medium.com/@parmarsuraj99/a-guide-to-the-hardest-data-science-tournament-on-the-planet-748f46e83690)<br>
+[[perfect\_fit](https://numer.ai/perfect_fit)さんによるKaggleカーネルを使ったチュートリアル
+](https://app.wandb.ai/carlolepelaars/numerai\_tutorial/reports/Build-the-World-s-Open-Hedge-Fund-by-Modeling-the-Stock-Market--VmlldzoxODU0NTQ)<br>
+[[perfect\_fit](https://numer.ai/perfect_fit)さんによるKaggleカーネルを使ったチュートリアル②](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)<br>
 
 #### サンプルスクリプトとツール
-
-{% embed url="https://github.com/numerai/example-scripts" caption="Example Scripts" %}
-
-{% embed url="https://github.com/numerai/example-scripts/blob/master/analysis\_and\_tips.ipynb" caption="Analysis and Tips" %}
-
-{% embed url="https://docs.numer.ai/tournament/tools" caption="Tools and Libraries" %}
-
+[サンプルスクリプト](https://github.com/numerai/example-scripts)<br>
+[データ分析と情報](https://github.com/numerai/example-scripts/blob/master/analysis\_and\_tips.ipynb)<br>
+[ツール](https://docs.numer.ai/tournament/tools)<br>
