@@ -31,7 +31,8 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
 * この値を0.0841で割ったものがMMCのスコアです。 \(このステップは、期待されるスコアを相関と同じ大きさにするためです\)
 * この全体のプロセスを20回繰り返しすことでMMCの平均スコアが計算できます。
 ![MMCの図](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F562749%2F1dfde04d-9648-7c92-8da3-e23eac997161.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=3f4b1b65c4d915e845070ad5a345846d "MMCの図")
-本図はUKIさん（twitter:![@blog_uki](@blog_uki "リンク")が作成したものを引用しています。https://qiita.com/blog_UKI/items/fb401725288e58c92bd6　）
+
+本図はUKIさん（twitter:![@blog_uki](https://twitter.com/blog_uki "twitter")が![作成](https://qiita.com/blog_UKI/items/fb401725288e58c92bd6 "作成")したものを引用しています。
 
 ## MMCのデザインについて <a id="design-considerations"></a>
 
