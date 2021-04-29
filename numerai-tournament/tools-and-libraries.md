@@ -9,10 +9,10 @@
 英語版のツールに関するリンク集です。
 
 #### APIクライアント(＊英語版\)
-[Numerapi](https://github.com/uuazed/numerapi):<br>
+[Numerapi](https://github.com/uuazed/numerapi)<br>
 本ライブラリは、Numerai APIへのPythonクライアントです。インターフェースはPythonでプログラムされており、トレーニングデータのダウンロード、予測値のアップロード、ユーザー、submission、competition情報へのアクセスが可能です。<br>
 これは、メインcompetitionと新しいNumerai Signals competitionの両方で動作します。<br>
-[RNumerai](https://github.com/Omni-Analytics-Group/Rnumerai):<br>
+[RNumerai](https://github.com/Omni-Analytics-Group/Rnumerai)<br>
 本インターフェースは、トーナメントデータのダウンロード、予測の提出、ユーザー情報の取得、NMRの預け入れなどを行うことができます。<br>
 R言語を用いて関数を使用すると、参加者はNumeraiトーナメントに関連する全ての手続きを自動化することができます。<br>
 
