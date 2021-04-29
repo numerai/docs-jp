@@ -4,7 +4,9 @@
 [Numeraiトーナメント用のサンプルスクリプト](https://github.com/numerai/example-scripts)<br>
 こちらは、Numeraiのデータをダウンロードした際に含まれる機械学習スクリプトの例です。<br>
 [Numeraiトーナメントファイルのデータ分析と情報](https://github.com/numerai/example-scripts/blob/master/analysis\_and\_tips.ipynb)<br>
+トーナメントファイルのデータがどのような傾向を示しているか分析するツールです。特徴量の作成や機械学習モデルの作成に役立つかもしれません。<br>
 [その他のツール](https://docs.numer.ai/tournament/tools)<br>
+英語版のツールに関するリンク集です。
 
 #### APIクライアント(＊英語版\)
 [Numerapi](https://github.com/uuazed/numerapi):<br>
@@ -15,8 +17,8 @@
 R言語を用いて関数を使用すると、参加者はNumeraiトーナメントに関連する全ての手続きを自動化することができます。<br>
 
 #### ツール(＊英語版\)
-[Numerai-cli](https://docs.numer.ai/tournament/compute):クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツール。<br>
+[Numerai-cli](https://docs.numer.ai/tournament/compute):クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツールです。<br>
 [Numerauto](https://github.com/thebrain85/numerauto)<br>
-Numeraiトーナメントに自動的に参加できるPythonデーモン<br>
+Numeraiトーナメントに自動的に参加できるPythonデーモンです。<br>
 
 
