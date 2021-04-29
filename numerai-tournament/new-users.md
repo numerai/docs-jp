@@ -1,5 +1,6 @@
 #### 有用な日本語記事
 * [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加することでさらなるヒントやサポートを得られます！
+* [Slack](https://t.co/a9i06PrSsN?amp=1) に参加することで、日本人参加者とコミュニケーションがとれます！
 * データ分析、ヒント、チュートリアルに関する投稿は、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。
 
 
@@ -84,7 +85,7 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 ](https://app.wandb.ai/carlolepelaars/numerai\_tutorial/reports/Build-the-World-s-Open-Hedge-Fund-by-Modeling-the-Stock-Market--VmlldzoxODU0NTQ)<br>
 [[perfect\_fit](https://numer.ai/perfect_fit)さんによるKaggleカーネルを使ったチュートリアル②](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)<br>
 
-#### サンプルスクリプトとツール
-[サンプルスクリプト](https://github.com/numerai/example-scripts)<br>
-[データ分析と情報](https://github.com/numerai/example-scripts/blob/master/analysis\_and\_tips.ipynb)<br>
-[ツール](https://docs.numer.ai/tournament/tools)<br>
+#### サンプルスクリプトとツール(＊英語版\)
+[Numeraiトーナメント用のサンプルスクリプト](https://github.com/numerai/example-scripts)<br>
+[Numeraiトーナメントファイルのデータ分析と情報](https://github.com/numerai/example-scripts/blob/master/analysis\_and\_tips.ipynb)<br>
+[その他のツール](https://docs.numer.ai/tournament/tools)<br>
