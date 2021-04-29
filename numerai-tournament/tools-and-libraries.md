@@ -17,7 +17,8 @@
 R言語を用いて関数を使用すると、参加者はNumeraiトーナメントに関連する全ての手続きを自動化することができます。<br>
 
 #### ツール(＊英語版\)
-[Numerai-cli](https://docs.numer.ai/tournament/compute):クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツールです。<br>
+[Numerai-cli](https://docs.numer.ai/tournament/compute)<br>
+クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツールです。<br>
 [Numerauto](https://github.com/thebrain85/numerauto)<br>
 Numeraiトーナメントに自動的に参加できるPythonデーモンです。<br>
 
