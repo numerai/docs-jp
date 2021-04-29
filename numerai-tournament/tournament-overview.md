@@ -2,29 +2,32 @@
 description: 公式ルールと始め方ガイド
 ---
 
-# Tournament Overview
+# トーナメント概要
 
-## Data
+#### 前書き
+Numeraiトーナメントでは、難読化されたデータを使用して機械学習モデルを構築することで株式市場の動向を予測します。<br>
+提出した予測ファイルにNMRと呼ばれる暗号通貨を賭けると、パフォーマンスに基づいてNMRを獲得できます。
+Numeraiに提出された予測ファイルは、Numeraiが保有するヘッジファンドのモデル（メタモデル）を設計するために使用されます。下に示すyoutubeを見ることで、どのようにデータが使用されるか学べます。
 
-Numeraiの中核をなすのは、データサイエンスの問題、つまり株式市場の予測の問題です。
+[![](https://img.youtube.com/vi/dhJnt0N497c/0.jpg)](https://www.youtube.com/watch?v=dhJnt0N497c)
 
-提供されている`training_data`では、各`id`は難読化された`features`のセットを持つ株式に対応しています。`target`は将来のパフォーマンスを表します。行は、異なる時点を表す`eras`にグループ化されています。
+#### 概要
+1.Numeraiに[登録](https://numer.ai/)する。
+2.トレーニングデータとサンプルスクリプトを含むデータセットをダウンロードする。
+3.モデルを作成し、予測をNumeraiに送信する。
+4.モデルにNMRを賭けて、パフォーマンスに基づいてNMRを貰う/払う
+6.毎週の提出物を自動化する。
 
-あなたの目標は、新しい特徴を与えられたターゲットを予測するための機械学習モデルを学習させることです。
-
-{% hint style="info" %}
-[analysis and tips notebooks](https://github.com/numerai/example-scripts/blob/master/analysis_and_tips.ipynb) を読んで、データセットを深く掘り下げてみましょう。
-{% endhint %}
-
+## データ
+Numeraiトーナメントの中核は無料のデータセットが使用できることです。データセットはクリーンアップ・正規化・難読化された高品質の財務データで構成されています。
 ![numerai\_training\_data.csv](../.gitbook/assets/image%20%287%29.png)
 
-## Modeling
+提供されている`training_data`では、各`id`は難読化された`features`のセットを持つ株式に対応しています。`target`は将来のパフォーマンスを表します。行は、異なる時点を表す`eras`にグループ化されています。
+詳細は[本記事](https://qiita.com/tit_BTCQASH/items/366a2d1c273507dd4b8c)に詳しく記述されています。
 
-以下に、`training_data`上でモデルを訓練して、`tournament_data`上で予測を行う方法の例を示します。
-
-{% hint style="info" %}
-より高度な例については [example-scripts](https://github.com/numerai/example-scripts) のレポジトリをチェックしてください。
-{% endhint %}
+## モデリング
+Numeraiトーナメントでは、過去のデータを用いて予測モデルを作成し、そのモデルを用いて将来の株式市場を予測することが目的です。
+PythonでXGBoostを使用した基本的な例を次に示します。過去のトレーニングデータを使用してモデルをトレーニングし、ライブトーナメントデータで予測を行います。（＊本プログラムのみでは予測ファイルの提出ができません。より実践的な例は[本記事](https://qiita.com/tit_BTCQASH/items/366a2d1c273507dd4b8c)をチェックしてください。
 
 ```python
 import pandas as pd
@@ -47,7 +50,7 @@ predictions = model.predict(tournament_data[feature_names])
 predictions.to_csv("predictions.csv")
 ```
 
-## Submissions
+## 予測ファイルの提出
 
 毎週土曜日の`18:00 UTC`\(日本時間では日曜日`03:00 JST`\) に新しい`round`が始まり、新しい`tournament_data`が公開されます。あなたの予想をNumeraiに提出して、トーナメントに参加しましょう。
 
