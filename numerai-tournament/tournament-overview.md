@@ -124,45 +124,85 @@ correlation = np.corrcoef(labels, ranked_predictions)[0, 1]
 
 
 
-## Staking and Payouts
+# ステーキングとペイアウト
 
-あなたの予測結果に `stake` することで `payouts` を得ることができます。`corr` のみ、または `corr + mmc` にstake することができます。
+## モチベーション
 
-stake せずにNumeraiに参加することで、トーナメントの詳細や自分のモデルの性能を知ることができます。自分のモデルに自信が持てるようになったら、そのモデルにstake することができます。stake の最小値は0.01NMRです。
+[シビル攻撃](https://en.wikipedia.org/wiki/Sybil_attack)などのNumeraiにとって不都合な攻撃を防止しつつNMRをペイアウトするにはどのようなシステムを設計すればよいでしょうか？<br>
 
-{% hint style="info" %}
-ステイキングを行うには、[Erasure](https://erasure.world/) smart contract agreement で [NMR](https://coinmarketcap.com/currencies/numeraire/) をロックする必要があります。これにより、モデルのパフォーマンスが低下した場合、Numerai はあなたのstake を燃やすことができます。
-{% endhint %}
+その答えはステーキング(=預け入れ)です。各参加者はNMRを掛け金として自分の予測の正確さを担保します。NMRのステーク量が多ければ多いほど予測に自信をもっているとみなします。<br>
 
-あなたがstake しているスコアに基づいて、あなたのstake のパーセンテージを `earn` \(獲得\)したり、 `burn` \(燃やし\)たりします。例えば、`correlation` に `100NMR` をstake して、スコアが+0.05だった場合、100NMRの5%=5NMRを獲得できます。稼ぐか燃やすかの上限は、1ラウンドごとにstake の `25％` となります。
+Numeraiは正確な予測ファイルの提出を望んでおり、良い予測には高い報酬で報います。<br>
 
-```python
-corr_payout = stake * clip(corr, -0.25, 0.25)
+どれだけのNMRを得られるかはNMRのステーク量と、Corr,MMCの値に依存します。<br>
+これは、[Skin in the Game](https://www.amazon.com/dp/B075HYVP7C/)という本で述べられているメゾットを使用しています。<br>
 
-mmc_payout = stake * clip(corr + mmc, -0.25, 0.25)
-```
+NumeraiにNMRをステーキングする場合、Numeraiはシビル耐性のある方法を提供します。NMRのペイアウトはステーク量に比例するため、複数のアカウントを作成するだけでは多くのペイアウト得ることができません。<br>
 
-詳しくは [Staking and Payouts](https://jp.docs.numer.ai/numerai-tournament/staking-and-payouts) のセクションを見てください。
+もちろん、NMRをステークせずにNumeraiに参加することもできます。<br>
+例えば、トーナメントの詳細や自分のモデルの性能を知るために、NMRをステークしないのは良いテストとなるでしょう。<br>
+自分のモデルに自信が持てるようになったら、そのモデルにステークすることができます。ステークの最小値は3NMRです。<br>
 
-## Daily Updates
+## ステーク量の変更方法
 
-提出した予測結果はそれぞれ、投稿締め切り後の最初の木曜日から4週間後の水曜日まで、毎日更新されたスコアを受け取ることができます。例えば、`7日（日）`に青の投稿をした場合、最初のスコアは`11日（木）`、最終スコアは翌月の`7日（水）`に届きます。
+Numeraiのウェブサイトでは、「Manage Stake」をクリックしてステーク量を管理できます。このモーダルを使用すれば、NMRのステーク量を増減したり、`Corr`、`Corr+1/2MMC`、`Corr+MMC`、`Corr+2MMC`にベットできます。
+ステーキングとは、NMRをイーサリアムブロックチェーンのスマートコントラクトに固定することを意味します。ステーク中はNumeraiがロックアップされたNMRを増減させる権利を保有します。
 
-提出した予測結果にstake した場合、ペイアウトも毎日更新されます。しかし、最終的なスコアと最終的なペイアウトだけがカウントされます。
+![](../.gitbook/assets/image%20%2818%29.png)
 
-![submission and scoring calender](../.gitbook/assets/image%20%282%29.png)
+NMRのステーク量を増やすと、あなたのウォレットからNMRが引き出され、Numeraiの保有しているアカウントにNMRが移送されます。<br>
+NMRのステーク量を減らすと、Numeraiの保有しているアカウントからNMRが移送され、あなたのウォレットに入金されます。
 
-## Reputation and Leaderboard
+ステーク量への変更はすぐに適用されるのではなく、約4週間後に反映されます。これは、トーナメントの終了期間が4週間であることに起因します。
 
-リーダーボードでのあなたの `rank` は、過去20ラウンドの `correlation` スコアの加重平均である `reputation` に基づいています。
+## ペイアウト
+どれだけのNMRを得られるかはNMRのステーク量と、Corr,MMCの値に依存します。<br>
+スコアが高いほど、より多くのNMRを得ることができます。もし負のCorr,MMCとなった場合、ステークしたNMRの一部が没収され、バーンされます。<br>
+バーンとはERC-20トークンの持つ機能の一つであり、トークンを永遠に使用できなくする操作のことです。<br>
+ペイアウトされるNMRの量はステークした量の±25％に制限されています。<br>
+ペイアウトは以下の式で計算されます。<br>
+payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multiplier)<br>
+stake_value:ラウンド開始時点の最初の木曜日にステークしたNMRの量<br>
+payout_factor:30万NMR以下では1、30万NMR以上では以下の図に示す値をとります。Numeraiはペイアウトの上限を決めることで持続的なトーナメントの開催を行うことができます。<br>
+![](../.gitbook/assets/factor.png)
+corr:提出した予測ファイルとターゲットの相関<br>
+corr_multiplier:現在は1のみ<br>
+mmc:提出した予測ファイルとメタモデルの相関<br>
+mmc_multiplier:0,0.5,1,2の中で一つ選べる。<br>
 
+ペイアウトファクターの関数やマルチプライヤーは、Numeraiによって変更される可能性があります。<br>
+
+ペイアウト計算の例を次に示します。
+最初の2つの例は、`corr_multiplier`の影響を示しています。<br>
+3番目の例は、負のスコアがペイアウトに影響を与えるかを示しています。<br>
+4番目の例は、ペイアウトがステーク量の±25％に制限されていることを示しています。<br>
+
+![](../.gitbook/assets/Payout.jpg)<br>
+
+スコアは毎日更新されますが、ペイアウトはトーナメントの終了日（日本時間の木曜日）にのみ行われます。参加者の一人が作成したNumeraiPayoutsアプリを使用すると、毎日の変化を追跡できます。<br>
+ステークを開始すると、最初の4ラウンドの間ステーク値は一定に保たれます。その後、4週間前のラウンドの支払いに基づいて、ステーク値が毎週更新されます。<br>
+![](../.gitbook/assets/payout_week.png)
+提出した予測ファイルがプラスのCorr、MMCを持ち続ける限り、得られたNMRの量は増大します。モデルが52週間、毎週同じ正のスコアを取得すると仮定した場合の支払い予測の例を下図に示します。<br>
+![](../.gitbook/assets/payout_predict.png)
+
+## 濫用防止
+
+Numeraiは、お客様が積極的にペイアウトルールを悪用している、または悪用していると当社が判断した場合には、お客様の賭け金を払い戻し、すべての得られたNMRを無効化にする権利を保有します。
+
+Numearaiの支払いシステムは攻撃に強いように設計されております。ユーザーが罰を恐れずに新しいアイデアを試してもらいたいため、この権利を行使することはめったにありません。
+
+悪質な攻撃を発見した場合には、そのことをコミュニティに伝えてください。以前あった攻撃の一つが[こちら](https://forum.numer.ai/t/leaderboard-bonus-exploit-uncovered/200/8)で紹介されています。
+
+
+## リーダーボード
+NMRのペイアウトは1回のラウンドでのパフォーマンスに左右されます。リーダーボードに掲載される評価や順位は20ラウンド分の評価の平均値を用いています。
 詳しくは、 [Reputation](https://jp.docs.numer.ai/numerai-tournament/reputation) のセクションを参照してください。
 
 ![](../.gitbook/assets/image%20%285%29.png)
 
-## Support
+## サポート
 
 助けが必要ですか？
 
-質問、サポート、フィードバックのために [RocketChat](https://community.numer.ai/home) で私たちを見つけてください!
+質問、サポート、フィードバックは [RocketChat](https://community.numer.ai/home) にお願いします!
 
