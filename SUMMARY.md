@@ -2,7 +2,7 @@
 
 * [Numeraiの日本語版DOCS](README.md)
 
-## Numerai Tournament
+## Numerai トーナメント
 
 * [トーナメントの概要](numerai-tournament/tournament-overview.md)
 * [予測ファイルの自動提出](numerai-tournament/numerai-compute.md)
@@ -14,12 +14,12 @@
 * [報酬プログラム](numerai-tournament/bounties.md)
 * [フォーラム](numerai-tournament/forum.md)
 
-## Numerai Signals
+## Numerai シグナルス
 
 * [Numerai Signalsについての概要](numerai-signals/signals-overview.md)
 * [新規参加者向けのTips](numerai-signals/new-users.md)
 
-## Connect
+## 連絡先
 
 * [Numerai運営への連絡](connect/connect-index.md)
 
