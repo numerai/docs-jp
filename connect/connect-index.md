@@ -1,4 +1,4 @@
-# Connect Index
+# 連絡先一覧
 
 * [RocketChat](https://community.numer.ai/) Numerai公式が運営する英語版のチャットルーム
 * [Slack](https://t.co/a9i06PrSsN?amp=1) 有志が運営する日本語版のチャットルーム
