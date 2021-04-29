@@ -99,9 +99,8 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 本インターフェースは、トーナメントデータのダウンロード、予測の提出、ユーザー情報の取得、NMRの預け入れなどを行うことができます。<br>
 R言語を用いて関数を使用すると、参加者はNumeraiトーナメントに関連する全ての手続きを自動化することができます。<br>
 
-####　ツール
-クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツール。<br>
-詳細は[こちら](https://docs.numer.ai/tournament/compute)<br>
-[Pythonで書かれたNumeraiトーナメントツールボックス](https://github.com/thebrain85/numerauto)<br>
-Numerautoは、Numeraiトーナメントに自動的に参加できるPythonデーモンです<br>
+#### ツール
+[Numerai-cli](https://docs.numer.ai/tournament/compute):クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツール。<br>
+[Numerauto](https://github.com/thebrain85/numerauto)<br>
+Numeraiトーナメントに自動的に参加できるPythonデーモン<br>
 
