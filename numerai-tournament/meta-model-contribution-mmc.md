@@ -13,7 +13,7 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
 {% endhint %}
 
 {% hint style="success" %}
-2019年には、Integration\_test(https://numer.ai/integration_test)のようなツリーベースのモデルがよいパフォーマンスを出しており、非常に人気があります。
+2019年には、Integration\_test(https://numer.ai/integration_test) のようなツリーベースのモデルがよいパフォーマンスを出しており、非常に人気があります。
 一方、`Corr`を最大化しつつ、`mmc`を最大化したい場合、どのようにモデル設計をすればよいでしょう？　他の人が考えないような方法で予測ファイルを提出すれば`mmc`を高められると思います。試行錯誤しましょう！
 {% endhint %}
 
