@@ -4,7 +4,7 @@ description: この記事は、tit_BTCQASHのqiita記事に従います。元記
 
 # 予測ファイルの自動提出
 
-Numerai Computeは予測ファイルの提出を自動化できるフレームワークです。Numerai CLI 0.1または0.2を使用している場合は、以下のアップグレードガイドに必ず従ってください。<br>
+Numerai－CLIは予測ファイルの提出を自動化できるフレームワークです。Numerai CLI 0.1または0.2を使用している場合は、以下のアップグレードガイドに必ず従ってください。<br>
 
 [numerai-cli](https://github.com/numerai/numerai-cli) は毎週の予測ファイル提出を自動化するのに役立つコマンドラインツールです。本ツールを使用することで、提出期限に遅れることなく予測ファイルを自動で提出できます。<br>
 ![](../.gitbook/assets/architecture_prediction_network.png)
