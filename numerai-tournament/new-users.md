@@ -92,12 +92,16 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 [その他のツール](https://docs.numer.ai/tournament/tools)<br>
 
 #### APIクライアント
-[Numerapi](https://github.com/uuazed/numerapi)
-本ライブラリは、Numerai APIへのPythonクライアントです。インターフェースはPythonでプログラムされており、トレーニングデータのダウンロード、予測値のアップロード、ユーザー、submission、competition情報へのアクセスが可能です。これは、メインcompetitionと新しいNumerai Signals competitionの両方で動作します。
-[RNumerai](https://github.com/Omni-Analytics-Group/Rnumerai)
-本インターフェースは、トーナメントデータのダウンロード、予測の提出、ユーザー情報の取得、NMRの預け入れなどを行うことができます。R言語を用いて関数を使用すると、参加者はNumeraiトーナメントに関連する全ての手続きを自動化することができます。
+[Numerapi](https://github.com/uuazed/numerapi):<br>
+本ライブラリは、Numerai APIへのPythonクライアントです。インターフェースはPythonでプログラムされており、トレーニングデータのダウンロード、予測値のアップロード、ユーザー、submission、competition情報へのアクセスが可能です。<br>
+これは、メインcompetitionと新しいNumerai Signals competitionの両方で動作します。<br>
+[RNumerai](https://github.com/Omni-Analytics-Group/Rnumerai):<br>
+本インターフェースは、トーナメントデータのダウンロード、予測の提出、ユーザー情報の取得、NMRの預け入れなどを行うことができます。<br>
+R言語を用いて関数を使用すると、参加者はNumeraiトーナメントに関連する全ての手続きを自動化することができます。<br>
 
 ####　ツール
-
-
+クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツール。<br>
+詳細は[こちら](https://docs.numer.ai/tournament/compute)<br>
+[Pythonで書かれたNumeraiトーナメントツールボックス](https://github.com/thebrain85/numerauto)<br>
+Numerautoは、Numeraiトーナメントに自動的に参加できるPythonデーモンです<br>
 
