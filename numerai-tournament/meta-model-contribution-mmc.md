@@ -13,8 +13,10 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
 {% endhint %}
 
 {% hint style="success" %}
-2019年には、Integration\_test(https://numer.ai/integration_test) のようなツリーベースのモデルがよいパフォーマンスを出しており、非常に人気があります。
-一方、`Corr`を最大化しつつ、`mmc`を最大化したい場合、どのようにモデル設計をすればよいでしょう？　他の人が考えないような方法で予測ファイルを提出すれば`mmc`を高められると思います。試行錯誤しましょう！
+2019年には、Integration\_test(https://numer.ai/integration_test) のようなツリーベースのモデルがよいパフォーマンスを出しており、非常に人気があります。<br>
+一方、`Corr`を最大化しつつ、`mmc`を最大化したい場合、どのようにモデル設計をすればよいでしょう？　<br>
+他の人が考えないような方法で予測ファイルを提出すれば`mmc`を高められると思います。<br>
+試行錯誤しましょう！<br>
 {% endhint %}
 
 ## mmcの計算方法 <a id="calculation"></a>
@@ -28,6 +30,8 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
 * Uのモデルとtarget の間の共分散を計算します。
 * この値を0.0841で割ったものがMMCのスコアです。 \(このステップは、期待されるスコアを相関と同じ大きさにするためです\)
 * この全体のプロセスを20回繰り返しすことでMMCの平均スコアが計算できます。
+![MMCの図](https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F562749%2F1dfde04d-9648-7c92-8da3-e23eac997161.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=3f4b1b65c4d915e845070ad5a345846d "MMCの図")
+本図はUKIさん（twitter:![@blog_uki](@blog_uki "リンク")が作成したものを引用しています。https://qiita.com/blog_UKI/items/fb401725288e58c92bd6　）
 
 ## MMCのデザインについて <a id="design-considerations"></a>
 
