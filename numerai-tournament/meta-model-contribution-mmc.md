@@ -1,4 +1,4 @@
-# Meta Model Contribution \(MMC\)
+# メタモデルへの貢献（MMC)について
 
 ## MMCを最大化するモチベーション <a id="motivation"></a>
 
