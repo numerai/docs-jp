@@ -85,22 +85,5 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 ](https://app.wandb.ai/carlolepelaars/numerai\_tutorial/reports/Build-the-World-s-Open-Hedge-Fund-by-Modeling-the-Stock-Market--VmlldzoxODU0NTQ)<br>
 [[perfect\_fit](https://numer.ai/perfect_fit)さんによるKaggleカーネルを使ったチュートリアル②](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)<br>
 
-#### サンプルスクリプト(＊英語版\)
-[Numeraiトーナメント用のサンプルスクリプト](https://github.com/numerai/example-scripts)<br>
-こちらは、Numeraiのデータをダウンロードした際に含まれる機械学習スクリプトの例です。<br>
-[Numeraiトーナメントファイルのデータ分析と情報](https://github.com/numerai/example-scripts/blob/master/analysis\_and\_tips.ipynb)<br>
-[その他のツール](https://docs.numer.ai/tournament/tools)<br>
 
-#### APIクライアント
-[Numerapi](https://github.com/uuazed/numerapi):<br>
-本ライブラリは、Numerai APIへのPythonクライアントです。インターフェースはPythonでプログラムされており、トレーニングデータのダウンロード、予測値のアップロード、ユーザー、submission、competition情報へのアクセスが可能です。<br>
-これは、メインcompetitionと新しいNumerai Signals competitionの両方で動作します。<br>
-[RNumerai](https://github.com/Omni-Analytics-Group/Rnumerai):<br>
-本インターフェースは、トーナメントデータのダウンロード、予測の提出、ユーザー情報の取得、NMRの預け入れなどを行うことができます。<br>
-R言語を用いて関数を使用すると、参加者はNumeraiトーナメントに関連する全ての手続きを自動化することができます。<br>
-
-#### ツール
-[Numerai-cli](https://docs.numer.ai/tournament/compute):クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツール。<br>
-[Numerauto](https://github.com/thebrain85/numerauto)<br>
-Numeraiトーナメントに自動的に参加できるPythonデーモン<br>
 
