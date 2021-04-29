@@ -1,4 +1,4 @@
-# Numerai Signals Overview
+# Numerai Signalsについての概要
 
 [Numerai Signals](https://signals.numer.ai/tournament) では、株式市場のシグナルをアップロードして、Numerai の他のシグナルと比較してどれだけオリジナルであるかを確認することができます。シグナルは、暗号通貨NMRを使ってstake し、報酬を得ることができます。最もオリジナリティの高いシグナルは、Numeraiのヘッジファンドで使用されています。
 
