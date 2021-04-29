@@ -37,7 +37,7 @@ NMRのステーク量を減らすと、Numeraiの保有しているアカウン�
 ペイアウトは以下の式で計算されます。<br>
 payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multiplier)<br>
 stake_value:ラウンド開始時点の最初の木曜日にステークしたNMRの量<br>
-payout_factor:30万NMR以下では1、30万NMR以上では以下の図に示す値をとります。Numeraiはペイアウトの上限を決めることで持続的なトーナメントの開催を行うことができます。<br>
+payout_factor:30万NMR以下では1になります。30万NMR以上では以下の図に示す値をとります。Numeraiはペイアウトの上限を決めることで持続的なトーナメントの開催を行うことができます。<br>
 ![](../.gitbook/assets/factor.png)
 corr:提出した予測ファイルとターゲットの相関<br>
 corr_multiplier:現在は1のみ<br>
