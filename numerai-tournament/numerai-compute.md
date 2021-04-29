@@ -2,15 +2,14 @@
 description: この記事は、tit_BTCQASHのqiita記事に従います。元記事そのままなので、そっちを読んだ方が良いかもしれません。
 ---
 
-# Numerai Compute
+# 予測ファイルの自動提出
 
-Computeは、あなた自身のインフラストラクチャを使用して毎週のsubmission ワークフローを自動化するのに役立つフレームワークです。
+Numerai Computeは予測ファイルの提出を自動化できるフレームワークです。Numerai CLI 0.1または0.2を使用している場合は、以下のアップグレードガイドに必ず従ってください。
 
-[numerai-cli](https://github.com/numerai/numerai-cli) を使用してインフラストラクチャをprovision（提供）し、新しいトーナメントデータをlisten（待機）し、モデルを実行し、予測値をNumeraiにアップロードするサーバとして、事前にトレーニングされたモデルをデプロイします。
+[numerai-cli](https://github.com/numerai/numerai-cli) は毎週の予測ファイル提出を自動化するのに役立つコマンドラインツールです。本ツールを使用することで、提出期限に遅れることなく予測ファイルを自動で提出できます。
+![](../.gitbook/assets/architecture_prediction_network.png)
 
-![](../.gitbook/assets/image%20%2816%29.png)
-
-## Quick start
+## 始め方
 
 ```text
 pip3 install numerai-cli
@@ -34,9 +33,10 @@ numerai compute test-webhook
 numerai compute logs -f
 ```
 
-## Timing
+## 自動投稿が有効になる時間
 
-[アカウント設定](https://numer.ai/account)にwebhookのURLを追加すると、Numeraiは土曜日の19:00 UTC（日本時間で04:00）（ラウンド開始から1時間後）にwebhookを実行します。もし、日曜日の2:00 UTC（日本時間で11:00）までにあなたの投稿を正常に受信できなかった場合は、あなたのコンピュートジョブが失敗したようだという警告をメールでお知らせします。もし失敗した場合は、日曜日の19:00 UTC（日本時間で04:00）に再度compute webhookを起動し、もしまた失敗した場合は、月曜日の2:00 UTC（日本時間で11:00）に最終的なメールを送信します。
+[アカウント設定](https://numer.ai/account)にwebhookのURLを追加すると、Numeraiは土曜日の19:00 UTC（日本時間で04:00）（ラウンド開始から1時間後）にwebhookを実行します。Numerai-cliを使用する場合、自動で設定されますが、Numerai-cliを使用せず、独自環境で予測ファイルの自動投稿をしたい場合、本部分を設定してください！<br>
+もし、日曜日の2:00 UTC（日本時間で11:00）までに予測ファイルが提出されなかった場合は、警告メールをお送りします。もし失敗した場合は、日曜日の19:00 UTC（日本時間で04:00）に再度compute webhookを起動し、もしまた失敗した場合は、月曜日の2:00 UTC（日本時間で11:00）に最終的なメールを送信します。
 
 ## 以下、詳細なセットアップ手順を載せます。
 
