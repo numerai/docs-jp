@@ -1,3 +1,4 @@
+# 新規参加者向けのTips
 #### 有用な日本語記事
 * [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加することでさらなるヒントやサポートを得られます！
 * [Slack](https://t.co/a9i06PrSsN?amp=1) に参加することで、日本人参加者とコミュニケーションがとれます！
