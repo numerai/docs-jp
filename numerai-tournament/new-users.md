@@ -62,10 +62,6 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 ](https://zenn.dev/katsu1110/articles/7ce69ccd5212fb)<br>
 
 【掲示板】<br>
-[【NMR】Numeraire総合1【未来のBTC】 [無断転載禁止]©2ch.net](http://fate.5ch.net/test/read.cgi/cryptocoin/1498364863/
-)<br>
-[【NMR】Numeraire総合1【未来のBTC】 [無断転載禁止]©2ch.net](https://fate.5ch.net/test/read.cgi/cryptocoin/1505348614/
-)*>>1のタイトルミス<br>
 [【日本語】Numeaiについて雑談・質問](https://forum.numer.ai/t/numeai/1473/11
 )<br>
 [【日本語】Numeai　Slack](https://t.co/05yh6pPy4T?amp=1)<br>
@@ -73,9 +69,6 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 【Advent Calendar】<br>
 [@kunigakuさん](https://twitter.com/kunigaku):[Numerai Advent Calendar 2020](https://adventar.org/calendars/5031
 )<br>
-
-【Twitter】<br>
-[Numeraiに関する日本語での初ツイート](https://twitter.com/khyh_/status/683196065416220672)<br>
 
 
 #### Numeraiに関するチュートリアル \(＊英語版\)
