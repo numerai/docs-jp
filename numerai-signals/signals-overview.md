@@ -1,19 +1,20 @@
 # Numerai Signalsについての概要
 
-[Numerai Signals](https://signals.numer.ai/tournament) では、株式市場のシグナルをアップロードして、Numerai の他のシグナルと比較してどれだけオリジナルであるかを確認することができます。シグナルは、暗号通貨NMRを使ってstake し、報酬を得ることができます。最もオリジナリティの高いシグナルは、Numeraiのヘッジファンドで使用されています。
+[Numerai Signals](https://signals.numer.ai/tournament) は、全世界の株式市場を対象としたコンペティションです。株式投資において収益の源泉となる指標を用いて予測データを作成し、他の人のデータと比較してオリジナリティがどれだけ高いか比較することができます。より独創的で、優位な予測データを提出すると、ステーク量に比例したNMRトークンを得ることができます。<br>
+また、Numeraiのヘッジファンドではオリジナリティが最も高い予測データを使用しています。
 
-Numerai Signals は、世界最後のヘッジファンドを構築するためのNumerai マスタープランの一部です。[Medium Post](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c) を読んで、[short film](https://www.youtube.com/watch?v=GWeC2PK4yXQ&feature=youtu.be) を見て、それがどのようにしてすべてを統合しているのかを詳しく知りましょう。
+Numerai Signals は、Numeraiヘッジファンドを構築するために使用され、Numeraiのマスタープランの一部です。[Medium Post](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c) や、[short film](https://www.youtube.com/watch?v=GWeC2PK4yXQ&feature=youtu.be) で詳細が述べられています。
 
 
 
-## Summary
+## 概要
 
 1. [Numerai Signals](https://signals.numer.ai/tournament)にサインアップするか、既存のNumerai Tournament アカウントでサインインしてください。
-2. Numerai のstock universe のシグナルをアップロードして、シグナルの過去の部分のパフォーマンス、リスク、収益性の診断を受け取ることができます。
-3. シグナルのライブ部分にNMRをstake して、Numeraiのカスタムターゲットとの相対的なパフォーマンスに基づいてNMRを獲得したり、失うことができます。
-4. 当社のAPIに直接接続することで、毎週のシグナルのアップロードを自動化し、時間の経過とともにstake の価値を高めます。
+2. 対象となっている株式市場に対応した予測データをアップロードすると、過去のパフォーマンス、リスク、収益性の診断ができます。
+3. 現行のコンペティションにNMRをステーキングすると、予測性能（Corr,MMC)に基づいてNMRを得られます。ただし、品質の低いデータではNMRを失うこともあります。
+4. NumeraiのAPIに直接接続することで、毎週の予測データ提出を自動化することができます。
 
-## What are stock market signals?
+## 株式市場のシグナルとは?
 
 株式市場のシグナルは、Numeraiのような定量的なヘッジファンドがポートフォリオを構築するために使用する、株式に関する数値データの供給です。
 
