@@ -1,9 +1,9 @@
 # Numerai Signalsについての概要
 
 [Numerai Signals](https://signals.numer.ai/tournament) は、全世界の株式市場を対象としたコンペティションです。<br>
-収益の源泉となる指標を用いたデータを作成し、他の人のデータと比較してオリジナリティがどれだけ高いか比較することができます。<br>
+収益の源泉となる指標を用いたシグナルを作成し、他の人のシグナルと比較してオリジナリティがどれだけ高いか比較することができます。<br>
 より独創的で、優位な予測データを提出すると、ステーク量に比例したNMRトークンを得ることができます。<br>
-また、Numeraiのヘッジファンドではオリジナリティが最も高いデータを使用しています。<br>
+また、Numeraiのヘッジファンドではオリジナリティが最も高いシグナルを使用しています。<br>
 
 Numerai Signals は、Numeraiヘッジファンドを構築するために使用され、Numeraiのマスタープランの一部です。<br>
 [Medium Post](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c) や、[short film](https://www.youtube.com/watch?v=GWeC2PK4yXQ&feature=youtu.be) で詳細が述べられています。
@@ -13,9 +13,9 @@ Numerai Signals は、Numeraiヘッジファンドを構築するために使用
 ## 概要
 
 1. [Numerai Signals](https://signals.numer.ai/tournament)にサインアップするか、既存のNumerai Tournament アカウントでサインインしてください。
-2. 対象となっている株式市場に対応したデータをアップロードすると、過去のパフォーマンス、リスク、収益性の診断ができます。
-3. 現行のコンペティションにNMRをステーキングすると、性能（Corr,MMC)に基づいてNMRを得られます。ただし、品質の低いデータではNMRを失うこともあります。
-4. NumeraiのAPIに直接接続することで、毎週のデータ提出を自動化することができます。
+2. 対象となっている株式市場に対応したシグナルをアップロードすると、過去のパフォーマンス、リスク、収益性の診断ができます。
+3. 現行のコンペティションにNMRをステーキングすると、性能（Corr,MMC)に基づいてNMRを得られます。ただし、品質の低いシグナルではNMRを失うこともあります。
+4. NumeraiのAPIに直接接続することで、毎週のシグナル提出を自動化することができます。
 
 ## 株式市場のシグナルとは?
 
@@ -75,7 +75,7 @@ Numeraiが参加者のデータを利用するためには、規格化が必要�
 
 2列のみの予測結果は、現在の`live`時間帯に対応していると仮定します。
 
-また、データを提出すると過去のパフォーマンス、リスク、潜在的な収益に関する診断もできます。検証期間は`20130104`から`20200228`までの374週間です。
+また、シグナルを提出すると過去のパフォーマンス、リスク、潜在的な収益に関する診断もできます。検証期間は`20130104`から`20200228`までの374週間です。
 
 検証期間を含む予測結果には、friday_date,data_type列を含める必要があります。
 
@@ -88,51 +88,51 @@ Numeraiが参加者のデータを利用するためには、規格化が必要�
 
 ### 診断
 
-予測結果が受理されると、診断のために時間がかかります。これは通常、提出物に含まれている週数やティッカー数に応じて10～15分程度かかります。
+シグナルを提出すると、過去のパフォーマンス、リスク、潜在的な収益の診断ができます。これは通常、提出物に含まれている週数やティッカー数に応じて10～15分程度かかります。
 
 ![An example diagnostics report](../.gitbook/assets/image%20%2810%29.png)
 
-これらの診断は、あなたのシグナルがstake する価値があるほど良いものかどうかを評価するための指針となります。過去の検証期間中に強い診断結果が出たシグナルは、現在または将来のライブ期間では良いスコアが得られない可能性があることに注意することが重要です。
+これらの診断を用いると、NMRをステークする価値があるかを評価できます。ただし、過去の検証期間中に高いパフォーマンスが出たシグナルは、現在または将来のライブ期間で良いスコアが得られない可能性があることに注意すべきです。
 
 {% hint style="danger" %}
-このヒストリカル評価ツールを繰り返し使用すると、すぐにオーバーフィッティングにつながります。診断は、シグナル作成プロセスの最終チェックとしてのみ扱うようにしてください。
+この診断ツールを繰り返し使用すると、すぐにオーバーフィッティングにつながります。診断は、シグナル作成プロセスの最終チェックとしてのみ使用してください。
 {% endhint %}
 
 診断の計算に使用した過去のターゲットはすべて[ここ](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals_train_val_bbg.csv)にあります。
 
-### API and Automation
+### 提出フローの自動化
 
 {% hint style="info" %}
 最新のシグナルを毎週Numeraiに提出する必要があります。
 {% endhint %}
 
-[GraphQL API ](https://api-tournament.numer.ai/)に直接接続するか、公式 python クライアントを使用することで、投稿ワークフローを自動化することができます。
+[Numerai-CLI](https://github.com/numerai/numerai-cli)、[GraphQL API ](https://api-tournament.numer.ai/)、公式 python クライアントを使用することで、投稿ワークフローを自動化することができます。
 
 {% embed url="https://github.com/uuazed/numerapi\#usage-example---numerai-signals" %}
 
-## Signal Evaluation
+## Signalの評価方法
 
-### Neutralization
+### 中和
 
-Numerai には様々な既存のシグナルがあります。当社の既存のシグナルには、Barra ファクター（サイズ、バリュー、モメンタムなどのようなもの）、国やセクターのリスクファクター、custom stock features などが含まれています。
+Numeraiは様々な既存のデータをもっています。既存のシグナルには、Barra ファクター（サイズ、バリュー、モメンタムなどのようなもの）、国やセクターのリスクファクター、custom stock features などが含まれています。
 
 {% hint style="info" %}
-定義: シグナルまたはターゲットは、Barra ファクター、国やセクターのファクター、その他のcustom stock features など、Numeraiの既存のシグナルとの相関関係が０になるように変換された後、"neutralized" されたとみなされます。
+定義: シグナルまたはターゲットは、Barra ファクター、国やセクターのファクター、その他のcustom stock features など、Numeraiの既存のシグナルとの相関関係が０になるように変換された後、"中和" されたとみなされます。
 {% endhint %}
 
-Numerai Signalsにアップロードされた全てのシグナルは、スコアリングされる前にneutralize されます。neutralization のポイントは、既知のシグナルに存在しないシグナルの独自成分あるいは直交成分を分離することです。
+Numerai Signalsにアップロードされた全てのシグナルは、スコアリングされる前に中和されます。中和のポイントは、既知のシグナルに存在しないシグナルの独自成分あるいは直交成分を分離することです。
 
 ![A visualization of neutralization against a single known signal](../.gitbook/assets/image%20%289%29.png)
 
 {% hint style="warning" %}
-よく知られたいくつかのシグナルの単純な線形和を提出すると、neutralization 後に直交成分がほとんど残りません。
+よく知られたいくつかのシグナルの単純な線形和を提出すると、中和後に直交成分がほとんど残りません。
 {% endhint %}
 
-シグナルを評価するために使用されるターゲットもneutralize されます。ターゲットは、実質的にはNumerai のカスタムの「特定のリターン」または「残留リターン」です。
+シグナルを評価するために使用されるターゲットも中和されます。ターゲットは、実質的にはNumerai のカスタムの「特定のリターン」または「残留リターン」です。
 
-neutralization を実行するために使用されるデータは提供されないため、このプロセスは「ブラックボックス」であることを意味します。ただし、過去の期間に強いスコアを持つシグナルは、現在のラウンドでも将来のラウンドでも良いスコアが得られない可能性があることに注意することが重要ですが、シグナルのヒストリカル診断を使用して、neutralization が将来のシグナルに与える影響を推定することができます。
+中和を実行するために使用されるデータは提供されないため、このプロセスは「ブラックボックス」であることを意味します。ただし、過去の期間に強いスコアを持つシグナルは、現在のラウンドでも将来のラウンドでも良いスコアが得られない可能性があることに注意することが重要ですが、シグナルのヒストリカル診断を使用して、中和が将来のシグナルに与える影響を推定することができます。
 
-neutralization を実装するために使用されているコードはオープンソースです。neutralization のプロセスについては、このexample notebook で詳しく知ることができます。
+中和を実装するために使用されているコードはオープンソースです。中和のプロセスについては、このexample notebook で詳しく知ることができます。
 
 {% embed url="https://github.com/numerai/example-scripts/blob/master/SignalsScoringExample.ipynb" %}
 
@@ -140,11 +140,11 @@ neutralization を実装するために使用されているコードはオー�
 
 {% embed url="https://forum.numer.ai/t/model-diagnostics-feature-exposure/899" %}
 
-後続の株式リターンとの相関性が非常に高いシグナルは、Numerai Signalsのスコアが非常に悪く、後続の株式リターンとの相関性が弱いシグナルは、高いスコアを出すことができるかもしれません。
+後続の株式リターンとの相関性が非常に高いシグナルは、Numerai Signalsのスコアが非常に低く、後続の株式リターンとの相関性が弱いシグナルは、高いスコアを出すことができるかもしれません。
 
-言い換えれば、強い予測値を持つ「良い」シグナルは、単独で考えた場合、Numerai Signals のスコアは低いかもしれません。これは、シグナルの重要なユニークな側面を強調しています。Numerai Signals は、株式のリターンを予測することではなく、Numerai にはない独自のシグナルを見つけることです。
+言い換えれば、強い予測値を持つ「良い」シグナルは、単独で考えた場合、Numerai Signals のスコアは低いかもしれません。これは、シグナルの重要なユニークな側面を強調しています。Numerai Signals は、株式のリターンを予測することではなく、Numerai にはない独自のシグナルを見つけることを目的としています。
 
-### Six Day Neutralized Return Targets
+### 6日間の中和されたリターンターゲット
 
 シグナルは、Numerai によって作成されたカスタムブラックボックスターゲットに対して評価されます。このターゲットは、6日間のニュートラル化された後続リターンに基づいています（最初の2日間は無視します）。
 
@@ -152,7 +152,7 @@ neutralization を実装するために使用されているコードはオー�
 
 後続のニュートラル化されたリターンの6日間を構成する正確な市場日についての詳細は、dates and deadlines についての後のセクションを参照してください。
 
-### Scoring
+### スコアリング
 
 スコアリングの前に、シグナルは最初に\[0, 1\]の間でランク付けされ、次に中和されます。最後に、neutralize されたシグナルとターゲットの間のスピアマン相関を取ることでスコアが計算されます。このスコアは、このドキュメントとウェブサイトでは、単に`corr`と呼ばれています。
 
@@ -162,7 +162,7 @@ neutralization を実装するために使用されているコードはオー�
 
 universe の一部の銘柄（例：米国株のシグナルのみ）についてのみシグナルを保有している場合でも、シグナルに参加することができ、高いパフォーマンスを発揮することができます。シグナルがない銘柄については、シグナルがランク付けされた後、Numerai が自動的に中央値で埋めてくれます。
 
-### Meta Model Contribution
+### メタモデルへの貢献
 
 `corr`があなたのシグナルがNumeraiが知っているすべてのシグナルとneutralize されたターゲットとどれだけ相関しているかを示す指標であるとすれば、Meta Model Contribution \(MMC\)は、あなたのシグナルが、Numeraiが知っているすべてのシグナルとneutralize されたターゲット、およびNumerai Signals 上の他のすべてのstake されたシグナルとどれだけ相関しているかを示す指標である。このスコアは、このドキュメントやウェブサイトでは、単に`mmc`と呼ばれています。
 
@@ -176,7 +176,7 @@ MMCはメインのNumerai Tournamentから取った概念であり、スコア�
 
 Numerai SignalsのMMCの計算は、Numerai Tournamentのそれとは完全に分離されていることに注意してください。具体的には、Numerai Signalsへのsubmission のみがSignalsのメタモデルを構築するために使用されます。
 
-## Staking and Payouts
+## ステーキングとペイアウト
 
 `payouts` を獲得する機会が欲しい場合は、投稿を`stake` することができます。`corr` または `corr_plus_mmc` にstake することができます。
 
@@ -208,16 +208,16 @@ stake を作成するには、ウェブサイトの"manage stake"ボタンをク
 
 change requests をしたからといって、すぐに適用されるわけではありませんのでご注意ください。変更を適用する前に、必ずウェブサイトに表示されている"effective date"を再確認してください。
 
-## Dates and Deadlines
+## 日付と締め切りについて
 
-### Data Date vs Effective Date
+### データの日付 vs 有効な日付
 
 ヌメライシグナルには2種類の日付があります。
 
 * `data_date` - 基礎となる株式市場データに対応する日付です。すべての`data_date`は、その日の市場の終値を参照しており、時刻は含まれていません。例えば、submissionsの`friday_date`列の値は`data_date`型です。
 * `effective_date`- Numerai Signals で行われるアクションやイベントに対応する日付で、常にUTCで指定された時間を含む場合があります。時間帯や株式市場データの処理に時間がかかるため、`data_date`と`effective_date`の間には通常遅延が発生します。特に指定がない限り、本ウェブサイトおよび本文書に記載されている日付はすべて effective\_date 型です。
 
-### Rounds
+### ラウンド
 
 Submissions、stakes、scores、payoutsは、それらについて話しやすいように番号の付いた`rounds` にグループ化されています。
 
@@ -231,15 +231,14 @@ Submissions、stakes、scores、payoutsは、それらについて話しやす�
 
 ![](../.gitbook/assets/image%20%2815%29.png)
 
-## Reputation and Leaderboard <a id="reputation-and-leaderboard"></a>
+## 評価とリーダーボード<a id="reputation-and-leaderboard"></a>
 
 あなたのシグナルの`reputation`は、過去20回のラウンドにおけるあなたのシグナルの`corr`の加重平均です。同様に、あなたのシグナルの`mmc_reputation`は、過去20ラウンドのあなたのシグナルの`mmc`の加重平均です。
 
 ![](../.gitbook/assets/image%20%2813%29.png)
 
-## Support
+## サポート
 
 助けが必要ですか？
 
-質問、サポート、フィードバックのために [RocketChat](https://community.numer.ai/home) で私たちを見つけてください!
-
+質問、サポート、フィードバックは [RocketChat](https://community.numer.ai/home)  にお願いします!
