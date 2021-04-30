@@ -30,9 +30,9 @@ Numerai Signals は、Numeraiヘッジファンドを構築するために使用
 * [オルタナティヴデータシグナル](https://en.wikipedia.org/wiki/Alternative_data_%28finance%29) \([クレジットカード取引](https://secondmeasure.com/), [衛生画像](https://www.theatlantic.com/magazine/archive/2019/05/stock-value-satellite-images-investing/586009/), [ソーシャルメディアの感情](https://www.swaggystocks.com/dashboard/wallstreetbets/realtime)\)
 * [ブレンドシグナル](https://www.investopedia.com/terms/m/multifactor-model.asp) \([Barra risk factors](https://www.investopedia.com/terms/b/barra-risk-factor-analysis.asp#:~:text=The%20Barra%20Risk%20Factor%20Analysis%20is%20a%20multi%2Dfactor%20model,turnover%20and%20senior%20debt%20rating.), [Fama French factors](https://www.investopedia.com/terms/f/famaandfrenchthreefactormodel.asp)\)
 
-これらのシグナルを生成するために使用される基礎データは、異なったフォーマットである可能性が高いです。<br>
-例えば、監査済みの財務報告書と駐車場の画像は全く異なるデータですが、株式市場を予測する何かしらのデータが含まれているかもしれません。<br>
-Numeraiがデータを利用するためには規格化された形式であることが必要なため、ティッカーとシグナルデータが一対一で対応するようにリスト化する必要があります。<br>
+これらのシグナルを生成するために使用される基礎データは、異なったフォーマットをもつ可能性が高いです。<br>
+例えば、監査済みの財務報告書と駐車場の画像は全く異なるデータですが、明日の株式市場を予測する指標が含まれているかもしれません。<br>
+Numeraiが参加者のデータを利用するためには、規格化が必要です。参加者はティッカーとシグナルデータが一対一で対応するようなリストを作成する必要があります。<br>
 
 ## シグナルの作り方
 
@@ -41,7 +41,7 @@ Numeraiがデータを利用するためには規格化された形式である�
 独自のシグナルを作成するためには、まず、いくつかの株式市場のデータを取得する必要があります。
 
 {% hint style="info" %}
-株式市場のデータがないデータサイエンティストですか？代わりに[Numerai Tournament](https://numer.ai/)に参加してください。 
+株式市場のデータをもっていないデータサイエンティストですか？代わりに[Numerai Tournament](https://numer.ai/)に参加してください。 
 {% endhint %}
 
 まだ株式市場のデータにアクセスできていない場合は、 [Yahoo Finance](https://finance.yahoo.com/)、[Quandl](https://www.quandl.com/)、 [Koyfin](https://www.koyfin.com/) など、インターネット上に無料または格安のデータプロバイダーが多数存在します。 
@@ -52,37 +52,41 @@ Numeraiがデータを利用するためには規格化された形式である�
 ユニークで差別化されたデータセットを見つけることが、オリジナルのシグナルを生み出す鍵となります。
 {% endhint %}
 
-### Universe
+### ユニバース（＊対象とする株式市場）
 
-ヌメライシグナルの株式市場ユニバースは、世界の上位5000の大型株をカバーしています。 
+対象とする株式市場は、世界の上位5000の大型株をカバーしています。 
 
-universe は毎週更新されていますが、一般的には、ある週に動き出すのは数銘柄の出来高の少ない銘柄のみです。 
+ユニバースは毎週更新されますが、一般的には、ある週に動き出すのは出来高の少ない数銘柄のみです。 
 
-[latest universe file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/universe/latest.csv) をダウンロードすると、最新のuniverse を見ることができます。
+[latest universe file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/universe/latest.csv) をダウンロードすると、最新のユニバースを見ることができます。
 
-universe の履歴は、 [historical targets file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals_train_val_bbg.csv) をダウンロードしてご覧いただけます。
+ユニバースの履歴は、 [historical targets file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals_train_val_bbg.csv) をダウンロードしてご覧いただけます。
 
-### Submissions
+### データの提出
 
-シグナルをNumerai Signals に提出する際には、少なくとも2つの列を含める必要があります。
+作成したデータをNumerai Signals に提出する際は、少なくとも2つの列を含める必要があります。
 
 * `cusip`、`sedol`、または`bloomberg_ticker` 列 - 値はヘッダーのticker タイプに関連付けられた有効なティッカーでなければなりません。
 * `signal` 列- 値は0から1の間でなければなりません（排他的）。
 
-2列のみの予測結果は、現在の`live`時間帯に対応していると仮定していますが、これはティッカーの値が一意でなければならないことを意味します。
+さらに、有効な提出をするためには： 
+* 現在の期間の予測を含む行が少なくとも10行ある必要があります。
+* 同じティッカーを複数回使用することはできません。
 
-また、過去の検証期間にわたってシグナルをアップロードして、パフォーマンス、リスク、潜在的な収益に関する診断指標を受け取ることもできます。検証期間は`20130104`から`20200228`までの374週間です。
+2列のみの予測結果は、現在の`live`時間帯に対応していると仮定します。
 
-検証期間を含む予測結果には、2つの余分な列を含める必要があります。
+また、データを提出すると過去のパフォーマンス、リスク、潜在的な収益に関する診断もできます。検証期間は`20130104`から`20200228`までの374週間です。
 
-* `friday_date` 列 -  Numerai Signals では、週の期間が金曜日に始まるので、値は金曜日でなければなりません。
+検証期間を含む予測結果には、friday_date,data_type列を含める必要があります。
+
+* `friday_date` 列 -  Numerai Signals では、コンペティションの開始が金曜日なので、金曜日に相当する日付をいれる必要があります。
 * `data_type`  列 - 値は`live`または`validation`のみを取り得ます。`data_type`が`live`の行には、直近の金曜日の日付が含まれていなければなりません。
 
 ![](../.gitbook/assets/image%20%288%29.png)
 
-最新の予測結果の例は[こちら](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/example_signal/latest.csv)からダウンロードできます。
+最新の提出例は[こちら](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/example_signal/latest.csv)からダウンロードできます。
 
-### Diagnostics
+### 診断
 
 予測結果が受理されると、診断のために時間がかかります。これは通常、提出物に含まれている週数やティッカー数に応じて10～15分程度かかります。
 
