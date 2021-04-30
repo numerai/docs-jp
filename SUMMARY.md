@@ -14,7 +14,7 @@
 * [報酬プログラム](numerai-tournament/bounties.md)
 * [フォーラム](numerai-tournament/forum.md)
 
-## Numerai シグナルス
+## Numerai シグナルズ
 
 * [Numerai Signalsについての概要](numerai-signals/signals-overview.md)
 * [新規参加者向けのTips](numerai-signals/new-users.md)
