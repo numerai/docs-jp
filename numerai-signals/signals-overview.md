@@ -180,7 +180,7 @@ Numerai Signals は、株式のリターンを予測することではなく、N
 シグナルの`mmc`は、最初にSignals' Meta Modelと呼ばれる特別なシグナルを構築することによって計算されます。ここで、Signals' Meta Modelとは、与えられたラウンドに対してNumerai Signals上のすべての（ランク付けされ、中和された）シグナルのステーク加重平均として定義されたものです。シグナルの`mmc`は、Signals' Meta Modelに中和された後のターゲットに対するシグナルの相関を表す指標です。<br>
 
 {% hint style="success" %}
-あなたが提出したシグナルが高いMMCを示す場合、他の人が提出したシグナルよりも優位に立っていることを意味します。<br>
+あなたが提出したシグナルが高いMMCを示す場合、他の人が提出したシグナルよりも優位であることを意味します。<br>
 {% endhint %}
 
 MMCはNumeraiトーナメントから取った概念であり、スコアリングシステムは非常に似ています。Numerai でのMMCの計算方法の詳細については、Numerai トーナメントのドキュメントの[metamodel contribution](https://docs.numer.ai/tournament/metamodel-contribution) のセクションを参照してください。<br>
