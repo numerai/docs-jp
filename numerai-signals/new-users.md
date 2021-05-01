@@ -7,14 +7,14 @@
 *[YouTube](https://www.youtube.com/channel/UCQt3RVSKsDpFgYIm1A-nWbA)でNumeraiを購読して、ビデオチュートリアルの通知を受け取れます。<br>
 *[RocketChat #NewUsersチャンネル](https://community.numer.ai/channel/newusers)、[#Signalsチャンネル(英語）](https://community.numer.ai/channel/signals)、[Signalsフォーラム(日本語)](https://forum.numer.ai/t/numerai-signals/2537/5)
 で参考となる情報を得られます。<br>
-*データ分析、ヒント、チュートリアルに関する投稿については、[umeraiフォーラム](https://forum.numer.ai/)をチェックしてください。<br> 
+*データ分析、ヒント、チュートリアルに関する投稿については、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。<br> 
 
 **ウォークスルー、チュートリアル、ノートブック 
 
 blog_ukiによるNumerai Signalsの紹介<br>
 {% embed url="https://qiita.com/blog\_UKI/items/6f044b41819f1f003426" %}
 
-Jason Rosenfeld（jrAI）によるYahooFinanceの完全無料データを使用したNumeraiSignalsのノートブック。 <br>
+Jason Rosenfeld（jrAI）によるYahooFinanceの完全無料データを使用したNumerai Signalsのノートブック。 <br>
 {% embed url="https://colab.research.google.com/drive/1ECh69C0LDCUnuyvEmNFZ51l_276nkQqo" %}
 Jason Rosenfeldによるノートブック <br>
 
