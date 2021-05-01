@@ -5,9 +5,6 @@
 * データ分析、ヒント、チュートリアルに関する投稿は、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。
 
 
-【Numeraiグッズのデザイン(?)】<br>
-[ペエム・スタジオ](https://www.paihemestudio.com/)<br>
-
 【Numeraiに関する説明・HPの見方等】<br>
 [Numerai公式](https://numer.ai/tournament):[Numerai 日本語ドキュメント](https://jp.docs.numer.ai/)<br>
 [@blog_UKI](https://twitter.com/blog_uki):[機械学習による株価予測　はじめようNumerai](https://qiita.com/blog_UKI/items/fb401725288e58c92bd6)<br>
