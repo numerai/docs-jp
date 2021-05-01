@@ -32,7 +32,7 @@ NMRのステーク量を減らすと、Numeraiの保有しているアカウン�
 ## ペイアウト
 どれだけのNMRを得られるかはNMRのステーク量と、Corr,MMCの値に依存します。<br>
 スコアが高いほど、より多くのNMRを得ることができます。もし負のCorr,MMCとなった場合、ステークしたNMRの一部が没収され、バーンされます。<br>
-バーンとは、トークンを永遠に使用できなくする操作のことです。<br>
+バーンとは、NMRを永遠に使用できなくする操作のことです。<br>
 ペイアウトされるNMRの量はステークした量の±25％に制限されています。<br>
 ペイアウトは以下の式で計算されます。<br>
 payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multiplier)<br>
