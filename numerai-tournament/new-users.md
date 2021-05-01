@@ -16,6 +16,7 @@
 ):[【ファイナンス機械学習】著者によるNumerai解説スライドを日本語でまとめてみる](https://quantcollege.net/financial-machine-learning-numerai
 )<br>
 [@tit_BTCQASH](https://twitter.com/tit_BTCQASH):[[NumeraiのHPの見方＋サブミット＋便利リンク集](https://qiita.com/tit_BTCQASH/items/366a2d1c273507dd4b8c)<br>
+
 【計算モデル関連】<br>
 [@katsu1110](https://twitter.com/kk1110tt):[Numerai tournamentベースライン](https://www.kaggle.com/code1110/numerai-tournament)<br>
 [@katsu1110](https://twitter.com/kk1110tt):[[numerai] MLP with KerasTuner Starter](https://www.kaggle.com/code1110/numerai-mlp-with-kerastuner-starter/notebook)<br>
