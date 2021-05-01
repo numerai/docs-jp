@@ -1,7 +1,7 @@
 # 新規参加者向けのTips
 
 
-現在、さまざまなレベルに対応する新しいユーザー動画やチュートリアルを作成中です。<br>
+現在、さまざまなレベルに対応する新しいユーザー向けの動画やチュートリアルを作成中です。<br>
 チュートリアルが完成するまでは、ユーザーが作成したNumerai Signalsの記事を参照してください。<br>
 
 * [YouTube](https://www.youtube.com/channel/UCQt3RVSKsDpFgYIm1A-nWbA)でNumeraiを購読して、ビデオチュートリアルの通知を受け取れます。<br>
