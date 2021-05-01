@@ -12,10 +12,10 @@
 [@blog_UKI](https://twitter.com/blog_uki):[機械学習による株価予測　さがそうNumerai Signals](https://qiita.com/blog_UKI/items/adba89950c4f70c2167d)<br>
 [@blog_UKI](https://twitter.com/blog_uki):[機械学習による株価予測　さがそう 真のNumerai Signals](https://qiita.com/blog_UKI/items/6f044b41819f1f003426)<br>
 [@katsu1110](https://twitter.com/kk1110tt):[KagglerへのNumeraiのススメ](https://zenn.dev/katsu1110/articles/bb2b5cba9b04c9e30bfe)<br>
-不明:[【ファイナンス機械学習】著者によるNumerai解説スライドを日本語でまとめてみる](https://quantcollege.net/financial-machine-learning-numerai
+[@developer_quant](https://twitter.com/developer_quant
+):[【ファイナンス機械学習】著者によるNumerai解説スライドを日本語でまとめてみる](https://quantcollege.net/financial-machine-learning-numerai
 )<br>
 [@tit_BTCQASH](https://twitter.com/tit_BTCQASH):[[NumeraiのHPの見方＋サブミット＋便利リンク集](https://qiita.com/tit_BTCQASH/items/366a2d1c273507dd4b8c)<br>
-
 【計算モデル関連】<br>
 [@katsu1110](https://twitter.com/kk1110tt):[Numerai tournamentベースライン](https://www.kaggle.com/code1110/numerai-tournament)<br>
 [@katsu1110](https://twitter.com/kk1110tt):[[numerai] MLP with KerasTuner Starter](https://www.kaggle.com/code1110/numerai-mlp-with-kerastuner-starter/notebook)<br>
