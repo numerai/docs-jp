@@ -110,7 +110,7 @@ Numeraiが参加者のデータを利用するためには、規格化が必要�
 
 {% embed url="https://github.com/uuazed/numerapi\#usage-example---numerai-signals" %}
 
-## Signalの評価方法
+## シグナルの評価方法
 
 ### 中和
 
@@ -225,15 +225,18 @@ corr:提出した予測ファイルとターゲットの相関<br>
 corr_multiplier:現在は2のみ<br>
 mmc:提出した予測ファイルとメタモデルの相関<br>
 mmc_multiplier:0,0.5,1,2の中で一つ選べる。<br>
+![](../.gitbook/assets/factor3.JPG)<br>
 
+{% hint style="info" %}
 ペイアウトファクターの関数やマルチプライヤーは、Numeraiによって変更される可能性があります。<br>
+{% endhint %}
 
 ペイアウト計算の例を次に示します。
 最初の2つの例は、`corr_multiplier`の影響を示しています。<br>
 3番目の例は、負のスコアがペイアウトに影響を与えるかを示しています。<br>
 4番目の例は、ペイアウトがステーク量の±25％に制限されていることを示しています。<br>
 
-![](../.gitbook/assets/Payout.jpg)<br>
+![](../.gitbook/assets/Payout2.JPG)<br>
 
 ## ステーク量の成長
 
