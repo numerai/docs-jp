@@ -173,49 +173,73 @@ Numerai Signals は、株式のリターンを予測することではなく、N
 
 ### メタモデルへの貢献
 
-`corr`があなたのシグナルがNumeraiが知っているすべてのシグナルとneutralize されたターゲットとどれだけ相関しているかを示す指標であるとすれば、Meta Model Contribution \(MMC\)は、あなたのシグナルが、Numeraiが知っているすべてのシグナルとneutralize されたターゲット、およびNumerai Signals 上の他のすべてのstake されたシグナルとどれだけ相関しているかを示す指標である。このスコアは、このドキュメントやウェブサイトでは、単に`mmc`と呼ばれています。
+`corr`とは、提出したシグナルとNumeraiの保有するシグナル（ターゲットは中和済）がどの程度相関しているかを示す指標です。<br>
+一方、Meta Model Contribution \(MMC\)は、提出したシグナルが、Numeraiの保有するシグナル（ターゲットは中和済）との相関をとるだけでなく、他の人がNMRをステークしたシグナルとも相関をとり、計算した指標です。<br>
+このドキュメントやウェブサイトでは、単に`mmc`と呼ばれています。<br>
 
-シグナルの`mmc`は、最初にSignals' Meta Modelと呼ばれる特別なシグナルを構築することによって計算されます。ここで、Signals' Meta Modelとは、与えられたラウンドに対してNumerai Signals上のすべての（ランク付けされ、neutralize された）シグナルのstake 加重平均として定義されたものです。シグナルの`mmc`は、Signals' Meta Modelに中和された後のターゲットに対するシグナルの相関関係です。
+シグナルの`mmc`は、最初にSignals' Meta Modelと呼ばれる特別なシグナルを構築することによって計算されます。ここで、Signals' Meta Modelとは、与えられたラウンドに対してNumerai Signals上のすべての（ランク付けされ、中和された）シグナルのステーク加重平均として定義されたものです。シグナルの`mmc`は、Signals' Meta Modelに中和された後のターゲットに対するシグナルの相関を表す指標です。<br>
 
 {% hint style="success" %}
-シグナルの高い一貫性のあるMMCは、あなたのシグナルがNumeraiの全てのデータとNumerai Signalsの他の全てのシグナルの組み合わせよりも優位に立っていることを意味するので、二重に印象的です。
+あなたが提出したシグナルが高いMMCを示す場合、他の人が提出したシグナルよりも優位に立っていることを意味します。<br>
 {% endhint %}
 
-MMCはメインのNumerai Tournamentから取った概念であり、スコアリングシステムは非常に似ています。Numerai でのMMCの計算方法の詳細については、Numerai Tournament のドキュメントの[metamodel contribution](https://docs.numer.ai/tournament/metamodel-contribution) のセクションを参照してください。
+MMCはNumeraiトーナメントから取った概念であり、スコアリングシステムは非常に似ています。Numerai でのMMCの計算方法の詳細については、Numerai トーナメントのドキュメントの[metamodel contribution](https://docs.numer.ai/tournament/metamodel-contribution) のセクションを参照してください。<br>
 
-Numerai SignalsのMMCの計算は、Numerai Tournamentのそれとは完全に分離されていることに注意してください。具体的には、Numerai Signalsへのsubmission のみがSignalsのメタモデルを構築するために使用されます。
+Numerai SignalsのMMCの計算は、Numerai Tournamentのそれとは完全に分離されていることに注意してください。具体的には、Numerai Signalsへの提出のみがSignalsのメタモデルを構築するために使用されます。<br>
 
-## ステーキングとペイアウト
+## ステーキング
 
-`payouts` を獲得する機会が欲しい場合は、投稿を`stake` することができます。`corr` または `corr_plus_mmc` にstake することができます。
+提出したシグナルに自信がある場合、`corr` または `corr_plus_mmc` にNMRをステークすることができます。<br>
+ステーキングとは、NMRをイーサリアムブロックチェーンのスマートコントラクトに固定することを意味します。NumeraiはロックアップされたNMRに報酬を追加したり、NMRを没収することができます。<br>
 
 {% hint style="info" %}
-ステイクを行うには、[NMR cryptocurrency](https://www.coinbase.com/price/numeraire) をロックアップ\(しばらく引き出せないようにする\)する必要があります。これにより、シグナルのパフォーマンスが悪くなった場合、Numeraiはあなたのステークを燃やすことができます。
+あなたがNMRをシグナルにステークする行為は、以下の行為に参加する機会をオファーするもの**ではない**ことに注意してください。<br>
+*投資契約、証券、金融資産のリターンに基づくスワップ、Numeraiヘッジファンドへの参加、Numeraiのヘッジファンドの利息、Numerai自体が得た手数料の提供<br>
+
+ペイアウトは、ユーザーに開示されないブラックボックスターゲットに基づいて、Numeraiの裁量で行われます。<br>
+基本的に、Numerai Signalsは、「本物の」シグナルを検証する方法としてNMRステーキングを使用して、ユーザーが自分のシグナルの価値を評価することを可能にするNumeraiが提供するサービスです。<br>
+その見返りとして、Numeraiはステークされたシグナルと関連データをNumeraiヘッジファンドで使用します。<br>
+異なる期待を持つユーザーは、シグナルにNMRをステークすべきではありません。<br>
+詳細については、[利用規約](https://numer.ai/terms)をお読みください。<br>
 {% endhint %}
 
-一度stake すれば、提出したスコアに応じて、何％かを`earn` したり、`burn` したりすることができます。
+あなたはウェブサイトであなたのステーク量を管理できます。ステークを増やすと、NMRはウォレットからステーキングコントラクト（Numeraiの保有しているETHアカウント）に転送されます。ステークを減らすと、NMRは約4週間の遅延後にウォレットに戻されます。また、ステークの種類を変更することもできます。これにより、ステークしたいスコア（Corr,MMC）を決められます。
 
-```python
-corr_payout = stake * clip(2 * corr, -0.25, 0.25)
+ステークを作成するには、ウェブサイトの"manage stake"ボタンをクリックし、ステークを増加させるためのリクエストを作成します。ここでは、`corr`と`corr_plus_mmc`のどちらにステークするかを選択することができます。ステークを減らしたい場合は、"change request"を作成し、ステークを減少させることもできます。  
 
-corr_plus_mmc_payout = stake * clip(2 * corr + mmc, -0.25, 0.25)
-```
+![](../.gitbook/assets/stake.png)
 
-例えば、`corr`に`100NMR`をstake して、あなたのスコアが`+0.05`であった場合、あなたは`100NMRの2 * 5% = 10NMR`を得ることができます。もしあなたが`corr_plus_mmc`にstake して、あなたの`mmc`が`+0.03`であれば、あなたは`100NMRの(2 * 5% + 3%) = 13NMR`を得ることになります。
+change requestsはすぐに反映されません。変更を適用する前に、必ずウェブサイトに表示されている"effective date"を再確認してください。
 
-あなたが稼ぐか、または燃やすことができる最大値は、各ラウンドであなたの賭け金の25％です。ペイアウトは自動的にあなたのstake に戻されます。
+## ペイアウト
+どれだけのNMRを得られるかはNMRのステーク量と、Corr,MMCの値に依存します。<br>
+スコアが高いほど、より多くのNMRを得ることができます。もし負のCorr,MMCとなった場合、ステークしたNMRの一部が没収され、バーンされます。<br>
+バーンとはERC-20トークンの持つ機能の一つであり、トークンを永遠に使用できなくする操作のことです。<br>
+ペイアウトされるNMRの量はステークした量の±25％に制限されています。<br>
+ペイアウトは以下の式で計算されます。<br>
+payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multiplier)<br>
+stake_value:ラウンド開始時点の最初の金曜日にステークしたNMRの量<br>
+payout_factor:10万NMR以下では1になります。10万NMR以上では以下の図に示す値をとります。Numeraiはペイアウトの上限を決めることで持続的なトーナメントの開催を行うことができます。<br>
+![](../.gitbook/assets/factor2.png)<br>
+corr:提出した予測ファイルとターゲットの相関<br>
+corr_multiplier:現在は2のみ<br>
+mmc:提出した予測ファイルとメタモデルの相関<br>
+mmc_multiplier:0,0.5,1,2の中で一つ選べる。<br>
 
-{% hint style="danger" %}
-シグナルを賭ける機会は、Numeraiによる投資契約、証券、金融資産のリターンに基づくスワップ、Numeraiのヘッジファンドへの参加、またはNumerai自身への参加、またはNumeraiが獲得するフィーの提供**ではない**ことに注意することが重要です。支払いは、ユーザーには開示されないブラックボックスのターゲットに基づいて、当社の裁量で行われます。 基本的に、Numerai Signalsは、「本物の」シグナルを検証する方法としてNMR staking を使用して、ユーザーが自分のシグナルの価値を評価することを可能にするNumeraiが提供するサービスです。その見返りとして、Numeraiはstake されたシグナルと関連データをNumeraiヘッジファンドで使用します。異なる期待を持っているユーザーは、シグナルをstake するべきではありません。
+ペイアウトファクターの関数やマルチプライヤーは、Numeraiによって変更される可能性があります。<br>
 
-詳細については、[利用規約](https://numer.ai/terms)をお読みください。
-{% endhint %}
+ペイアウト計算の例を次に示します。
+最初の2つの例は、`corr_multiplier`の影響を示しています。<br>
+3番目の例は、負のスコアがペイアウトに影響を与えるかを示しています。<br>
+4番目の例は、ペイアウトがステーク量の±25％に制限されていることを示しています。<br>
 
-stake を作成するには、ウェブサイトの"manage stake"ボタンをクリックして、stake を"increase"するための"change request"を作成します。ここでは、`corr`と`corr_plus_mmc`のどちらにstake するかを選択することができます。いつでもstake を減らしたい場合は、"change request"を作成してステークを"decrease"することもできます。  
+![](../.gitbook/assets/Payout.jpg)<br>
 
-![](../.gitbook/assets/image%20%2812%29.png)
+## ステーク量の成長
 
-change requests をしたからといって、すぐに適用されるわけではありませんのでご注意ください。変更を適用する前に、必ずウェブサイトに表示されている"effective date"を再確認してください。
+スコアは毎日更新されますが、ペイアウトはトーナメントの終了日（日本時間の木曜日）にのみ行われます。
+提出した予測ファイルがプラスのCorr、MMCを持ち続ける限り、得られるNMRの量は増大します。モデルが52週間、毎週同じ正のスコアを取得すると仮定した場合の支払い予測の例を下図に示します。<br>
+![](../.gitbook/assets/payout_predict2.png)
 
 ## 日付と締め切りについて
 
