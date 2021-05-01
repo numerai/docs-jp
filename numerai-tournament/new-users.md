@@ -33,8 +33,7 @@
 【Era selection】<br>
 [@katsu1110](https://twitter.com/kk1110tt):[Metric learningでlive eraに近いeraを見つける
 ](https://www.kaggle.com/code1110/numerai-metric-learning-and-live-era/notebook)<br>
-MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
-](https://docs.google.com/document/d/19P_e8ahJUr6HbaOfFAmJSLXcXZWgzSj3lf_zyecBatM/edit)*日本語ではないですが、重要なため引用<br>
+
 
 【feature neutralization】<br>
 [@yaaku](https://twitter.com/yaaku123):[[Numerai] 成功が約束された特徴量を試してみる
@@ -72,9 +71,10 @@ MesozoicMetallurgistさん:[MesozoicMetallurgist Numerai Model List
 
 #### Numeraiに関するチュートリアル \(＊英語版\)
 [Numerai notebook](https://numer.ai/submit)<br>
-[SurajP](https://numer.ai/surajp)さんによる[Google Colabを使った簡単なガイド](https://medium.com/@parmarsuraj99/a-guide-to-the-hardest-data-science-tournament-on-the-planet-748f46e83690)<br>
-[perfect\_fit](https://numer.ai/perfect_fit)さんによる[Kaggleカーネルを使ったチュートリアル](https://app.wandb.ai/carlolepelaars/numerai\_tutorial/reports/Build-the-World-s-Open-Hedge-Fund-by-Modeling-the-Stock-Market--VmlldzoxODU0NTQ)<br>
-[perfect\_fit](https://numer.ai/perfect_fit)さんによる[Kaggleカーネルを使ったチュートリアル②](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)<br>
-
+[@SurajP](https://numer.ai/surajp):[Google Colabを使った簡単なガイド](https://medium.com/@parmarsuraj99/a-guide-to-the-hardest-data-science-tournament-on-the-planet-748f46e83690)<br>
+[@perfect\_fit](https://numer.ai/perfect_fit):[Kaggleカーネルを使ったチュートリアル](https://app.wandb.ai/carlolepelaars/numerai\_tutorial/reports/Build-the-World-s-Open-Hedge-Fund-by-Modeling-the-Stock-Market--VmlldzoxODU0NTQ)<br>
+[@perfect\_fit](https://numer.ai/perfect_fit):[Kaggleカーネルを使ったチュートリアル②](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)<br>
+[@MesozoicMetallurgist](https://numer.ai/mesozoicmetallurgist):[MesozoicMetallurgist Numerai Model List
+](https://docs.google.com/document/d/19P_e8ahJUr6HbaOfFAmJSLXcXZWgzSj3lf_zyecBatM/edit)
 
 
