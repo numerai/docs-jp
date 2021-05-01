@@ -4,8 +4,8 @@
 現在、さまざまなレベルに対応する新しいユーザー動画やチュートリアルを作成中です。<br>
 チュートリアルが完成するまでは、ユーザーが作成したNumerai Signalsの記事を参照してください。<br>
 
-*[YouTube](https://www.youtube.com/channel/UCQt3RVSKsDpFgYIm1A-nWbA)でNumeraiを購読して、ビデオチュートリアルの通知を受け取れます。<br>
-*[RocketChat #NewUsersチャンネル](https://community.numer.ai/channel/newusers)、[#Signalsチャンネル(英語）](https://community.numer.ai/channel/signals)、[Signalsフォーラム(日本語)](https://forum.numer.ai/t/numerai-signals/2537/5)
+* [YouTube](https://www.youtube.com/channel/UCQt3RVSKsDpFgYIm1A-nWbA)でNumeraiを購読して、ビデオチュートリアルの通知を受け取れます。<br>
+* [RocketChat #NewUsersチャンネル](https://community.numer.ai/channel/newusers)、[#Signalsチャンネル(英語）](https://community.numer.ai/channel/signals)、[Signalsフォーラム(日本語)](https://forum.numer.ai/t/numerai-signals/2537/5)
 で参考となる情報を得られます。<br>
 *データ分析、ヒント、チュートリアルに関する投稿については、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。<br> 
 
