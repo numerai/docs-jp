@@ -30,7 +30,6 @@ def round_weight(delta, day):
 
 予測ファイルが提出されなかった場合ペナルティが課せられます。
 
-最初の提出が遅れるか、失敗した場合、`example_predictions`と同等のスコアが与えられます。また、予測ファイルが提出されなかった場合、`-0.1`という非常に低いスコアが与えられます。
-
+最初の提出が遅れるか、失敗した場合、`example_predictions`と同等のスコアが与えられます。それ以降、予測ファイルが提出されなかった場合、-0.1という非常に低いスコアが与えられます。
 このペナルティを回避するためには、[Numerai－CLI](https://jp.docs.numer.ai/numerai-tournament/numerai-compute)が役立ちます。Numerai－CLIを使用すれば毎週の提出ワークフローを自動化できます。
 
