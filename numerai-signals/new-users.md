@@ -9,7 +9,7 @@
 で参考となる情報を得られます。<br>
 *データ分析、ヒント、チュートリアルに関する投稿については、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。<br> 
 
-##ウォークスルー、チュートリアル、ノートブック 
+## ウォークスルー、チュートリアル、ノートブック 
 
 blog_ukiによるNumerai Signalsの紹介<br>
 {% embed url="https://qiita.com/blog\_UKI/items/6f044b41819f1f003426" %}
