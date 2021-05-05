@@ -4,7 +4,7 @@
 
 ## Numerai トーナメント
 
-* [トーナメント概要](numerai-tournament/tournament-overview.md)
+* [Tournament概要](numerai-tournament/tournament-overview.md)
 * [予測ファイルの自動提出](numerai-tournament/numerai-compute.md)
 * [ツールとライブラリ](numerai-tournament/tools-and-libraries.md)
 * [メタモデルへの貢献（MMC)について](numerai-tournament/meta-model-contribution-mmc.md)
