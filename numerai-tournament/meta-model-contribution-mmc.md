@@ -9,7 +9,7 @@ Numeraiはメタモデルの`Corr`を高めることを目標としています�
 `Corr`が個人のパフォーマンスに報酬を与えるのに対し、`mmc`はメタモデルの`correlation`やグループパフォーマンスへの貢献に報酬を与えます。<br>  
 
 {% hint style="info" %}
-トーナメント参加者の大多数はexample_model.pyと似たようなモデルです。他の人と異なる独自のモデルを作れば高いMMCを得られます。
+Tournament参加者の大多数はexample_model.pyと似たようなモデルです。他の人と異なる独自のモデルを作れば高いMMCを得られます。
 {% endhint %}
 
 {% hint style="success" %}
