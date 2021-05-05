@@ -183,7 +183,7 @@ Signalsの`mmc`は、最初にSignals' Meta Modelと呼ばれる特別なSignals
 あなたが提出したSignalsが高いMMCを示す場合、他の人が提出したSignalsよりも優位であることを意味します。<br>
 {% endhint %}
 
-MMCはNumeraitournamentから取った概念であり、スコアリングシステムは非常に似ています。Numerai でのMMCの計算方法の詳細については、Numerai tournamentのドキュメントの[metamodel contribution](https://docs.numer.ai/tournament/metamodel-contribution) のセクションを参照してください。<br>
+MMCはNumerai Tournamentから取った概念であり、スコアリングシステムは非常に似ています。Numerai でのMMCの計算方法の詳細については、Numerai Tournamentのドキュメントの[metamodel contribution](https://docs.numer.ai/tournament/metamodel-contribution) のセクションを参照してください。<br>
 
 Numerai SignalsのMMCの計算は、Numerai Tournamentのそれとは完全に分離されていることに注意してください。具体的には、Numerai Signalsへの提出のみがSignalsのメタモデルを構築するために使用されます。<br>
 
@@ -220,7 +220,7 @@ change requestsはすぐに反映されません。変更を適用する前に�
 ペイアウトは以下の式で計算されます。<br>
 payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multiplier)<br>
 stake_value:ラウンド開始時点の最初の金曜日にステークしたNMRの量<br>
-payout_factor:10万NMR以下では1になります。10万NMR以上では以下の図に示す値をとります。Numeraiはペイアウトの上限を決めることで持続的なtournamentの開催を行うことができます。<br>
+payout_factor:10万NMR以下では1になります。10万NMR以上では以下の図に示す値をとります。Numeraiはペイアウトの上限を決めることで持続的なTournamentの開催を行うことができます。<br>
 ![](../.gitbook/assets/factor2.png)<br>
 corr:提出した予測ファイルとターゲットの相関<br>
 corr_multiplier:現在は2のみ<br>
@@ -241,7 +241,7 @@ mmc_multiplier:0,0.5,1,2の中で一つ選べる。<br>
 
 ## ステーク量の成長
 
-スコアは毎日更新されますが、ペイアウトはtournamentの終了日（日本時間の木曜日）にのみ行われます。
+スコアは毎日更新されますが、ペイアウトはTournamentの終了日（日本時間の木曜日）にのみ行われます。
 提出した予測ファイルがプラスのCorr、MMCを持ち続ける限り、得られるNMRの量は増大します。モデルが52週間、毎週同じ正のスコアを取得すると仮定した場合の支払い予測の例を下図に示します。<br>
 ![](../.gitbook/assets/payout_predict2.png)
 
