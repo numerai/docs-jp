@@ -177,7 +177,7 @@ Signalsが6日間（最初の2日を除く）で評価される理由は、短�
 一方、Meta Model Contribution \(MMC\)は、提出したSignalsが、Numeraiの保有するSignals（ターゲットは中和済）との相関をとるだけでなく、他の人がNMRをステークしたSignalsとも相関をとり、計算した指標です。<br>
 このドキュメントやウェブサイトでは、単に`mmc`と呼ばれています。<br>
 
-Signalsの`mmc`は、最初にSignals' Meta Modelと呼ばれる特別なSignalsを構築することによって計算されます。ここで、Signals' Meta Modelとは、与えられたラウンドに対してNumerai Signals上のすべての（ランク付けされ、中和された）Signalsのステーク加重平均として定義されたものです。Signalsの`mmc`は、Signals' Meta Modelに中和された後のターゲットに対するSignalsの相関を表す指標です。<br>
+Signalsの`mmc`は、最初にSignals' Meta Modelと呼ばれる特別なSignalsを構築することによって計算されます。ここで、Signals Meta Modelとは、与えられたラウンドに対してNumerai Signals上のすべての（ランク付けされ、中和された）Signalsのステーク加重平均として定義されたものです。Signalsの`mmc`は、Signals' Meta Modelに中和された後のターゲットに対するSignalsの相関を表す指標です。<br>
 
 {% hint style="success" %}
 あなたが提出したSignalsが高いMMCを示す場合、他の人が提出したSignalsよりも優位であることを意味します。<br>
