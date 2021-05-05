@@ -5,7 +5,7 @@ description: 公式ルールと始め方ガイド
 # Tournament概要
 
 #### 前書き
-NumeraiTournamentとは、株式市場の動向を予測し、競争するプラットフォームです。<br>
+Numerai Tournamentとは、株式市場の動向を予測し、競争するプラットフォームです。<br>
 <br>
 参加者は難読化されたデータを使用して機械学習モデルを構築し、予測ファイルを提出することでTournamentに参加できます。<br>
 <br>
@@ -23,7 +23,7 @@ Numeraiに提出された予測ファイルは、Numeraiが保有するヘッジ
 6.毎週の提出物を自動化する。<br>
 
 ## データ
-NumeraiTournamentの中核は無料のデータセットが使用できることです。データセットはクリーンアップ・正規化・難読化された高品質の財務データで構成されています。<br>
+Numerai Tournamentの中核は無料のデータセットが使用できることです。データセットはクリーンアップ・正規化・難読化された高品質の財務データで構成されています。<br>
 ![numerai\_training\_data.csv](../.gitbook/assets/image%20%287%29.png)
 
 提供されている`training_data`では、各`id`は難読化された`features`のセットを持つ株式に対応しています。<br>
@@ -31,7 +31,7 @@ NumeraiTournamentの中核は無料のデータセットが使用できること
 詳細は[本記事](https://qiita.com/tit_BTCQASH/items/366a2d1c273507dd4b8c)に詳しく記述されています。<br>
 
 ## モデリング
-NumeraiTournamentでは、過去のデータを用いて予測モデルを作成し、そのモデルを用いて将来の株式市場を予測することが目的です。<br>
+Numerai Tournamentでは、過去のデータを用いて予測モデルを作成し、そのモデルを用いて将来の株式市場を予測することが目的です。<br>
 <br>
 PythonでXGBoostを使用した基本的な例を次に示します。<br>
 過去のトレーニングデータを使用してモデルをトレーニングし、ライブTournamentデータで予測を行います。<br>
