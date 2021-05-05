@@ -21,7 +21,7 @@ description: Numeraiの改善提案をすることで報酬がもらえます
 | 中程度のデータエラー、不正なペイアウト、予測ファイルの提出やNMRの預け入れができない | 1-5 NMR |
 | _大規模_な問題、セキュリティ問題、スマートコントラクトの脆弱性 | 1-100 NMR |
 
-注: 報酬の支払いを受けるには、[Numerai トーナメント](https://numer.ai/tournament/)のアカウントが必要です。600ドル以上の賞金を受け取る米国人は、[W9 taxpayer information](https://docs.numer.ai/help/us-taxes)を提出する必要があります。
+注: 報酬の支払いを受けるには、[Numerai Tournament](https://numer.ai/tournament/)のアカウントが必要です。600ドル以上の賞金を受け取る米国人は、[W9 taxpayer information](https://docs.numer.ai/help/us-taxes)を提出する必要があります。
 
 ### 除外規定
 
@@ -56,7 +56,7 @@ description: Numeraiの改善提案をすることで報酬がもらえます
 | :--- | :--- |
 | 小規模なウェブサイトの機能 | 1 NMR |
 | 中規模のデータ、予測ファイルの提出、NMR預け入れ方法の改善 | 1-5 NMR |
-| 大規模トーナメントのルール/ペイアウト、評価の改善 | 10-100 NMR |
+| 大規模なTournamentのルール/ペイアウト、評価の改善 | 10-100 NMR |
 
 ### フィードバックや提案の提出方法
 
