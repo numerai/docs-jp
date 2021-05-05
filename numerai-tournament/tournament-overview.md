@@ -177,7 +177,7 @@ payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multi
 stake_value:ラウンド開始時点の最初の木曜日にステークしたNMRの量<br>
 payout_factor:30万NMR以下では1、30万NMR以上では以下の図に示す値をとります。Numeraiはペイアウトの上限を決めることで持続的なTournamentの開催を行うことができます。<br>
 <br>
-![](../.gitbook/assets/factor.png)
+![](../.gitbook/assets/factor.png)<br>
 corr:提出した予測ファイルとターゲットの相関<br>
 corr_multiplier:現在は1のみ<br>
 mmc:提出した予測ファイルとメタモデルの相関<br>
