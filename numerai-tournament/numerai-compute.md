@@ -232,7 +232,7 @@ numerai copy-example -e tournament-python3
 numerai copy-example -e signals-python3 
 ```
 
-などとすることで、Numeraiトーナメント用のexampleファイルや、Signals用のファイルをダウンロードできます。
+などとすることで、Numerai Tournament用のexampleファイルや、Signals用のファイルをダウンロードできます。
 
 ![](../.gitbook/assets/image%20%283%29.png)
 
