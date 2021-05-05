@@ -2,7 +2,7 @@
 description: 公式ルールと始め方ガイド
 ---
 
-# Numerai Japanese Docs
+# Numeraiの日本語版DOCS
 
 このセクションの記事は次の通りです:
 
