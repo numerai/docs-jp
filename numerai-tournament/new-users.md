@@ -4,6 +4,9 @@
 * [Slack](https://t.co/a9i06PrSsN?amp=1) に参加することで、日本人参加者とコミュニケーションがとれます！
 * データ分析、ヒント、チュートリアルに関する投稿は、[Numeraiフォーラム](https://forum.numer.ai/)をチェックしてください。
 
+【初心者向け】<br>
+[@tit_BTCQASH](https://twitter.com/tit_BTCQASH):[NumeraiのHPの見方＋サブミット＋便利リンク集](https://qiita.com/tit_BTCQASH/items/366a2d1c273507dd4b8c)<br>
+
 
 【Numeraiに関する説明・HPの見方等】<br>
 [Numerai公式](https://numer.ai/tournament):[Numerai 日本語ドキュメント](https://jp.docs.numer.ai/)<br>
@@ -15,7 +18,6 @@
 [@developer_quant](https://twitter.com/developer_quant
 ):[【ファイナンス機械学習】著者によるNumerai解説スライドを日本語でまとめてみる](https://quantcollege.net/financial-machine-learning-numerai
 )<br>
-[@tit_BTCQASH](https://twitter.com/tit_BTCQASH):[[NumeraiのHPの見方＋サブミット＋便利リンク集](https://qiita.com/tit_BTCQASH/items/366a2d1c273507dd4b8c)<br>
 
 【計算モデル関連】<br>
 [@katsu1110](https://twitter.com/kk1110tt):[Numerai tournamentベースライン](https://www.kaggle.com/code1110/numerai-tournament)<br>
