@@ -1,3 +1,326 @@
+## はじめに
+2015年に設立されたNumerai社は、https://numer.ai、毎週データサイエンスのトーナメントを開催しています。世界中のデータサイエンティストが、難読化されたクリーンなデータを無料でダウンロードし、モデルを構築して株式市場を予測して投稿することができます。難読化されたデータなので、金融の知識がなくても参加することができます。参加者は、自分の予測に賭け金をかけてゲームに参加します。良い予測はより多くの暗号（Numerai）で報われ、悪い予測は燃やされます（暗号の賭け金は永遠に破棄されます）。
+Numeraiは、最も優れた投稿を受けてメタモデルを構築し、それを自社のグローバル・エクイティ・ヘッジファンドの取引に反映させています。参加者は、賭け金の有無にかかわらず投稿することができますが、Numeraiは賭け金付きの予測のみを使用します。
+参加者は自分でデータを用意する必要はありませんが、チームから与えられたデータを最適化し、自分の予測を提出することが求められます。
+
+## 目次
+Numerai社のホームページと用語集の読み方
+Numeraiチームが提供する機能と難読化された株価データを最適化し、予測を提出する方法
+モデル診断の読み方
+まとめ
+Numeraiとコミュニティに関連する便利なリンク
+
+## 1. Numerai社のホームページと用語集の読み方
+NumeraiのホームページのURLは、https://numer.ai/tournament。
+ヌメライ（NMR）トークン。ERC-20ベースのトークンで、Numeraiへの出資に使用されます。NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な貢献をすることで獲得できます。
+NMRトークンは、Numeraiが構築されているErasure Protocolで使用することができます。現在、Erasureプロトコル上のアプリは、Numerai、Numerai Signals、Erasure Bayですが、プロトコルは誰でも構築できるようになっています。
+Corr：提出された株価予測結果と目標回答との相関係数。
+MMC：メタモデル貢献度（MMC）は、あなたのモデルの予測がNumeraiのメタモデルにとってどれだけ価値があるかを示します。非常に独創的で中程度の精度の予測は、非常に正確だが独創的でない予測よりも高いMMCを持ちます。
+FNC: フィーチャーニュートラル相関（FNC）は、予測がNumeraiのすべてのフィーチャーに対してニュートラル化された後の、モデルのターゲットとの相関です。
+Corr / MMC / FNC Rep: Rep（評判）は、過去20ラウンドにおけるその指標の加重平均であり、リーダーボードでユーザーをランク付けするために使用されるものです。レピュテーションについての詳細はこちら
+ステイク 人々は、自分のモデルの予測にどれだけ自信があるかを示すために、NMRに杭を打ちます。良い予測をした競争相手は報われ、パフォーマンスの低いモデルに賭けられたNMRは破壊される（燃やされる）。賭け金の最小値は0.01NMRです。杭を打たずに参加して、自分のモデルがどのようにパフォーマンスを発揮するかを知ってから、杭を打つかどうかを決めることができます。
+ペイアウト 賭けたNMRに応じて受け取る報酬。毎週（1ラウンドは4週間）、賭け金の最大25％を獲得または燃焼させることができます。ステイキングとペイアウトについての詳細はこちらをご覧ください。
+# トップページの構成
+![image](https://user-images.githubusercontent.com/78800304/120104122-eca94d80-c18d-11eb-8f06-d0128a2d7bb4.png)
+
+DOCS ルール、FAQ、新規ユーザーセクションを含むNumeraiのドキュメントへのリンクです。
+CHAT: 告知、一般的な議論、データサイエンスなどのチャンネルを含むチャットスペースです。NumeraiチームはRocketChatに積極的に参加しており、彼らのプロフィールには`team`タグが付いています。チームメンバーは主に太平洋時間で活動しています。参加はこちらから。
+FORUM: Numerai、データサイエンス、ステイク戦略などに関連する議論のための長文スペースです。主にコミュニティ内での情報共有を目的としています。ここで読んでください。
+LEADERBOARD：Numeraiに投稿された予測結果のランキングです。ステイクサイズ、Rep、MMCなどでソート可能。
+アカウント。4つのリンクがあります。ウォレット」「モデル」「設定」「ログアウト」の4つのリンクがあります。
+ウォレットです。このページでは、NMRトークンの入金と出金を行います。ウォレットに登録されているアドレスにNMRトークンを送ることで入金できます。このアドレスに他のトークンを送ることはできません。
+出金タブでは、NMRトークンを自分のNumeraiウォレット以外のアドレスに出金することができます。出金を依頼する前に、出金先の外部アドレスがNMR ERC-20トークンの受け取りに適していることを確認してください。紛失したNMRは回収できません。
+
+![image](https://user-images.githubusercontent.com/78800304/120104136-fd59c380-c18d-11eb-9986-e510285a0b4b.png)
+
+モデル このページでは、Numeraiに投稿するモデルを追加／削除します。モデルの追加／削除は、「新しいモデルの追加」／「既存のアカウントの吸収」を押して行います。
+複数モデルのアカウントやアカウントの吸収についてはこちらをご覧ください。
+
+![image](https://user-images.githubusercontent.com/78800304/120104142-08145880-c18e-11eb-8874-aa5533355ef5.png)
+設定：Eメール、パスワード、2段階認証（2FA）、APIキーの設定を行います。
+アカウントがNMRを保持できるため、2FAを推奨します。2FAを使用する場合は、リカバリーコードを保存する必要があります。2FAのデバイスにアクセスできなくなっても、Numeraiはアカウントをリセットしません。
+
+![image](https://user-images.githubusercontent.com/78800304/120104152-119dc080-c18e-11eb-88ed-ada0e1b5f6d1.png)
+
+下部ホームページの部品
+モデル情報です。モデル（今回はTIT_BTCQASH）のランキングや評判、MMC Repなどの情報を掲載しています。↓のボタンでモデルを切り替えることができます。
+データ情報です。最新ラウンドのデータダウンロードリンクと、予測結果のアップロードリンクです。
+賭け金。NMRのステイク値を調整する設定。賭け方には、CorrやCorr＋MMCなどの種類があります。例えば、Corrでは相関関係のみにNMRを賭けることができ、Corr + MMCでは相関関係とMMCにNMRを賭けることができます。
+Pending Payouts。各ラウンドの予想ペイアウトの表です。
+
+![image](https://user-images.githubusercontent.com/78800304/120104161-1d898280-c18e-11eb-9c4f-9dce9efe0cc2.png)
+
+## 2. Numeraiチームが与えてくれた機能と難読化された株価データを最適化する方法
+すぐにでもNumeraiに投稿したいという方は、大会参加者のkatsu1110さんとCarlo LepelaarsさんのKaggle Notebooksがとても参考になります。
+今回の記事では、上記の記事や公式のサンプルモデルから一歩踏み込んだ説明（コードでどこを改善するかなど）をします。この記事によってプロセスがわかりやすくなり、大会の出場者数が増えることを願っています。(また、Corrを上げる良い方法を見つけたら、こっそり教えてくださいね)
+今回紹介したコードは、Google Colab上で実行できます。Runボタンを押すと投稿ファイルが作成されますので、ぜひ使ってみてください。
+Colabへのリンクです。
+
+コードを説明する前の基礎知識
+i) Numeraiデータセットの構造
+このデータセットは、最新のラウンドデータダウンロードリンクからダウンロードできます。前述のUKIの記事に詳しい説明があるので、内容を簡単に説明する。
+numerai_training_data.csvはトレーニングデータを格納したcsvファイル。 numerai_tournament_data.csvは検証用データを格納したcsvファイル。
+
+![image](https://user-images.githubusercontent.com/78800304/120104183-31cd7f80-c18e-11eb-8ebc-1c03fcc095b4.png)
+
+idです。暗号化されたストックのラベル。
+era: データが収集された期間に関するラベルです。時代が同じであれば、同じ期間にデータが収集されたことを意味します。
+data_type：データの種類。trainはトレーニング用のデータ、validationは検証用のデータ、testはNumeraiからテスト用のデータ、liveは現在のラウンドのデータである。
+feature: ビン詰めされた特徴量。特徴量は0,0.25,0.5,0.75,1の5段階にビン分けされている。フィーチャーは、次のようなラベルの付いたグループに分かれています。"feature_intelligence"、"feature_wisdom"、"feature_charisma"、"feature_dexterity"、"feature_strength"、"feature_constitution"。
+target: ビン化された教師データ。また、ターゲットは0,0.25,0.5,0.75,1の5段階にビン分けされている。numerai_training_data.csvではターゲットデータが与えられていますが、numerai_tournament_data.csvのテストデータとライブデータではNANとなっています。
+ii）データ入稿までの流れ
+データ読み込み
+フィーチャーエンジニアリング
+機械学習
+モデルの強さについて
+予測結果が書き込まれたcsvファイルの作成
+中和方法
+2 A. データ読み込み
+Carlo Lepelaars氏の記事から、データ読み込みの部分を引用（一部編集）します。download_current_data (DIR)を呼び出し、最新のデータをDIRで指定したディレクトリにダウンロードする。train, val, test = load_data (DIR, reduce_memory = True)を呼び出すと、train, val, testのデータを別々に保存します。
+
+
+```
+!pip install numerapi
+import numerapi
+NAPI = numerapi.NumerAPI(verbosity="info")
+import numpy as np
+import random as rn
+import pandas as pd
+import seaborn as sns
+import lightgbm as lgb
+import matplotlib.pyplot as plt
+from scipy.stats import spearmanr, pearsonr
+from sklearn.metrics import mean_absolute_error
+import os
+
+DIR = "/kaggle/working"
+def download_current_data(directory: str):
+        """
+        Downloads the data for the current round
+        :param directory: The path to the directory where the data needs to be saved
+        """
+        current_round = NAPI.get_current_round()
+        if os.path.isdir(f'{directory}/numerai_dataset_{current_round}/'):
+            print(f"You already have the newest data! Current round is: {current_round}")
+        else:
+            print(f"Downloading new data for round: {current_round}!")
+            NAPI.download_current_dataset(dest_path=directory, unzip=True)
+
+def load_data(directory: str, reduce_memory: bool=True) -> tuple:
+        """
+        Get data for current round
+        :param directory: The path to the directory where the data needs to be saved
+        :return: A tuple containing the datasets
+        """
+        print('Loading the data')
+        full_path = f'{directory}/numerai_dataset_{NAPI.get_current_round()}/'
+        train_path = full_path + 'numerai_training_data.csv'
+        test_path = full_path + 'numerai_tournament_data.csv'
+        train = pd.read_csv(train_path)
+        test = pd.read_csv(test_path)
+        # Reduce all features to 32-bit floats
+        if reduce_memory:
+            num_features = [f for f in train.columns if f.startswith("feature")]
+            train[num_features] = train[num_features].astype(np.float32)
+            test[num_features] = test[num_features].astype(np.float32)
+        val = test[test['data_type'] == 'validation']
+        test = test[test['data_type'] != 'validation']
+        return train, val, test
+    # Download, unzip and load data
+download_current_data(DIR)
+train, val, test = load_data(DIR, reduce_memory=True)
+```
+
+2 B. 特徴量エンジニアリング
+Numeraiデータセットの特徴量は互いに相関が低く、特徴量エンジニアリングを行わなくてもある程度の結果が得られます。また、PCAなどの手法で特徴量を減らすと、Corrが低くなる傾向があり、あまり良いとは言えません。
+(※これはあくまでも私の検証結果です。Corrが向上する可能性を否定しているわけではありません)。
+Numeraiで有効なのは、特徴量を増やしつつ、特徴量間の相関を下げることだと思います。公式には、機能数を310から3100に増やすことになっています（https://twitter.com/numerai/status/1347361350205415425）。これからは、フィーチャーエンジニアリングさえも必要ないのではないかと思われますが、フィーチャーの扱い方について簡単に紹介します。
+まず、訓練データを見てみると、大まかに6種類に分かれていることがわかります。"feature_intelligence"、"feature_wisdom"、"feature_charisma"、"feature_dexterity"、"feature_strength"、"feature_constitution "の6種類です。
+Carlo Lepelaars氏の論文からコードを引用しましたが、これらの特徴の平均値、偏差値、歪度などは有用な特徴です。したがって、train = get_group_stats (train)を呼び出して、これらの特徴をtrainデータに追加するなどします。
+
+```
+def get_group_stats(df: pd.DataFrame) -> pd.DataFrame:
+        for group in ["intelligence", "wisdom", "charisma", "dexterity", "strength", "constitution"]:
+            cols = [col for col in df.columns if group in col]
+            df[f"feature_{group}_mean"] = df[cols].mean(axis=1)
+            df[f"feature_{group}_std"] = df[cols].std(axis=1)
+            df[f"feature_{group}_skew"] = df[cols].skew(axis=1)
+        return df
+train = get_group_stats(train)
+val = get_group_stats(val)
+test = get_group_stats(test)
+```
+
+メモリに余裕のあるPCであれば、特徴量差データや相互作用特徴量などを含めると、良い特徴量になります。Corrが20％程度増加します）。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。これを軽減する方法については、フォーラムで議論されています。
+
+```
+from sklearn import preprocessing
+ft_corr_list=['feature_dexterity7', 'feature_charisma18', 'feature_charisma63', 'feature_dexterity14']#Please try other features!
+interactions = preprocessing.PolynomialFeatures(degree=2, interaction_only=True, include_bias=False)
+
+interactions.fit(train[ft_corr_list], train["target"])
+
+X_train_interact = pd.DataFrame(interactions.transform(train[ft_corr_list]))
+X_best_val_inter =pd.DataFrame(interactions.transform(val[ft_corr_list]))
+X_best_test_inter =pd.DataFrame(interactions.transform(test[ft_corr_list]))
+
+train=pd.concat([train,X_train_interact],axis=1)
+
+val=val.reset_index().drop(columns='index')
+val=pd.concat([val,X_best_val_inter],axis=1)
+
+test=test.reset_index().drop(columns='index')
+test=pd.concat([test,X_best_test_inter],axis=1)
+```
+
+Kaggleで使われているような特徴量エンジニアリングがNumeraiでもそのまま使えるので、train、val、testのデータを弄ることで、良いCorrやSharpe ratioが得られると思います。Numeraiで良い結果を得るために必要な作業の一つが特徴量エンジニアリングなので、これは継続的に実験を行う要素の一つです。
+2 C. 機械学習
+Numeraiデータセットに機械学習を適用する際に考慮しなければならないのは
+i) どのような機械学習手法を使用するか（LightGBM、XGBoost、ニューラルネットワークなど
+ii) どのようなハイパーパラメータを使用するか
+iii) 予測結果をスタックするかどうか などです。
+今回は、計算時間を考慮してLightGBMを使用します。訓練データ以外のid、era、data_typeは機械学習には必要ありません。残ったfeature_ ○○を説明変数として、targetを教師データとして学習します。学習したデータを用いて、valに含まれるValidationデータとLiveデータについても予測データを作成します。
+i)～iii)を考慮すれば、Corr等の値が改善されるので、この部分も再生の要素の一つです。
+
+```
+feature_list = train.columns.drop(['id','era','data_type','target'])
+dtrain = lgb.Dataset(train[feature_list].fillna(0), label=train["target"])
+dvalid = lgb.Dataset(val[feature_list].fillna(0), label=val["target"])
+
+best_config ={"objective":"regression", "num_leaves":31,"learning_rate":0.01,"n_estimators":2000,"max_depth":5,"metric":"mse","verbosity": 10, "random_state": 0} 
+
+model = lgb.train(best_config, dtrain)
+
+train.loc[:, "prediction"] = model.predict(train[feature_list])
+
+val.loc[:,"prediction"]=val["target"]
+val.loc[:,"prediction"] = model.predict(val[feature_list])
+```
+
+2 D. モデルの強さについて
+spearman, payout, numerai_sharpe, maeを計算して、Validationデータのモデルの強さを推定する。spearman,payout,numerai_sharpeは大きいほど良い。
+このうち、まず、spearmanの値が大きい（0.025以上が目安）という条件を見つけることで、良いモデルを作ることができます。
+(※Corrだけに注目すると、いろいろな問題が発生する可能性があります。Numeraiに詳しい方とは意見が分かれるところだと思いますが、初めて予測結果を提出する方向けの記事なので、このように表現させてください)
+なお、用語の説明は以下の通りです。
+spearman：Correlationの平均値。高ければ高いほど良い(参考は0.022～0.04。)
+ペイアウト。平均リターンの比率
+numerai_sharpe：平均リターンを標準偏差で割った比率。高ければ高いほど良い（目安は1以上
+mae：平均絶対誤差
+
+
+```
+def sharpe_ratio(corrs: pd.Series) -> np.float32:
+        """
+        Calculate the Sharpe ratio for Numerai by using grouped per-era data
+
+        :param corrs: A Pandas Series containing the Spearman correlations for each era
+        :return: A float denoting the Sharpe ratio of your predictions.
+        """
+        return corrs.mean() / corrs.std()
+
+
+def evaluate(df: pd.DataFrame) -> tuple:
+        """
+        Evaluate and display relevant metrics for Numerai 
+
+        :param df: A Pandas DataFrame containing the columns "era", "target" and a column for predictions
+        :param pred_col: The column where the predictions are stored
+        :return: A tuple of float containing the metrics
+        """
+        def _score(sub_df: pd.DataFrame) -> np.float32:
+            """Calculates Spearman correlation"""
+            return spearmanr(sub_df["target"], sub_df["prediction"])[0]
+
+        # Calculate metrics
+        corrs = df.groupby("era").apply(_score)
+        print(corrs)
+        payout_raw = (corrs / 0.2).clip(-1, 1)
+        spearman = round(corrs.mean(), 4)
+
+        payout = round(payout_raw.mean(), 4)
+        numerai_sharpe = round(sharpe_ratio(corrs), 4)
+        mae = mean_absolute_error(df["target"], df["prediction"]).round(4)
+
+        # Display metrics
+        print(f"Spearman Correlation: {spearman}")
+        print(f"Average Payout: {payout}")
+        print(f"Sharpe Ratio: {numerai_sharpe}")
+        print(f"Mean Absolute Error (MAE): {mae}")
+        return spearman, payout, numerai_sharpe, mae
+        
+feature_spearman_val = [spearmanr(val["prediction"], val[f])[0] for f in feature_list]
+feature_exposure_val = np.std(feature_spearman_val).round(4)
+spearman, payout, numerai_sharpe, mae = evaluate(val)
+```
+
+2 E. 予測結果が書き込まれたcsvファイルの準備
+ニュートライズ用のファイルをsubmission_file.csvに書き込みます。このファイルにはidとpredictionのカラムが必要で、idはValidationデータ、testデータ（＋Liveデータ）の順であることが必要です。順番が違うとNumerai側でリジェクトされますのでご注意ください。
+
+```
+test.loc[:, "prediction"] =0
+test.loc[:, "prediction"] = model.predict(test[feature_list])
+test[['id', "prediction"]].to_csv("submission_test.csv", index=False)
+
+val[['id', "prediction"]].to_csv("submission_val.csv", index=False)
+
+test=0
+val=0
+
+directory = "/kaggle/working"
+full_path = f'{directory}/numerai_dataset_{NAPI.get_current_round()}/'
+
+test_path = full_path + 'numerai_tournament_data.csv'
+
+tournament_data = pd.read_csv(test_path)
+tournament_data_id=tournament_data['id']
+tournament_data_id2=tournament_data['feature_dexterity7']
+tournament_data_id=pd.concat([tournament_data_id,tournament_data_id2],axis=1)
+
+val=pd.read_csv("submission_val.csv")
+test=pd.read_csv("submission_test.csv")
+
+test_val_concat=pd.concat([val[['id', "prediction"]],test[['id', "prediction"]]],axis=0).set_index('id')
+tournament_data_id=tournament_data_id.set_index('id')
+
+conc_submit=pd.concat([tournament_data_id,test_val_concat],axis=1).drop(columns='feature_dexterity7').reset_index()
+conc_submit=conc_submit.rename(columns={'index': 'id'})
+conc_submit.to_csv("submission_file"+".csv", index=False)
+```
+
+2 F. ニュートラル化法
+Example_model（Numerai社が公式に配布しているサンプルモデル）と自分のモデルを線形回帰させることで、1つの特徴と予測結果の相関を下げつつ、シャープ比を向上させることができます。ただし、やりすぎるとCorrが大きく下がってしまうので、0.3～0.5くらいがいいと思います。どのようなモデルをどれだけ中和するかが一つの要素となります。
+得られたneutralized_submission_file.csvを、NumeraiのホームページのUpload predictionsから提出して完了です。
+
+```
+def neutralize(series,by, proportion):
+    scores = series.values.reshape(-1, 1)
+    exposures = by.values.reshape(-1, 1)
+    exposures = np.hstack((exposures, np.array([np.mean(series)] * len(exposures)).reshape(-1, 1)))
+    correction = proportion * (exposures.dot(np.linalg.lstsq(exposures, scores)[0]))
+    corrected_scores = scores - correction
+    neutralized = pd.Series(corrected_scores.ravel(), index=series.index)
+    return neutralized
+    
+by=pd.read_csv('/kaggle/working/numerai_dataset_'+str(NAPI.get_current_round())+'/example_predictions.csv')
+
+neut=pd.read_csv("submission_file.csv")
+neut=pd.DataFrame({'prediction':neutralize(neut['prediction'],by['prediction'], 0.3)})
+
+conc=pd.concat([by.drop(columns="prediction"),neut],axis=1)
+conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
+```
+
+3. モデル診断の読み方
+Validation Sharpe：ValidationデータのSharpe ratioが1以上であること。
+Validation Mean: ValidationデータのCorr平均値が0.025～程度であること。
+Feature Neutral Mean: 全ての特徴をニュートラルにした場合のCorr平均値（あまり参考にならない
+Validation SD：各Eraの予測値とValidationデータの相関の標準偏差（あまり参考にならない
+Feature Exposure：フィーチャーの露出度。特徴量と予測結果のバランスの良さを示す指標。小さければ小さいほど良い。
+最大ドローダウン。最大ドローダウン-0.05以下を目安とする
+Corr + MMC Sharpe：CorrとMMCを合わせたシャープ比
+MMCミーン：MMCのミーン。MMC Mean：MMCの平均値 Corr with Example Preds：サンプルモデルとの相関性 0.5～0.8が目安
+
+
 # 新規参加者向けのTips
 #### 有用な日本語記事
 * [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加することでさらなるヒントやサポートを得られます！
