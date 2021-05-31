@@ -340,7 +340,7 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 **Validation Mean:** ValidationデータのCorr平均値が0.025～程度であると良いです。<br>
 **Feature Neutral Mean:** 全ての特徴量で中和した場合のCorr平均値（あまり参考になりません）<br>
 **Validation SD：** 各Eraの予測値とValidationデータの相関の標準偏差（あまり参考になりません）<br>
-**Feature Exposure：**　特徴量の露出度。特徴量と予測結果のバランスの良さを示す指標です。小さければ小さいほど良いです。<br>
+**Feature Exposure：** 特徴量の露出度。特徴量と予測結果のバランスの良さを示す指標です。小さければ小さいほど良いです。<br>
 **Max Drawdown** -0.05以下を目安としましょう。<br>
 **Corr + MMC Sharpe：** CorrとMMCの合算シャープレシオ<br>
 **MMC mean：** MMCの平均値<br>
