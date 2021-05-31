@@ -54,7 +54,7 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 複数モデルのアカウントやアカウントの吸収については[こちら](https://forum.numer.ai/t/announcing-general-availability-of-multi-model-account-support-for-all-users/399)をご覧ください。<br>
 <br>
 ![image](https://user-images.githubusercontent.com/78800304/120104142-08145880-c18e-11eb-8874-aa5533355ef5.png)
-設定：Eメール、パスワード、2段階認証（2FA）、APIキーの設定を行います。<br>
+**設定：** Eメール、パスワード、2段階認証（2FA）、APIキーの設定を行います。<br>
 アカウントがNMRを保持しているため、2FAによるセキュリティ強化を推奨します。2FAを使用する場合は、リカバリーコードを保存する必要があります。2FAのデバイスにアクセスできなくなっても、Numeraiはアカウントをリセットしません。<br>
 <br>
 ![image](https://user-images.githubusercontent.com/78800304/120104152-119dc080-c18e-11eb-88ed-ada0e1b5f6d1.png)
@@ -333,6 +333,9 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 ```
 
 ## 3. モデル診断の読み方<br>
+
+**以下に示す目安はあくまでも一例です。参考程度にとどめてください。事実、以下の指標が悪いものでも上位にランクされるモデルも存在します。**<br>
+<br>
 **Validation Sharpe：** Validationデータのシャープレシオは1以上が良い結果を得やすいです。<br>
 **Validation Mean:** ValidationデータのCorr平均値が0.025～程度であると良いです。<br>
 **Feature Neutral Mean:** 全ての特徴量で中和した場合のCorr平均値（あまり参考になりません）<br>
@@ -364,6 +367,7 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 [@katsu1110](https://twitter.com/kk1110tt):[KagglerへのNumeraiのススメ](https://zenn.dev/katsu1110/articles/bb2b5cba9b04c9e30bfe)<br>
 [@developer_quant](https://twitter.com/developer_quant
 ):[【ファイナンス機械学習】著者によるNumerai解説スライドを日本語でまとめてみる](https://quantcollege.net/financial-machine-learning-numerai
+[@Y_oHr_N](https://twitter.com/y_ohr_n):[Numeraiはいいぞ](https://speakerdeck.com/yohrn/an-encouragement-of-numerai)<br>
 )<br>
 
 【計算モデル関連】<br>
