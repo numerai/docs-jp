@@ -1,24 +1,34 @@
 ## はじめに
-　2015年に設立された[Numerai](https://numer.ai)は、毎週データサイエンスのトーナメントを開催しています。世界中のデータサイエンティストが、難読化されたデータを無料でダウンロードし、株式市場の予測モデルを構築することでトーナメントに参加できます。ダウンロードできるデータは難読化されたいるため、金融の知識がなくても参加することができます。
-参加者は、自分の予測に賭け金をかけることでトーナメントに参加できます。良い予測を提出すると、より多くの仮想通貨（[NMR](https://vimeo.com/205032211)）を得ることができ、悪い予測を提出すると、NMRを没収されます。
+ 2015年に設立された[Numerai](https://numer.ai)は、毎週データサイエンスのトーナメントを開催しています。世界中のデータサイエンティストが、難読化されたデータを無料でダウンロードし、株式市場の予測モデルを構築することでトーナメントに参加できます。ダウンロードできるデータは難読化されたいるため、金融の知識がなくても参加することができます。<br>
+ 参加者は、自分の予測に賭け金をかけることでトーナメントに参加できます。良い予測を提出すると、より多くの仮想通貨（[NMR](https://vimeo.com/205032211)）を得ることができ、悪い予測を提出すると、NMRを没収されます。<br>
 
-　Numeraiは、[メタモデル](https://www.youtube.com/watch?v=dhJnt0N497c)と呼ばれる参加者のモデルを統合したモデルを構築し、得られたデータを自社のグローバル・エクイティ・ヘッジファンドの取引に反映させています。参加者は、賭け金の有無にかかわらずトーナメントに参加することができますが、NumeraiはNMRがステークされたモデルのみを使用します。参加者は自分でデータを用意する必要はありませんが、チームから与えられたデータを最適化し、自分の予測を提出することが求められます。
+ Numeraiは、[メタモデル](https://www.youtube.com/watch?v=dhJnt0N497c)と呼ばれる参加者のモデルを統合したモデルを構築し、得られたデータを自社のグローバル・エクイティ・ヘッジファンドの取引に反映させています。<br>
+ 参加者は、賭け金の有無にかかわらずトーナメントに参加することができますが、NumeraiはNMRがステークされたモデルのみを使用します。参加者は自分でデータを用意する必要はありませんが、チームから与えられたデータを最適化し、自分の予測を提出することが求められます。<br>
 
-## 目次
-1. Numeraiのホームページと用語集の読み方
-2. Numeraiが提供する特徴量と難読化された株価データを最適化し、予測を提出する方法
-3. モデル診断の読み方
-4. Numeraiとコミュニティに関連する便利なリンク
+## 目次<br>
+1. Numeraiのホームページと用語集の読み方<br>
+2. Numeraiが提供する特徴量と難読化された株価データを最適化し、予測を提出する方法<br>
+3. モデル診断の読み方<br>
+4. Numeraiとコミュニティに関連する便利なリンク<br>
 
-## 1. Numeraiのホームページと用語集の読み方
-NumeraiのホームページのURLは、https://numer.ai/tournament　です。
-**Numeraire （NMR）トークン:** Numeraireは[ERC-20ベースのトークン](https://www.coinbase.com/price/numeraire)で、Numeraiへのステーキングに使用されます。NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な貢献をすることで獲得できます。NMRトークンは、Numeraiが構築されている[Erasure Protocol](https://erasure.world/)で使用することができます。現在、Erasureプロトコル上のアプリは、Numerai、Numerai Signals、Erasure Bayですが、プロトコルは誰でも構築できるようになっています。
-**Corr：** 提出された予測データとターゲットとの相関係数を表します。
-**MMC：** メタモデル貢献度（MMC）は、モデルの予測がNumeraiのメタモデルにとってどれだけ価値があるかを示します。非常に独創的な予測は、独創的でない予測よりも高いMMCを持ちます。MMCに関する詳細は[こちら](https://medium.com/numerai/a-new-data-science-competition-where-being-different-pays-251c2aecc40a)
-**FNC:** Feature neutral correlation （FNC）は、提出した予測データをNumeraiのすべての特徴量に対して中和した後の、ターゲットとの相関係数を表します。
-**Corr / MMC / FNC Rep:** Rep（評判）は、過去20ラウンドにおけるその指標の加重平均であり、リーダーボードでユーザーをランク付けするために使用されるものです。Repについての詳細は[こちら](https://docs.numer.ai/tournament/reputation)
+## 1. Numeraiのホームページと用語集の読み方<br>
+NumeraiのホームページのURLは、https://numer.ai/tournament です。<br>
+<br>
+**Numeraire （NMR）トークン:** Numeraireは[ERC-20ベースのトークン](https://www.coinbase.com/price/numeraire)で、Numeraiへのステーキングに使用されます。<br>
+NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な貢献をすることで獲得できます。NMRトークンは、Numeraiが構築されている[Erasure Protocol](https://erasure.world/)で使用することができます。現在、Erasureプロトコル上のアプリは、Numerai、Numerai Signals、Erasure Bayですが、プロトコルは誰でも構築できるようになっています。<br>
+<br>
+**Corr：** 提出された予測データとターゲットとの相関係数を表します。<br>
+<br>
+**MMC：** メタモデル貢献度（MMC）は、モデルの予測がNumeraiのメタモデルにとってどれだけ価値があるかを示します。非常に独創的な予測は、独創的でない予測よりも高いMMCを持ちます。MMCに関する詳細は[こちら](https://medium.com/numerai/a-new-data-science-competition-where-being-different-pays-251c2aecc40a)<br>
+<br>
+**FNC:** Feature neutral correlation （FNC）は、提出した予測データをNumeraiのすべての特徴量に対して中和した後の、ターゲットとの相関係数を表します。<br>
+<br>
+**Corr / MMC / FNC Rep:** Rep（評判）は、過去20ラウンドにおけるその指標の加重平均であり、リーダーボードでユーザーをランク付けするために使用されるものです。Repについての詳細は[こちら](https://docs.numer.ai/tournament/reputation)<br>
+<br>
 **ステーク** 自分のモデルの予測にどれだけ自信があるかを示すために、NMRをステーク（預入れ＋ロック）をします。良い予測を提出した場合、NMRを得ることができます。一方、悪い予測を提出した場合はNMRが没収されます。賭け金の最小値は3NMRです。ステークせずに参加して、自分のモデルがどのようなパフォーマンスを示すかを知ってから、ステークするかどうかを決めることができます。
+<br>
 **ペイアウト** 賭けたNMRに応じて受け取る報酬。毎週（1ラウンドは4週間）、賭け金の最大25％を獲得または没収されます。ステーキングとペイアウトについての詳細は[こちら](https://docs.numer.ai/tournament/staking-and-payouts)をご覧ください。
+<br>
 
 # トップページの構成
 ![image](https://user-images.githubusercontent.com/78800304/120104122-eca94d80-c18d-11eb-8f06-d0128a2d7bb4.png)
