@@ -8,7 +8,7 @@
 
 ## 目次 <br>
 1. Numeraiのホームページと用語集の読み方<br>
-2. Numeraiが提供する特徴量と難読化された株価データを最適化し、予測を提出する方法<br>
+2. Numeraiに予測を提出する方法<br>
 3. モデル診断の読み方<br>
 4. Numeraiとコミュニティに関連する便利なリンク<br>
 <br>
@@ -70,11 +70,13 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 <br>
 ![image](https://user-images.githubusercontent.com/78800304/120104161-1d898280-c18e-11eb-9c4f-9dce9efe0cc2.png)
 <br>
-## 2. Numeraiが提供する特徴量と難読化された株価データを最適化し、予測を提出する方法<br>
-すぐにでもNumeraiに投稿したいという方は、大会参加者のkatsu1110さんとCarlo LepelaarsさんのKaggle Notebooksがとても参考になります。<br>
-今回の記事では、上記の記事や公式のサンプルモデルから一歩踏み込んだ説明（コードでどこを改善するかなど）をします。この記事によってプロセスがわかりやすくなり、大会の出場者数が増えることを願っています。<br>
+## 2. Numeraiに予測を提出する方法<br>
+すぐにでもNumeraiに投稿したいという方は、大会参加者の[katsu1110さん](https://www.kaggle.com/code1110/numerai-tournament)と[Carlo Lepelaarsさん](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)のKaggle Notebooksがとても参考になります。<br>
+今回の記事では、上記の記事や公式のサンプルモデルから一歩踏み込んだ説明（コードでどこを改善するかなど）をします。本説明により提出プロセスがわかりやすくなり、大会の出場者数が増えることを願っています。<br>
+<br>
 今回紹介したコードは、Google Colab上で実行できます。Runボタンを押すと投稿ファイルが作成されますので、ぜひ使ってみてください。<br>
-Colabへのリンクです。<br>
+<br>
+[Colabへのリンク](https://colab.research.google.com/drive/1u5Cc3NlJQZJwJNmOrPjjqBchk928gT4C?usp=sharing)<br>
 <br>
 ## コードを説明する前の基礎知識
 i) Numeraiデータセットの構造
@@ -330,19 +332,20 @@ conc=pd.concat([by.drop(columns="prediction"),neut],axis=1)
 conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 ```
 
-## 3. モデル診断の読み方
-Validation Sharpe：ValidationデータのSharpe ratioが1以上であること。
-Validation Mean: ValidationデータのCorr平均値が0.025～程度であること。
-Feature Neutral Mean: 全ての特徴をニュートラルにした場合のCorr平均値（あまり参考にならない
-Validation SD：各Eraの予測値とValidationデータの相関の標準偏差（あまり参考にならない
-Feature Exposure：フィーチャーの露出度。特徴量と予測結果のバランスの良さを示す指標。小さければ小さいほど良い。
-最大ドローダウン。最大ドローダウン-0.05以下を目安とする
-Corr + MMC Sharpe：CorrとMMCを合わせたシャープ比
-MMCミーン：MMCのミーン。MMC Mean：MMCの平均値 Corr with Example Preds：サンプルモデルとの相関性 0.5～0.8が目安
+## 3. モデル診断の読み方<br>
+**Validation Sharpe：** Validationデータのシャープレシオは1以上が良い結果を得やすいです。<br>
+**Validation Mean:** ValidationデータのCorr平均値が0.025～程度であると良いです。<br>
+**Feature Neutral Mean:** 全ての特徴量で中和した場合のCorr平均値（あまり参考になりません）<br>
+**Validation SD：** 各Eraの予測値とValidationデータの相関の標準偏差（あまり参考になりません）<br>
+**Feature Exposure：**　特徴量の露出度。特徴量と予測結果のバランスの良さを示す指標です。小さければ小さいほど良いです。<br>
+**最大ドローダウン** -0.05以下を目安としましょう。<br>
+**Corr + MMC Sharpe：** CorrとMMCの合算シャープレシオ<br>
+**MMC mean：** MMCの平均値<br>
+**Corr with Example Preds：** サンプルモデルとの相関性 0.5～0.8が目安です。<br>
 
 
-# 4. 新規参加者向けのTips
-#### Numeraiとコミュニティに関連する便利なリンク
+# 4. 新規参加者向けのTips<br>
+#### Numeraiとコミュニティに関連する便利なリンク<br>
 
 * [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加することでさらなるヒントやサポートを得られます！
 * [Slack](https://t.co/a9i06PrSsN?amp=1) に参加することで、日本人参加者とコミュニケーションがとれます！
