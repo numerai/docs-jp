@@ -177,8 +177,10 @@ train = get_group_stats(train)
 val = get_group_stats(val)
 test = get_group_stats(test)
 ```
+
 <br>
-メモリに余裕のあるPCであれば、特徴量の差分データや多項式特徴量などを含めると、良い結果が得られます。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。メモリ使用量を軽減する方法については、[フォーラム](https://forum.numer.ai/t/reducing-memory/313) で議論されています。<br>
+メモリに余裕のあるPCであれば、特徴量の差分データや多項式特徴量などを含めると、良い結果が得られます。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。<br>
+
 
 ```
 from sklearn import preprocessing
@@ -199,7 +201,7 @@ val=pd.concat([val,X_best_val_inter],axis=1)
 test=test.reset_index().drop(columns='index')
 test=pd.concat([test,X_best_test_inter],axis=1)
 ```
-<br>
+
 Kaggleで使われているような特徴量エンジニアリングがNumeraiでもそのまま使えるので、train、val、testのデータを加工ことで、良いCorrやSharpe ratioが得られると思います。Numeraiで良い結果を得るために必要な作業の一つが特徴量エンジニアリングであることに間違いはありません。<br>
 <br>
 
@@ -380,9 +382,8 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 [@blog_UKI](https://twitter.com/blog_uki):[機械学習による株価予測　さがそう 真のNumerai Signals](https://qiita.com/blog_UKI/items/6f044b41819f1f003426)<br>
 [@katsu1110](https://twitter.com/kk1110tt):[KagglerへのNumeraiのススメ](https://zenn.dev/katsu1110/articles/bb2b5cba9b04c9e30bfe)<br>
 [@developer_quant](https://twitter.com/developer_quant
-):[【ファイナンス機械学習】著者によるNumerai解説スライドを日本語でまとめてみる](https://quantcollege.net/financial-machine-learning-numerai
+):[【ファイナンス機械学習】著者によるNumerai解説スライドを日本語でまとめてみる](https://quantcollege.net/financial-machine-learning-numerai)
 [@Y_oHr_N](https://twitter.com/y_ohr_n):[Numeraiはいいぞ](https://speakerdeck.com/yohrn/an-encouragement-of-numerai)<br>
-)<br>
 
 【計算モデル関連】<br>
 [@katsu1110](https://twitter.com/kk1110tt):[Numerai tournamentベースライン](https://www.kaggle.com/code1110/numerai-tournament)<br>
@@ -394,7 +395,8 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 [@blog_UKI](https://twitter.com/blog_uki):[NumeariトーナメントのValid Corrをちょびっとだけ上げる小技](https://qiita.com/blog_UKI/private/c71ec4d34624afaf1a2d)<br>
 [@kunigaku](https://twitter.com/kunigaku):[Numerai で Random Seed Average](https://zenn.dev/kunigaku/articles/914efe9855ad2d8f487b)<br>
 [@blog_UKI](https://twitter.com/blog_uki):[Numeraiトーナメント：直交化に関するテクニック
-](https://qiita.com/blog_UKI/private/fbf4520278569db8b880)[@katsu1110さん](https://twitter.com/kk1110tt):[[Numerai] 成功が約束された特徴量を試してみる
+](https://qiita.com/blog_UKI/private/fbf4520278569db8b880)<br>
+[@katsu1110さん](https://twitter.com/kk1110tt):[[Numerai] 成功が約束された特徴量を試してみる
 ](https://zenn.dev/katsu1110/articles/0d96b293b547e0)<br>
 
 【Era selection】<br>
