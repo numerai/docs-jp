@@ -99,7 +99,8 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 5. 予測結果が書き込まれたcsvファイルの作成<br>
 6. 中和の方法<br>
 <br>
-## 2 A. データ読み込み<br>
+
+## 2A.データ読み込み<br>
 Carlo Lepelaars氏の記事から、データ読み込みの部分を引用（一部編集）します。<br>
 download_current_data (DIR)を呼び出し、最新のデータをDIRで指定したディレクトリにダウンロード後、train, val, test = load_data (DIR, reduce_memory = True)を呼び出すと、train, val, testのデータを別々に保存できます。<br>
 <br>
