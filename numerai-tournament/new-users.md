@@ -70,7 +70,7 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 <br>
 ![image](https://user-images.githubusercontent.com/78800304/120104161-1d898280-c18e-11eb-9c4f-9dce9efe0cc2.png)
 <br>
-## 2. Numeraiに予測を提出する方法<br>
+# 2. Numeraiに予測を提出する方法<br>
 すぐにでもNumeraiに投稿したいという方は、大会参加者の[katsu1110さん](https://www.kaggle.com/code1110/numerai-tournament)と[Carlo Lepelaarsさん](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)のKaggle Notebooksがとても参考になります。<br>
 今回の記事では、上記の記事や公式のサンプルモデルから一歩踏み込んだ説明（コードでどこを改善するかなど）をします。本説明により提出プロセスがわかりやすくなり、大会の出場者数が増えることを願っています。<br>
 <br>
@@ -79,7 +79,7 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 [Colabへのリンク](https://colab.research.google.com/drive/1u5Cc3NlJQZJwJNmOrPjjqBchk928gT4C?usp=sharing)<br>
 <br>
 ## コードを説明する前の基礎知識<br>
-i) Numeraiデータセットの構造<br>
+## i) Numeraiデータセットの構造<br>
 データセットはダウンロードリンクからダウンロードできます。ファイルを解凍すると、numerai_training_data.csv、numerai_tournament_data.csvなどのファイルがあることがわかります。numerai_training_data.csvはトレーニングデータを格納したcsvファイル、numerai_tournament_data.csvは検証用データを格納したcsvファイルです。<br>
 <br>
 ![image](https://user-images.githubusercontent.com/78800304/120104183-31cd7f80-c18e-11eb-8ebc-1c03fcc095b4.png)
@@ -102,8 +102,8 @@ i) Numeraiデータセットの構造<br>
 2 A. データ読み込み<br>
 Carlo Lepelaars氏の記事から、データ読み込みの部分を引用（一部編集）します。<br>
 download_current_data (DIR)を呼び出し、最新のデータをDIRで指定したディレクトリにダウンロード後、train, val, test = load_data (DIR, reduce_memory = True)を呼び出すと、train, val, testのデータを別々に保存できます。<br>
-
-
+<br>
+<br>
 ```
 !pip install numerapi
 import numerapi
@@ -155,14 +155,14 @@ def load_data(directory: str, reduce_memory: bool=True) -> tuple:
 download_current_data(DIR)
 train, val, test = load_data(DIR, reduce_memory=True)
 ```
-
-2 B. 特徴量エンジニアリング
-Numeraiデータセットの特徴量は互いに相関が低く、特徴量エンジニアリングを行わなくてもある程度の結果が得られます。また、PCAなどの手法で特徴量を減らすと、Corrが低くなる傾向があり、あまり良いとは言えません。
-(※これはあくまでも私の検証結果です。Corrが向上する可能性を否定しているわけではありません)。
-Numeraiで有効なのは、特徴量を増やしつつ、特徴量間の相関を下げることだと思います。公式には、機能数を310から3100に増やすことになっています（https://twitter.com/numerai/status/1347361350205415425）。これからは、フィーチャーエンジニアリングさえも必要ないのではないかと思われますが、フィーチャーの扱い方について簡単に紹介します。
-まず、訓練データを見てみると、大まかに6種類に分かれていることがわかります。"feature_intelligence"、"feature_wisdom"、"feature_charisma"、"feature_dexterity"、"feature_strength"、"feature_constitution "の6種類です。
-Carlo Lepelaars氏の論文からコードを引用しましたが、これらの特徴の平均値、偏差値、歪度などは有用な特徴です。したがって、train = get_group_stats (train)を呼び出して、これらの特徴をtrainデータに追加するなどします。
-
+<br>
+## 2 B. 特徴量エンジニアリング<br>
+Numeraiデータセットの特徴量は互いに相関が低く、特徴量エンジニアリングを行わなくてもある程度の結果が得られます。<br>
+まず、訓練データを見てみると、大まかに6種類に分かれていることがわかります。<br>
+（"feature_intelligence"、"feature_wisdom"、"feature_charisma"、"feature_dexterity"、"feature_strength"、"feature_constitution "）
+Carlo Lepelaars氏の論文からコードを引用しましたが、これらの特徴の平均値、偏差値、歪度などは有用な特徴です。<br>
+したがって、train = get_group_stats (train)を呼び出して、これらの特徴をtrainデータに追加します。<br>
+<br>
 ```
 def get_group_stats(df: pd.DataFrame) -> pd.DataFrame:
         for group in ["intelligence", "wisdom", "charisma", "dexterity", "strength", "constitution"]:
@@ -175,8 +175,8 @@ train = get_group_stats(train)
 val = get_group_stats(val)
 test = get_group_stats(test)
 ```
-
-メモリに余裕のあるPCであれば、特徴量差データや相互作用特徴量などを含めると、良い特徴量になります。Corrが20％程度増加します）。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。これを軽減する方法については、フォーラムで議論されています。
+<br>
+メモリに余裕のあるPCであれば、特徴量の差分データや多項式特徴量などを含めると、良い結果が得られます。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。メモリ使用量を軽減する方法については、フォーラムで議論されています。<br>
 
 ```
 from sklearn import preprocessing
@@ -197,16 +197,17 @@ val=pd.concat([val,X_best_val_inter],axis=1)
 test=test.reset_index().drop(columns='index')
 test=pd.concat([test,X_best_test_inter],axis=1)
 ```
-
-Kaggleで使われているような特徴量エンジニアリングがNumeraiでもそのまま使えるので、train、val、testのデータを弄ることで、良いCorrやSharpe ratioが得られると思います。Numeraiで良い結果を得るために必要な作業の一つが特徴量エンジニアリングなので、これは継続的に実験を行う要素の一つです。
-2 C. 機械学習
-Numeraiデータセットに機械学習を適用する際に考慮しなければならないのは
-i) どのような機械学習手法を使用するか（LightGBM、XGBoost、ニューラルネットワークなど
-ii) どのようなハイパーパラメータを使用するか
-iii) 予測結果をスタックするかどうか などです。
-今回は、計算時間を考慮してLightGBMを使用します。訓練データ以外のid、era、data_typeは機械学習には必要ありません。残ったfeature_ ○○を説明変数として、targetを教師データとして学習します。学習したデータを用いて、valに含まれるValidationデータとLiveデータについても予測データを作成します。
-i)～iii)を考慮すれば、Corr等の値が改善されるので、この部分も再生の要素の一つです。
-
+<br>
+Kaggleで使われているような特徴量エンジニアリングがNumeraiでもそのまま使えるので、train、val、testのデータを加工ことで、良いCorrやSharpe ratioが得られると思います。Numeraiで良い結果を得るために必要な作業の一つが特徴量エンジニアリングであることに間違いはありません。<br>
+<br>
+## 2 C. 機械学習<br>
+Numeraiデータセットに機械学習を適用する際に考慮しなければならないのは<br>
+i) どのような機械学習手法を使用するか（LightGBM、XGBoost、ニューラルネットワークなど<br>
+ii) どのようなハイパーパラメータを使用するか<br>
+iii) 予測結果をスタックするかどうか などです。<br>
+今回は、計算時間を考慮してLightGBMを使用します。訓練データ以外のid、era、data_typeは機械学習には必要ありません。残ったfeature_ ○○を説明変数として、targetを教師データとして学習します。学習したデータを用いて、valに含まれるValidationデータとLiveデータについても予測データを作成します。<br>
+i)～iii)を考慮すれば、Corr等の値が改善されるので、この部分もやりこみ要素の要素の一つです。<br>
+<br>
 ```
 feature_list = train.columns.drop(['id','era','data_type','target'])
 dtrain = lgb.Dataset(train[feature_list].fillna(0), label=train["target"])
@@ -221,18 +222,18 @@ train.loc[:, "prediction"] = model.predict(train[feature_list])
 val.loc[:,"prediction"]=val["target"]
 val.loc[:,"prediction"] = model.predict(val[feature_list])
 ```
-
-2 D. モデルの強さについて
-spearman, payout, numerai_sharpe, maeを計算して、Validationデータのモデルの強さを推定する。spearman,payout,numerai_sharpeは大きいほど良い。
-このうち、まず、spearmanの値が大きい（0.025以上が目安）という条件を見つけることで、良いモデルを作ることができます。
-(※Corrだけに注目すると、いろいろな問題が発生する可能性があります。Numeraiに詳しい方とは意見が分かれるところだと思いますが、初めて予測結果を提出する方向けの記事なので、このように表現させてください)
-なお、用語の説明は以下の通りです。
-spearman：Correlationの平均値。高ければ高いほど良い(参考は0.022～0.04。)
-ペイアウト。平均リターンの比率
-numerai_sharpe：平均リターンを標準偏差で割った比率。高ければ高いほど良い（目安は1以上
-mae：平均絶対誤差
-
-
+<br>
+## 2 D. モデルの強さについて<br>
+spearman, payout, numerai_sharpe, maeを計算して、Validationデータのモデルの強さを推定すできます。spearman,payout,numerai_sharpeは大きいほど良いです。<br>
+この中でも特にspearmanの値が大きい（0.025以上が目安）と良いモデルであるとみなせます。<br>
+(※Corrだけに注目すると、いろいろな問題が発生する可能性があります。Numeraiに詳しい方とは意見が分かれるところだと思いますが、初めて予測結果を提出する方向けの記事なので、このように表現させてください)<br>
+なお、用語の説明は以下の通りです。<br>
+**spearman：** Correlationの平均値。高ければ高いほど良い(参考は0.022～0.04)<br>
+**ペイアウト** 平均リターン<br>
+**numerai_sharpe：** 平均リターンを標準偏差で割った比率。高ければ高いほど良い（目安は1以上）<br>
+**mae：** 平均絶対誤差<br>
+<br>
+<br>
 ```
 def sharpe_ratio(corrs: pd.Series) -> np.float32:
         """
@@ -277,6 +278,7 @@ feature_spearman_val = [spearmanr(val["prediction"], val[f])[0] for f in feature
 feature_exposure_val = np.std(feature_spearman_val).round(4)
 spearman, payout, numerai_sharpe, mae = evaluate(val)
 ```
+<br>
 
 2 E. 予測結果が書き込まれたcsvファイルの準備
 ニュートライズ用のファイルをsubmission_file.csvに書き込みます。このファイルにはidとpredictionのカラムが必要で、idはValidationデータ、testデータ（＋Liveデータ）の順であることが必要です。順番が違うとNumerai側でリジェクトされますのでご注意ください。
