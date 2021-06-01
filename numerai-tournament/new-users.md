@@ -92,14 +92,14 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 **target:** ビン化された教師データ。また、ターゲットも0,0.25,0.5,0.75,1の5段階にビン化されています。numerai_training_data.csvではターゲットデータが与えられていますが、numerai_tournament_data.csvのテストデータとライブデータではNaNとなっています。<br>
 <br>
 ## ii）データ提出までの流れ<br>
-データ読み込み<br>
-特徴量エンジニアリング<br>
-機械学習<br>
-モデルの強さについて<br>
-予測結果が書き込まれたcsvファイルの作成<br>
-中和方法<br>
+1. データ読み込み<br>
+2. 特徴量エンジニアリング<br>
+3. 機械学習<br>
+4. モデルの強さについて<br>
+5. 予測結果が書き込まれたcsvファイルの作成<br>
+6. 中和の方法<br>
 <br>
-2 A. データ読み込み<br>
+## 2 A. データ読み込み<br>
 Carlo Lepelaars氏の記事から、データ読み込みの部分を引用（一部編集）します。<br>
 download_current_data (DIR)を呼び出し、最新のデータをDIRで指定したディレクトリにダウンロード後、train, val, test = load_data (DIR, reduce_memory = True)を呼び出すと、train, val, testのデータを別々に保存できます。<br>
 <br>
@@ -176,7 +176,7 @@ val = get_group_stats(val)
 test = get_group_stats(test)
 ```
 <br>
-メモリに余裕のあるPCであれば、特徴量の差分データや多項式特徴量などを含めると、良い結果が得られます。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。メモリ使用量を軽減する方法については、フォーラムで議論されています。<br>
+メモリに余裕のあるPCであれば、特徴量の差分データや多項式特徴量などを含めると、良い結果が得られます。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。メモリ使用量を軽減する方法については、[フォーラム](https://forum.numer.ai/t/reducing-memory/313)で議論されています。<br>
 
 ```
 from sklearn import preprocessing
@@ -202,7 +202,7 @@ Kaggleで使われているような特徴量エンジニアリングがNumerai�
 <br>
 ## 2 C. 機械学習<br>
 Numeraiデータセットに機械学習を適用する際に考慮しなければならないのは<br>
-i) どのような機械学習手法を使用するか（LightGBM、XGBoost、ニューラルネットワークなど<br>
+i) どのような機械学習手法を使用するか（LightGBM、XGBoost、ニューラルネットワークなど)<br>
 ii) どのようなハイパーパラメータを使用するか<br>
 iii) 予測結果をスタックするかどうか などです。<br>
 今回は、計算時間を考慮してLightGBMを使用します。訓練データ以外のid、era、data_typeは機械学習には必要ありません。残ったfeature_ ○○を説明変数として、targetを教師データとして学習します。学習したデータを用いて、valに含まれるValidationデータとLiveデータについても予測データを作成します。<br>
@@ -279,10 +279,12 @@ feature_exposure_val = np.std(feature_spearman_val).round(4)
 spearman, payout, numerai_sharpe, mae = evaluate(val)
 ```
 <br>
+<br>
 
-2 E. 予測結果が書き込まれたcsvファイルの準備
-ニュートライズ用のファイルをsubmission_file.csvに書き込みます。このファイルにはidとpredictionのカラムが必要で、idはValidationデータ、testデータ（＋Liveデータ）の順であることが必要です。順番が違うとNumerai側でリジェクトされますのでご注意ください。
-
+## 2 E. 予測結果が書き込まれたcsvファイルの準備<br>
+中和用のファイルをsubmission_file.csvに書き込みます。このファイルにはidとpredictionのカラムが必要です。また、idはValidationデータ、testデータ（＋Liveデータ）の順であることが必要です。順番が違うとNumerai側でリジェクトされますのでご注意ください。
+<br>
+<br>
 ```
 test.loc[:, "prediction"] =0
 test.loc[:, "prediction"] = model.predict(test[feature_list])
@@ -314,9 +316,9 @@ conc_submit=conc_submit.rename(columns={'index': 'id'})
 conc_submit.to_csv("submission_file"+".csv", index=False)
 ```
 
-2 F. ニュートラル化法
-Example_model（Numerai社が公式に配布しているサンプルモデル）と自分のモデルを線形回帰させることで、1つの特徴と予測結果の相関を下げつつ、シャープ比を向上させることができます。ただし、やりすぎるとCorrが大きく下がってしまうので、0.3～0.5くらいがいいと思います。どのようなモデルをどれだけ中和するかが一つの要素となります。
-得られたneutralized_submission_file.csvを、NumeraiのホームページのUpload predictionsから提出して完了です。
+## 2 F. 中和の方法
+Example_model（Numerai社が公式に配布しているサンプルモデル）と自分のモデルを線形回帰させることで、それぞれの特徴量と予測結果の相関を下げつつ、シャープ比を向上させることができます。ただし、やりすぎるとCorrが大きく下がってしまうので、0.3～0.5くらいがいいと思います。どのようなモデルをどれだけ中和するかも一つの検討要素となります。（＊中和をしない、というのも選択肢の一つです）
+得られたneutralized_submission_file.csvを、NumeraiのホームページのUpload predictionsから提出すれば完了です。
 
 ```
 def neutralize(series,by, proportion):
@@ -336,7 +338,7 @@ neut=pd.DataFrame({'prediction':neutralize(neut['prediction'],by['prediction'], 
 conc=pd.concat([by.drop(columns="prediction"),neut],axis=1)
 conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 ```
-
+<br>
 ## 3. モデル診断の読み方<br>
 
 **以下に示す目安はあくまでも一例です。参考程度にとどめてください。事実、以下の指標が悪いものでも上位にランクされるモデルも存在します。**<br>
