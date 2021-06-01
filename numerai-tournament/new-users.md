@@ -157,7 +157,7 @@ download_current_data(DIR)
 train, val, test = load_data(DIR, reduce_memory=True)
 ```
 <br>
-## 2 B. 特徴量エンジニアリング<br>
+## 2B.特徴量エンジニアリング<br>
 Numeraiデータセットの特徴量は互いに相関が低く、特徴量エンジニアリングを行わなくてもある程度の結果が得られます。<br>
 まず、訓練データを見てみると、大まかに6種類に分かれていることがわかります。<br>
 （"feature_intelligence"、"feature_wisdom"、"feature_charisma"、"feature_dexterity"、"feature_strength"、"feature_constitution "）
@@ -201,7 +201,7 @@ test=pd.concat([test,X_best_test_inter],axis=1)
 <br>
 Kaggleで使われているような特徴量エンジニアリングがNumeraiでもそのまま使えるので、train、val、testのデータを加工ことで、良いCorrやSharpe ratioが得られると思います。Numeraiで良い結果を得るために必要な作業の一つが特徴量エンジニアリングであることに間違いはありません。<br>
 <br>
-## 2 C. 機械学習<br>
+## 2C.機械学習<br>
 Numeraiデータセットに機械学習を適用する際に考慮しなければならないのは<br>
 i) どのような機械学習手法を使用するか（LightGBM、XGBoost、ニューラルネットワークなど)<br>
 ii) どのようなハイパーパラメータを使用するか<br>
@@ -224,7 +224,7 @@ val.loc[:,"prediction"]=val["target"]
 val.loc[:,"prediction"] = model.predict(val[feature_list])
 ```
 <br>
-## 2 D. モデルの強さについて<br>
+## 2D.モデルの強さについて<br>
 spearman, payout, numerai_sharpe, maeを計算して、Validationデータのモデルの強さを推定すできます。spearman,payout,numerai_sharpeは大きいほど良いです。<br>
 この中でも特にspearmanの値が大きい（0.025以上が目安）と良いモデルであるとみなせます。<br>
 (※Corrだけに注目すると、いろいろな問題が発生する可能性があります。Numeraiに詳しい方とは意見が分かれるところだと思いますが、初めて予測結果を提出する方向けの記事なので、このように表現させてください)<br>
@@ -282,7 +282,7 @@ spearman, payout, numerai_sharpe, mae = evaluate(val)
 <br>
 <br>
 
-## 2 E. 予測結果が書き込まれたcsvファイルの準備<br>
+## 2E.予測結果が書き込まれたcsvファイルの準備<br>
 中和用のファイルをsubmission_file.csvに書き込みます。このファイルにはidとpredictionのカラムが必要です。また、idはValidationデータ、testデータ（＋Liveデータ）の順であることが必要です。順番が違うとNumerai側でリジェクトされますのでご注意ください。
 <br>
 <br>
@@ -317,7 +317,7 @@ conc_submit=conc_submit.rename(columns={'index': 'id'})
 conc_submit.to_csv("submission_file"+".csv", index=False)
 ```
 
-## 2 F. 中和の方法
+## 2F.中和の方法
 Example_model（Numerai社が公式に配布しているサンプルモデル）と自分のモデルを線形回帰させることで、それぞれの特徴量と予測結果の相関を下げつつ、シャープ比を向上させることができます。ただし、やりすぎるとCorrが大きく下がってしまうので、0.3～0.5くらいがいいと思います。どのようなモデルをどれだけ中和するかも一つの検討要素となります。（＊中和をしない、というのも選択肢の一つです）
 得られたneutralized_submission_file.csvを、NumeraiのホームページのUpload predictionsから提出すれば完了です。
 
@@ -340,7 +340,7 @@ conc=pd.concat([by.drop(columns="prediction"),neut],axis=1)
 conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 ```
 <br>
-## 3. モデル診断の読み方<br>
+## 3.モデル診断の読み方<br>
 
 **以下に示す目安はあくまでも一例です。参考程度にとどめてください。事実、以下の指標が悪いものでも上位にランクされるモデルも存在します。**<br>
 <br>
@@ -355,7 +355,7 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 **Corr with Example Preds：** サンプルモデルとの相関性 0.5～0.8が目安です。<br>
 
 
-# 4. 新規参加者向けのTips<br>
+# 4.新規参加者向けのTips<br>
 #### Numeraiとコミュニティに関連する便利なリンク<br>
 
 * [RocketChat \#newUsers チャンネル](https://community.numer.ai/channel/newusers)に参加することでさらなるヒントやサポートを得られます！
