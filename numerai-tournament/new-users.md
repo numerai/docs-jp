@@ -78,27 +78,30 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 <br>
 [Colabへのリンク](https://colab.research.google.com/drive/1u5Cc3NlJQZJwJNmOrPjjqBchk928gT4C?usp=sharing)<br>
 <br>
-## コードを説明する前の基礎知識
-i) Numeraiデータセットの構造
-このデータセットは、最新のラウンドデータダウンロードリンクからダウンロードできます。前述のUKIの記事に詳しい説明があるので、内容を簡単に説明する。
-numerai_training_data.csvはトレーニングデータを格納したcsvファイル。 numerai_tournament_data.csvは検証用データを格納したcsvファイル。
-
+## コードを説明する前の基礎知識<br>
+i) Numeraiデータセットの構造<br>
+データセットはダウンロードリンクからダウンロードできます。ファイルを解凍すると、numerai_training_data.csv、numerai_tournament_data.csvなどのファイルがあることがわかります。numerai_training_data.csvはトレーニングデータを格納したcsvファイル、numerai_tournament_data.csvは検証用データを格納したcsvファイルです。<br>
+<br>
 ![image](https://user-images.githubusercontent.com/78800304/120104183-31cd7f80-c18e-11eb-8ebc-1c03fcc095b4.png)
-
-idです。暗号化されたストックのラベル。
-era: データが収集された期間に関するラベルです。時代が同じであれば、同じ期間にデータが収集されたことを意味します。
-data_type：データの種類。trainはトレーニング用のデータ、validationは検証用のデータ、testはNumeraiからテスト用のデータ、liveは現在のラウンドのデータである。
-feature: ビン詰めされた特徴量。特徴量は0,0.25,0.5,0.75,1の5段階にビン分けされている。フィーチャーは、次のようなラベルの付いたグループに分かれています。"feature_intelligence"、"feature_wisdom"、"feature_charisma"、"feature_dexterity"、"feature_strength"、"feature_constitution"。
-target: ビン化された教師データ。また、ターゲットは0,0.25,0.5,0.75,1の5段階にビン分けされている。numerai_training_data.csvではターゲットデータが与えられていますが、numerai_tournament_data.csvのテストデータとライブデータではNANとなっています。
-ii）データ入稿までの流れ
-データ読み込み
-フィーチャーエンジニアリング
-機械学習
-モデルの強さについて
-予測結果が書き込まれたcsvファイルの作成
-中和方法
-2 A. データ読み込み
-Carlo Lepelaars氏の記事から、データ読み込みの部分を引用（一部編集）します。download_current_data (DIR)を呼び出し、最新のデータをDIRで指定したディレクトリにダウンロードする。train, val, test = load_data (DIR, reduce_memory = True)を呼び出すと、train, val, testのデータを別々に保存します。
+<br>
+**id:** 暗号化された株のラベル<br>
+**era:** データが収集された期間のことです。eraが同じであれば、同じ期間にデータが収集されたことを意味します。<br>
+**data_type:** データの種類。trainはトレーニング用のデータ、validationは検証用のデータ、testはテスト用のデータ、liveは現在のラウンドのデータです。<br>
+**feature:** ビン化した特徴量。特徴量は0,0.25,0.5,0.75,1の5段階にビン化されています。また、特徴量は、次のようなラベルの付いたグループに分かれています。<br>
+"feature_intelligence"、"feature_wisdom"、"feature_charisma"、"feature_dexterity"、"feature_strength"、"feature_constitution"<br>
+**target:** ビン化された教師データ。また、ターゲットも0,0.25,0.5,0.75,1の5段階にビン化されています。numerai_training_data.csvではターゲットデータが与えられていますが、numerai_tournament_data.csvのテストデータとライブデータではNaNとなっています。<br>
+<br>
+## ii）データ提出までの流れ<br>
+データ読み込み<br>
+特徴量エンジニアリング<br>
+機械学習<br>
+モデルの強さについて<br>
+予測結果が書き込まれたcsvファイルの作成<br>
+中和方法<br>
+<br>
+2 A. データ読み込み<br>
+Carlo Lepelaars氏の記事から、データ読み込みの部分を引用（一部編集）します。<br>
+download_current_data (DIR)を呼び出し、最新のデータをDIRで指定したディレクトリにダウンロード後、train, val, test = load_data (DIR, reduce_memory = True)を呼び出すと、train, val, testのデータを別々に保存できます。<br>
 
 
 ```
