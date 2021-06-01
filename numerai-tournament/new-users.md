@@ -178,7 +178,7 @@ val = get_group_stats(val)
 test = get_group_stats(test)
 ```
 <br>
-メモリに余裕のあるPCであれば、特徴量の差分データや多項式特徴量などを含めると、良い結果が得られます。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。メモリ使用量を軽減する方法については、[フォーラム](https://forum.numer.ai/t/reducing-memory/313)で議論されています。<br>
+メモリに余裕のあるPCであれば、特徴量の差分データや多項式特徴量などを含めると、良い結果が得られます。Google Colabで実行するとクラッシュしてしまうので、コードのみ掲載します。メモリ使用量を軽減する方法については、[フォーラム](https://forum.numer.ai/t/reducing-memory/313) で議論されています。<br>
 
 ```
 from sklearn import preprocessing
