@@ -390,6 +390,8 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 [@katsu1110](https://twitter.com/kk1110tt):[[numerai] MLP with KerasTuner Starter](https://www.kaggle.com/code1110/numerai-mlp-with-kerastuner-starter/notebook)<br>
 [@tit_BTCQASH](https://twitter.com/tit_BTCQASH):[Numeraiに上位20%以上のスコアがでる予測値を提出する方法
 ](https://qiita.com/tit_BTCQASH/items/4b321f06f7fea9709e05)<br>
+[@habakan_f](https://twitter.com/habakan_f):[Numeraiトーナメントのデータを構築過程から分析してみる](https://zenn.dev/habakan/articles/how-to-generate-numerai-dataset)<br>
+
 
 【Corr,MMC関連】<br>
 [@blog_UKI](https://twitter.com/blog_uki):[NumeariトーナメントのValid Corrをちょびっとだけ上げる小技](https://qiita.com/blog_UKI/private/c71ec4d34624afaf1a2d)<br>
