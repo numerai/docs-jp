@@ -421,6 +421,7 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 ](https://reon777.com/2020/07/06/numerai-compute/)<br>
 [@tit_BTCQASH](https://twitter.com/tit_BTCQASH):[Numerai-cliを使って予測ファイルの提出を自動化する方法
 ](https://qiita.com/tit_BTCQASH/items/fbcc9271c0a8977ff216)<br>
+[@habakan_f](https://twitter.com/habakan_f):[Payoutの一定割合を各モデルにStakeするスクリプト](https://gist.github.com/habakan/943ec48cf4e6b27043e5f4c4562a7e2e)<br>
 
 【fireside chat】<br>
 [@katsu1110](https://twitter.com/kk1110tt):[Numerai 2021Q1炉端会議メモ
@@ -429,6 +430,12 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 ](https://zenn.dev/katsu1110/articles/3fc47534cdc8c1807102)<br>
 [@katsu1110](https://twitter.com/kk1110tt):[Numerai Numerai 2021Q2炉端会議メモ
 ](https://zenn.dev/katsu1110/articles/7ce69ccd5212fb)<br>
+[@katsu1110](https://twitter.com/kk1110tt):[Numerai Numerai 2021Q3炉端会議メモ
+](https://zenn.dev/katsu1110/articles/bba27e6f8ff8c0)<br>
+[@katsu1110](https://twitter.com/kk1110tt):[Numerai Numerai 2021Q4炉端会議メモ
+](https://zenn.dev/katsu1110/articles/d804efecba6a49)<br>
+[@katsu1110](https://twitter.com/kk1110tt):[Numerai Numerai 2022Q1炉端会議メモ
+](https://zenn.dev/katsu1110/articles/d461c8dea4024b)<br>
 
 【掲示板】<br>
 [【日本語】Numeaiについて雑談・質問](https://forum.numer.ai/t/numeai/1473/11
@@ -437,6 +444,8 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 
 【Advent Calendar】<br>
 [@kunigaku](https://twitter.com/kunigaku):[Numerai Advent Calendar 2020](https://adventar.org/calendars/5031
+)<br>
+[@kunigaku](https://twitter.com/kunigaku):[Numerai Advent Calendar 2021](https://adventar.org/calendars/6226
 )<br>
 
 
