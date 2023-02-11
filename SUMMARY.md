@@ -8,7 +8,6 @@
 * [予測ファイルの自動提出](numerai-tournament/numerai-compute.md)
 * [ツールとライブラリ](numerai-tournament/tools-and-libraries.md)
 * [真の貢献（TC）について](numerai-tournament/true-contribution-tc.md)
-* [メタモデルへの貢献（MMC）について](numerai-tournament/meta-model-contribution-mmc.md)
 * [FNCについて](numerai-tournament/Feature-Neutral-Correlation.md)
 * [ステーキングとペイアウト](numerai-tournament/staking-and-payouts.md)
 * [評価方法について](numerai-tournament/reputation.md)

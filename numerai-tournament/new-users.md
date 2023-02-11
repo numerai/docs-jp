@@ -21,11 +21,11 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 <br>
 **Corr：** 提出された予測データとターゲットとの相関係数を表します。<br>
 <br>
-**MMC：** メタモデル貢献度（MMC）は、モデルの予測がNumeraiのメタモデルにとってどれだけ価値があるかを示します。非常に独創的な予測は、独創的でない予測よりも高いMMCを持ちます。MMCに関する詳細は[こちら](https://medium.com/numerai/a-new-data-science-competition-where-being-different-pays-251c2aecc40a)<br>
+**TC：** 真の貢献度（TC）は、モデルの予測がNumeraiのメタモデルにとってどれだけ価値があるかを示します。
 <br>
 **FNC:** Feature neutral correlation （FNC）は、提出した予測データをNumeraiのすべての特徴量に対して中和した後の、ターゲットとの相関係数を表します。<br>
 <br>
-**Corr / MMC / FNC Rep:** Rep（評判）は、過去20ラウンドにおけるその指標の加重平均であり、リーダーボードでユーザーをランク付けするために使用されるものです。Repについての詳細は[こちら](https://docs.numer.ai/tournament/reputation)<br>
+**Corr / TC / FNC Rep:** Rep（評判）は、過去20ラウンドにおけるその指標の加重平均であり、リーダーボードでユーザーをランク付けするために使用されるものです。Repについての詳細は[こちら](https://docs.numer.ai/tournament/reputation)<br>
 <br>
 **ステーク** 自分のモデルの予測にどれだけ自信があるかを示すために、NMRをステーク（預入れ＋ロック）をします。良い予測を提出した場合、NMRを得ることができます。一方、悪い予測を提出した場合はNMRが没収されます。賭け金の最小値は3NMRです。ステークせずに参加して、自分のモデルがどのようなパフォーマンスを示すかを知ってから、ステークするかどうかを決めることができます。
 <br>
@@ -41,7 +41,7 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 <br>
 **FORUM:** Numerai、データサイエンス、ステイク戦略などに関連する議論のためのスペースです。主にコミュニティ内での情報共有を目的としています。リンクは[こちら](https://forum.numer.ai/)です。<br>
 <br>
-**LEADERBOARD：** Numeraiに投稿された予測結果のランキングです。ステーク量、Rep、MMCなどでソート可能です。<br>
+**LEADERBOARD：** Numeraiに投稿された予測結果のランキングです。ステーク量、Rep、TCなどでソート可能です。<br>
 <br>
 **アカウント:** 「ウォレット」「モデル」「設定」「ログアウト」の4つのリンクがあります。<br>
 ・ウォレット：NMRトークンの入金と出金が行えます。<br>
@@ -59,17 +59,19 @@ NMRは、Numeraiのトーナメントに参加したり、Numeraiに技術的な
 <br>
 ![image](https://user-images.githubusercontent.com/78800304/120104152-119dc080-c18e-11eb-88ed-ada0e1b5f6d1.png)
 <br>
+
+
 # ホームページ下部
-**モデル情報：** モデル（今回はTIT_BTCQASH）のランキングやRep、MMC Repなどの情報を掲載しています。↓のボタンでモデルを切り替えることができます。<br>
+**モデル情報：** モデルのランキングやCorr・TCのRepなどの情報を掲載しています。ˇのボタンでモデルを切り替えることができます。<br>
 <br>
 **データ情報:** 最新ラウンドのデータダウンロードリンクと、予測結果のアップロードリンクです。<br>
 <br>
-**ステーク:** NMRのステーク量を調整できます。ステーク方法には、CorrやCorr＋MMCなどの種類があります。例えば、Corrではターゲットとの相関関係のみにNMRを賭けることができ、Corr + MMCではターゲットとの相関関係とMMCにNMRを賭けることができます。<br>
+**ステーク:** NMRのステーク量を調整できます。ステーク方法には、CorrやTCがあります。Corrではターゲットとの相関関係のみにNMRを賭けることができ、TCでは真の貢献にNMRを賭けることができます。<br>
 <br>
-**Pending Payouts:** 各ラウンドの予想ペイアウト（払い出し）の表です。<br>
+![Numeraiページ下部](../.gitbook/assets/image_homepage.png)
 <br>
-![image](https://user-images.githubusercontent.com/78800304/120104161-1d898280-c18e-11eb-9c4f-9dce9efe0cc2.png)
-<br>
+
+
 # 2. Numeraiに予測を提出する方法<br>
 すぐにでもNumeraiに投稿したいという方は、大会参加者の[katsu1110さん](https://www.kaggle.com/code1110/numerai-tournament)と[Carlo Lepelaarsさん](https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai)のKaggle Notebooksがとても参考になります。<br>
 今回の記事では、上記の記事や公式のサンプルモデルから一歩踏み込んだ説明（コードでどこを改善するかなど）をします。本説明により提出プロセスがわかりやすくなり、大会の出場者数が増えることを願っています。<br>
@@ -358,10 +360,7 @@ conc.to_csv("neutralized_submission_file.csv", index=False)#submission file
 **Validation SD：** 各Eraの予測値とValidationデータの相関の標準偏差（あまり参考になりません）<br>
 **Feature Exposure：** 特徴量の露出度。特徴量と予測結果のバランスの良さを示す指標です。小さければ小さいほど良いです。<br>
 **Max Drawdown** -0.05以下を目安としましょう。<br>
-**Corr + MMC Sharpe：** CorrとMMCの合算シャープレシオ<br>
-**MMC mean：** MMCの平均値<br>
 **Corr with Example Preds：** サンプルモデルとの相関性 0.5～0.8が目安です。<br>
-
 
 # 4.新規参加者向けのTips<br>
 #### Numeraiとコミュニティに関連する便利なリンク<br>
