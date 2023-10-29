@@ -116,7 +116,7 @@ docker run -i --rm -v "$PWD:$PWD" ghcr.io/numerai/numerai_predict_py_3_10:stable
 
 参考までに、いくつかの例のランタイムを示します。
 
- - small特長量（32個）、2万個（20k）の木を使ったLGBMモデル（上のノートブックの例）は、small特長量を使って1分未満
+ - small特長量（32個）、2万個（20k）の木を使ったLGBMモデルは、small特長量を使って1分未満
  
  - 全特長量（>1000特長量）、9万個（90k）の木を使ったLGBMモデルの実行時間は6分未満 
 
@@ -128,9 +128,9 @@ model uploadを行うと、Numerai compute経由での送信が無効化され�
 
 この機能は、インフラの設定や管理に時間を費やしたくない、新規〜中級ユーザー向けに設計されています。
 
-この機能のデメリットとしては、は、学習済みモデルをアップロードする（そしてNumeraiにアクセス権を与える）必要があることです。
+この機能のデメリットとしては、学習済みモデルをアップロードする（そしてNumeraiにアクセス権を与える）必要があることです。
 
-この点に抵抗がある場合は、Compute Heavy、Compute Lite、またはお好きなものをお使いください。
+この点に抵抗がある場合は、[Numerai CLI](https://jp.docs.numer.ai/numerai-tnamento/numerai-compute)などを検討してください。
 
 ## 利用規約
 
