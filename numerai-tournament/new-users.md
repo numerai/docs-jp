@@ -283,7 +283,7 @@ spearman（numerai_corr）, numerai_sharpeは大きいほど良いです。
 
 ## 2E.予測結果の準備 
 
-中和用のファイルをsubmission_file.csvに書き込みます。このファイルにはidとpredictionのカラムが必要です。また、idはValidationデータ、testデータ（＋Liveデータ）の順であることが必要です。順番が違うとNumerai側でリジェクトされますのでご注意ください。
+中和用のファイルをsubmission_file.csvに書き込みます。このファイルにはidとpredictionのカラムが必要です。
 
 ```py
 models = []
@@ -364,7 +364,7 @@ live_sub.to_csv("submission.csv")
 
 **Sharpe Ratio：** Validationデータのシャープレシオは1以上が良い結果を得やすいです。
 
-**VCORR20v2:** ValidationデータのCorr平均値が0.025～程度であると良いです。
+**CORR20v2:** ValidationデータのCorr平均値が0.025～程度であると良いです。
 
 **FNCv3:** v3データの特徴量で中和した場合のCorr平均値（あまり参考になりません）
 
@@ -374,7 +374,7 @@ live_sub.to_csv("submission.csv")
 
 **Max Drawdown：** -0.05以下を目安としましょう。
 
-**Ex. Preds Corr：** サンプルモデルとの相関性 値はあまり気にする必要はないです。
+**Ex. Preds Corr：** サンプルモデルとの相関性；値はあまり気にする必要はないです。
 
 ---
 
