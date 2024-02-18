@@ -12,13 +12,12 @@
 * [ツールとライブラリ](numerai-tournament/tools-and-libraries.md)
 * 評価指標
   * [Corr](numerai-tournament/correlation-corr.md)
-  * [TC](numerai-tournament/true-contribution-tc.md)
-  * [FNC](numerai-tournament/Feature-Neutral-Correlation.md)
+  * [MMC](numerai-tournament/meta-model-contribution-mmc-and-bmc.md)
+* [ベンチマークモデル](numerai-tournament/benchmark_models.md)
 * [ステーキングとペイアウト](numerai-tournament/staking-and-payouts.md)
 * [新規参加者向けのTips](numerai-tournament/new-users.md)
 * [Numeraiに関するFAQ](numerai-tournament/Tournament-FAQ.md)
 * [報酬プログラム](numerai-tournament/bounties.md)
-* [フォーラム](numerai-tournament/forum.md)
 
 ## Numerai シグナルズ
 
