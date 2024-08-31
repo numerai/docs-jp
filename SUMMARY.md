@@ -26,7 +26,7 @@
 
 ## Numerai Crypto
 
-* [Numerai Crypto概要](numerai-crypto/crypto-overview.md)
+* [Numerai Cryptoについての概要](numerai-crypto/crypto-overview.md)
 * [データ](numerai-crypto/data.md)
 * [提出](numerai-crypto/submissions.md)
 * [評価指標](numerai-crypto/scoring.md)
