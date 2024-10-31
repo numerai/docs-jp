@@ -51,27 +51,29 @@ Numeraiデータセットは多くの異なるファイルで構成されてい�
 from numerapi import NumerAPI
 napi = NumerAPI()
 
-# Let's see what files are available for download in the latest v4.2 dataset
-[f for f in napi.list_datasets() if f.startswith("v4.2")]
-# => ['v4.2/features.json',
-# 'v4.2/live_int8.parquet',
-# 'v4.2/live_example_preds.csv',
-# 'v4.2/live_example_preds.parquet',
-# 'v4.2/meta_model.parquet',
-# 'v4.2/train_int8.parquet',
-# 'v4.2/validation_example_preds.csv',
-# 'v4.2/validation_example_preds.parquet',
-# 'v4.2/validation_int8.parquet']
+napi.list_datasets()
+# => ['v5.0/features.json',
+#  'v5.0/live.parquet',
+#  'v5.0/live_benchmark_models.parquet',
+#  'v5.0/live_example_preds.csv',
+#  'v5.0/live_example_preds.parquet',
+#  'v5.0/meta_model.parquet',
+#  'v5.0/train.parquet',
+#  'v5.0/train_benchmark_models.parquet',
+#  'v5.0/validation.parquet',
+#  'v5.0/validation_benchmark_models.parquet',
+#  'v5.0/validation_example_preds.csv',
+#  'v5.0/validation_example_preds.parquet']
 
 # Download the training data
-napi.download_dataset("v4.2/train_int8.parquet")
+napi.download_dataset("v5.0/live.parquet")
 ```
 
- - `train_int8.parquet` には、特徴とターゲットを含む、学習用のデータが含まれています。
+ - `train.parquet` には、特徴とターゲットを含む、学習用のデータが含まれています。
 
- - `validation_int8.parquet` には、特徴量とターゲットを含む、評価用のデータが含まれます。
+ - `validation.parquet` には、特徴量とターゲットを含む、評価用のデータが含まれます。
 
- - `live_int8.parquet`には、現在のラウンドのターゲットなしの最新のライブ特徴量が含まれます。
+ - `live.parquet`には、現在のラウンドのターゲットなしの最新のライブ特徴量が含まれます。
 
  - `features.json` には、特徴量と特徴量セットに関するメタデータが含まれます。
 
@@ -85,12 +87,4 @@ napi.download_dataset("v4.2/train_int8.parquet")
 
 Numeraiデータセットは、常にアップデートのあるデータセットです。一般的に、新しいモデルを構築する場合は、最新バージョンを使用することが推奨されます。
 
-データセットの改良は、古いバージョンで学習したモデルの後方互換性を保つために、データセットの新しいバージョンとしてリリースされます。
-
- - [V4.2 (Rain)](https://forum.numer.ai/t/rain-data-release/6657)
-
- - [V4.1 (Sunshine)](https://forum.numer.ai/t/super-massive-data-sunshine/5977)
- 
- - [V4 (Titan)](https://forum.numer.ai/t/v4-tournament-data-announcement/5163)
- 
- - [V3 (スーパーマッシブ)](https://forum.numer.ai/t/super-massive-data-release-deep-dive/4053)
+[Numeraiのデータページ](https://numer.ai/data/)から最新のデータを確認してください。
