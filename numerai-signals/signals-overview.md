@@ -58,9 +58,7 @@ Numeraiが参加者のデータを利用するためには、規格化が必要�
 
 ユニバースは毎週更新されますが、更新対象となるのは出来高の少ない数銘柄のみです。 
 
-[latest universe file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/universe/latest.csv) をダウンロードすると、最新のユニバースを見ることができます。
-
-ユニバースの履歴は、 [historical targets file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals_train_val_bbg.csv) をダウンロードしてご覧いただけます。
+[Numerai data](https://signals.numer.ai/data/)から最新のユニバースを見ることができます。
 
 ### データの提出
 
@@ -84,7 +82,7 @@ Numeraiが参加者のデータを利用するためには、規格化が必要�
 
 ![](../.gitbook/assets/image%20%288%29.png)
 
-最新の提出例は[こちら](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/example_signal/latest.csv)からダウンロードできます。
+最新の提出例は[こちら](https://signals.numer.ai/data/)からダウンロードできます。
 
 ### 診断
 
@@ -97,8 +95,6 @@ Signalsを提出すると、過去のパフォーマンス、リスク、潜在�
 {% hint style="danger" %}
 この診断ツールを繰り返し使用すると、すぐにオーバーフィッティングにつながります。診断は、Signals作成プロセスの最終チェックとしてのみ使用してください。
 {% endhint %}
-
-診断の計算に使用した過去のターゲットはすべて[ここ](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals_train_val_bbg.csv)にあります。
 
 ### 提出フローの自動化
 
@@ -146,17 +142,6 @@ Signalsのヒストリカル診断を使用して、中和が将来のSignalsに
 
 言い換えれば、強い予測値を持つ「良い」Signalsは、単独で考えた場合、Numerai Signals のスコアは低いかもしれません。これは、Signalsの重要なユニークな側面を強調しています。<br>
 Numerai Signals は、株式のリターンを予測することではなく、Numerai にはない独自のSignalsを見つけることを目的としています。<br>
-
-### 6日間の中和されたリターンターゲット
-
-Signalsは、Numerai によって作成されたターゲットに対して評価されます。<br>
-このターゲットはブラックボックス化されており、参加者は内容を知ることができません。このターゲットは、6日間の中和された後続リターンに基づいています（最初の2日間は無視します）。<br>
-
-Signalsが6日間（最初の2日を除く）で評価される理由は、短い時間軸でしか機能しないSignalsは、大規模なヘッジファンドが実装することが不可能だからです。<br>
-例えば、Signalsが株式の1時間後のリターンを正確に予測できたとしても、ヘッジファンドがそのポジションを完全に取引するのに24時間かかるのであれば、あまり有用ではありません。<br>
-大規模なヘッジファンドにとって最も有用なSignalsは、「低アルファ減衰」とも呼ばれる長い時間軸での予測力を持っています。<br>
-
-正確な日時については、「日付と締め切りについて」セクションを参照してください。<br>
 
 ### スコアリング
 
