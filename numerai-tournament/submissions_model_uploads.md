@@ -37,7 +37,7 @@ with open("predict.pkl", "wb") as f:
 
 モデルのアップロードボタンをクリックし、アップロードモーダルを開きます。アップロードしたいpickleファイルを選択し、pickleの作成に使用したPythonのバージョンを設定し、Uploadをクリックします。
 
-![Numerai model uploads画面（v4.2）](../.gitbook/assets/model-uploads_upload-v4.2.png)
+![Numerai model uploads画面（画面はv4.2のものですが、現在もほぼ同様です）](../.gitbook/assets/model-uploads_upload-v4.2.png)
 
 アップロードが完了すると、Numeraiは直ちにあなたのモデルを実行し、現在のラウンドのライブサブミッションを生成し、検証データセットに対して診断を生成します。
 

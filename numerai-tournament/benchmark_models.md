@@ -17,9 +17,9 @@
 !pip install numerapi
 from numerapi import NumerAPI
 napi = NumerAPI()
-napi.download_dataset("v4.3/train_benchmark_models.parquet", "train_benchmark_models.parquet")
-napi.download_dataset("v4.3/validation_benchmark_models.parquet", "validation_benchmark_models.parquet")
-napi.download_dataset("v4.3/live_benchmark_models.parquet", "live_benchmark_models.parquet")
+napi.download_dataset("v5.0/train_benchmark_models.parquet", "train_benchmark_models.parquet")
+napi.download_dataset("v5.0/validation_benchmark_models.parquet", "validation_benchmark_models.parquet")
+napi.download_dataset("v5.0/live_benchmark_models.parquet", "live_benchmark_models.parquet")
 ```
 
 ## ベンチマークモデルの作成方法
@@ -137,75 +137,13 @@ def neutralize(df, columns, neutralizers=None, proportion=1.0, era_col="era"):
     return pd.DataFrame(np.concatenate(computed), columns=columns, index=df.index)
 ```
 
-## どのようなモデルがありますか？
+## ベンチマークモデルの命名規則
 
 **{data\_version}\_LGBM\_{target}**
 
-これらは、データバージョン（V2、V3、V4、V41、V42、V43）とターゲットの組み合わせを持つ多くのモデルがあります。
+これらは、データバージョン（V2、V3、V4、V41、V42、V43、V5）とターゲットの組み合わせを持つ多くのモデルがあります。
 
 これらは、標準のウォークフォワード方法でトレーニングされたモデルであり、標準的なLGBMパラメータを使用し、指定されたデータバージョンとターゲットを使用しています。それだけです！
 
-**V42\_RAIN\_ENSEMBLEおよびV42\_RAIN\_ENSEMBLE2**
+[https://numer.ai/~benchmark_models](https://numer.ai/~benchmark_models)から最新のデータバージョンのモデルを確認することができます。
 
-[V42\_RAIN\_ENSEMBLE](https://numer.ai/v42\_rain\_ensemble)と[V42\_RAIN\_ENSEMBLE2](https://numer.ai/v42\_rain\_ensemble2)モデルは、22種類の標準モデルをすべてアンサンブル化したモデルです。
-
-V42\_RAIN\_ENSEMBLEは、Rainデータセットのリリース時点で作成された11の最良のターゲットを使用し、スコアリングターゲットであるCyrusに重点を置き、60Dターゲットに対して20Dターゲットの重みが2倍であることを特徴としています。
-
-異なるターゲットは次のとおりです：
-
-|ターゲット|割合|
-|-|-|
-|Cyrus20|33%|
-|Ralph20|3.3%|
-|Jeremy20|3.3%|
-|Waldo20|3.3%|
-|Tyler20|3.3%|
-|Victor20|3.3%|
-|Alpha20|3.3%|
-|Bravo20|3.3%|
-|Charlie20|3.3%|
-|Delta20|3.3%|
-|Echo20|3.3%|
-|Cyrus60|17%|
-|Ralph60|1.7%|
-|Jeremy60|1.7%|
-|Waldo60|1.7%|
-|Tyler60|1.7%|
-|Victor60|1.7%|
-|Alpha60|1.7%|
-|Bravo60|1.7%|
-|Charlie60|1.7%|
-|Delta60|1.7%|
-|Echo60|1.7%|
-
-V42\_RAIN\_ENSEMBLE2は、同じ11のターゲットセットを使用しますが、60Dバージョンには重みがなく、さらにserenityセットの特徴に対してニュートラルです。
-
-**V{42/43}\_LGBM\_CT\_BLEND**
-
-これは、V{42/43}\_LGBM\_TEAGER20とV{42/43}\_LGBM\_CYRUS20のシンプルな50/50ブレンドです。
-
-**V42\_EXAMPLE\_PREDS**
-
-これは、V42データとCyrus20ターゲットを使用した標準モデルです。
-
-**V41\_EXAMPLE\_PREDS**
-
-これはかつてのSunshine Example Modelです。
-
-Nomi20、Jerome60、Ralph20、Victor20、Waldo20、Tyler20の6つの異なるターゲットに構築された標準モデルを使用します。
-
-これらのモデルは、アンサンブルで等しい重みです。
-
-最終的な予測は、V4.1の「medium」特徴セットに対して50％の割合でニュートラルされます。
-
-**V3\_EXAMPLE\_PREDS**
-
-これは、v3相当の特徴セットとRalph20ターゲットでトレーニングされた標準モデルです。
-
-**V2\_EXAMPLE\_PREDS**
-
-これは、v2相当の特徴セットとNomi20ターゲットでトレーニングされた標準モデルです。
-
-**その他のモデル**
-
-ベンチマークモデルページには他にもいくつかのモデルがありますが、予測ファイルには含まれていないものもあります。

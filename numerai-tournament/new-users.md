@@ -134,11 +134,12 @@ import pandas as pd
 from contextlib import redirect_stderr
 
 napi = numerapi.NumerAPI()
+
 # Notebook実行時に大量に出力がでてしまうため抑制
 with redirect_stderr(open(os.devnull, 'w')):
-    napi.download_dataset("v4.2/train_int8.parquet", "train.parquet")
-    napi.download_dataset("v4.2/live_int8.parquet", "live.parquet")
-    napi.download_dataset("v4.2/features.json", "features.json")
+    napi.download_dataset("v5.0/train.parquet", "train.parquet")
+    napi.download_dataset("v5.0/live.parquet", "live.parquet")
+    napi.download_dataset("v5.0/features.json", "features.json")
 
 # 特徴量の選択（今回はmedium特徴量を選択）
 feature_set_name = "medium"
@@ -160,23 +161,6 @@ Numeraiデータセットの特徴量は互いに相関が低く、特徴量エ�
 これらの特徴の平均値、偏差値、歪度などは有用な特徴です。
 
 ```python
-# v4.2のデータで確認
-# small 42
-# medium 583
-# all 2132
-# v2_equivalent_features 304
-# v3_equivalent_features 1000
-# fncv3_features 400
-# intelligence 35
-# charisma 290
-# strength 135
-# dexterity 51
-# constitution 335
-# wisdom 140
-# agility 145
-# serenity 95
-# sunshine 325
-# rain 666
 feature_metadata = json.load(open("features.json"))
 for k, v in feature_metadata["feature_sets"].items():
     print(k, len(v))
@@ -492,5 +476,4 @@ live_sub.to_csv("submission.csv")
 
 [@MesozoicMetallurgist](https://numer.ai/mesozoicmetallurgist):[MesozoicMetallurgist Numerai Model List
 ](https://docs.google.com/document/d/19P_e8ahJUr6HbaOfFAmJSLXcXZWgzSj3lf_zyecBatM/edit)
-
 
