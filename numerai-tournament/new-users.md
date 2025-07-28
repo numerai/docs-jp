@@ -418,10 +418,6 @@ live_sub.to_csv("submission.csv")
 
 [@katsu1110](https://twitter.com/kk1110tt):[Metric learningでlive eraに近いeraを見つける](https://www.kaggle.com/code1110/numerai-metric-learning-and-live-era/notebook)
 
-【feature neutralization】
-
-[@yaaku](https://twitter.com/yaaku123):[[Numerai] 成功が約束された特徴量を試してみる](https://yaakublog.com/numerai-feature-neutralization)
-
 【Era boost】
 
 [@pegion_hole](https://twitter.com/pegion_hole):[Era Boost について](https://zenn.dev/ageonsen/articles/aab408111bf952)
