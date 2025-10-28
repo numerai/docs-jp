@@ -150,7 +150,7 @@ Numerai TournamentとNumerai Signalsは、ユーザーが株式市場を予測�
 
 **なぜ自分で取引しないのですか？**
 
-あなたが自分で取引することは可能ですし、私たちはそれを止めることはできません。しかし、Numeraiはあなたのシグナルが既に知られており、他の誰もが使用しているかどうかを教えてくれます。すべての人が既に取引しているシグナルを取引しても、それほど価値がありません。[詳細はMediumの投稿をご覧ください](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c)。
+あなたが自分で取引することは可能ですし、私たちはそれを止めることはできません。しかし、Numeraiはあなたのシグナルが既に知られており、他の誰もが使用しているかどうかを教えてくれます。すべての人が既に取引しているシグナルを取引しても、それほど価値がありません。[詳細はMediumの投稿をご覧ください](https:/blog.numer.ai/building-the-last-hedge-fund-introducing-numerai-signals)。
 
 **参加するためにコーディングや金融の知識が必要ですか？**
 

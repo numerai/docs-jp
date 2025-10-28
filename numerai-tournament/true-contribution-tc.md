@@ -10,7 +10,7 @@
 
 ## TCはどのように計算されるのか？
 
-まず、Numeraiがどのようにエンド・ツー・エンドで動作するかを説明する必要があります。以下の説明は、[Richard CraibのMedinumのpost](https://medium.com/numerai/alien-stock-market-intelligence-numerais-true-contribution-6bc7652bd6ac)から引用したものです。
+まず、Numeraiがどのようにエンド・ツー・エンドで動作するかを説明する必要があります。以下の説明は、[Richard CraibのMedinumのpost](https://blog.numer.ai/alien-stock-market-intelligence-numerais-true-contribution)から引用したものです。
 
 1. Numeraiは、すべてのシグナルの賭け金加重平均を介して提出された予測を組み合わせ、Stake-Weighted Meta Model (SWMM) を作成します。自分のモデルに大量のNMRを賭けるデータサイエンティストは、Steak-Weighted Meta Modelでより大きなウェイトを持つことになります。
 

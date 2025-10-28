@@ -285,7 +285,7 @@ numerai uninstall
 [Numerai CLI wiki](https://github.com/numerai/numerai-cli/wiki/Amazon-Web-Services)  
 [Numerai Computeの設定方法（動画版、英語）](https://www.youtube.com/watch?v=YFgXMpQszpM&ab_channel=Numerai)  
 [Numerai CLI tutorial](https://docs.numer.ai/help/compute-tutorial)  
-[Numerai CLI　Medium記事](https://medium.com/numerai/building-the-numerai-network-af733c29d56f)  
+[Numerai CLI　Medium記事](https://blog.numer.ai/building-the-numerai-network)  
 [Youtube](https://www.youtube.com/watch?v=7NWAlQEay_w&t=2060s&ab_channel=Numerai)
 
 本記事が参考になった方はNMRを投げてくれるとtit\_BTCQASH氏がきっと喜びます。  
