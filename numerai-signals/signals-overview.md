@@ -6,7 +6,7 @@
 また、Numeraiのヘッジファンドではオリジナリティが最も高いSignalsを使用しています。<br>
 
 Numerai Signals は、Numeraiヘッジファンドを構築するために使用され、Numeraiのマスタープランの一部です。<br>
-[Medium Post](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c) や、[short film](https://www.youtube.com/watch?v=GWeC2PK4yXQ&feature=youtu.be) で詳細が述べられています。
+[Medium Post](https://blog.numer.ai/building-the-last-hedge-fund-introducing-numerai-signals) や、[short film](https://www.youtube.com/watch?v=GWeC2PK4yXQ&feature=youtu.be) で詳細が述べられています。
 
 
 
